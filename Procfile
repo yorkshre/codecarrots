@@ -1,1 +1,1 @@
-b: gunicorn mysite.wsgi
+web: gunicorn pycodekoszalin.wsgi
