@@ -1,17 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>{% load staticfiles %}<html>
 <head>
   <title>Code Carrots Koszalin</title>
-  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css" />
-  <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css' />
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
+  <link rel="stylesheet" href="{% static 'bootstrap-theme.min.css' %}" />
   <link rel="stylesheet" href="{% static 'css/blog.css' %}" />
 </head>
 <body>
   <div class="page-header">
-    <h1>
-      <a href="/">Code Carrots</a>
-    </h1>
-    <!-- <img src="http://codecarrotsjs.github.io/loops/cc.jpg"height="200"align="right" /> -->
+    <div class="row">
+      <div class="col-md-7">
+        <h1>
+          <a href="/">Code Carrots</a>
+        </h1>
+      </div>
+      <div class="col-md-5">
+        <img class="main-logo" src="http://codecarrotsjs.github.io/loops/cc.jpg" width="20%"/>
+      </div>
+    </div>
   </div>
   <div class="content container">
     <div class="row">
