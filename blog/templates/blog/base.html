@@ -1,97 +1,62 @@
-{% load staticfiles %}
-<html>
-    <head>
-        <title>Code Carrots Koszalin</title>
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-        <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
-    </head>
-    <body>
-
-        <div class="page-header">
-            <h1><a href="/">Code Carrots</a></h1>
-	    <img src="http://codecarrotsjs.github.io/loops/cc.jpg"height="200"align="right" />
-	<ol>
-    
-
-	     </div>
-	 
-    
-        <div class="content container">
-            <div class="row">
-                <div class="col-md-8">
-		
-                {% block content %}
-                
-		{% endblock %}
-             
-             
-
-
-               </div>
-
-            </div>
+<?xml version="1.0" encoding="UTF-8"?>{% load staticfiles %}<html>
+<head>
+  <title>Code Carrots Koszalin</title>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css" />
+  <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css' />
+  <link rel="stylesheet" href="{% static 'css/blog.css' %}" />
+</head>
+<body>
+  <div class="page-header">
+    <h1>
+      <a href="/">Code Carrots</a>
+    </h1>
+    <!-- <img src="http://codecarrotsjs.github.io/loops/cc.jpg"height="200"align="right" /> -->
+  </div>
+  <div class="content container">
+    <div class="row">
+      <div class="col-md-8">
+        {% block content %}
+        {% endblock %}
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 spons">
+        <h3>Partnerzy</h3>
+        <div class="row">
+          {% for img in partners %}
+          <div class="col-md-{{ size_partners }} spons">
+            <img src="{{ img.src }}" width="80%"/>
+          </div>
+          {% endfor %}
         </div>
- 	      </br><       
-
-		</br></br></br>
-     
-		 <div id="partners">
-                    <h4><a>Partnerzy</a></h4>
-
-
-                </div>
-		       
-
-               >
-	<div style='position:absolute; right:50%'>
-		<img src='/static/img/infolet.jpg'width='200'>
-	</div>
-	<div style='position:absolute;right:35%'>
-		<img src='/static/img/osworld.jpg'width='200'>
-	</div>
-		  
-
-		</br></br></br></br></br></br></br>
-
-		<div id="sponsors">
-                    <h4><a>Sponsorzy</a></h4>
-		</div>
-                    
-		<div style='position:absolute;right:50%'>
-                <img src='/static/img/indeks.jpeg'width='200' >
+      </div>
+      <div class="col-md-4 spons">
+        <div class="row">
+          <h3>Sponsorzy</h3>
+          {% for img in sponsors %}
+          <div class="col-md-{{ size_sponsors }} spons">
+            <img src="{{ img.src }}" width="80%"/>
+          </div>
+          {% endfor %}
         </div>
-
-
-               
-
-	</br></br></br></br></br></br></br>
-
-                <div id="patrons">
-                    <h4><a>Patroni medialni</a></h4>
-
-
-                </div>
-
-                    <div style='position:absolute;right:50%'>
-                <img src='/static/img/fundacja_infolet.jpg'width='150' >
+      </div>
+      <div class="col-md-4 spons">
+        <h3>Patroni</h3>
+        <div class="row">
+          {% for img in patrons %}
+          <div class="col-md-{{ size_patrons }} spons">
+            <img src="{{ img.src }}" width="80%"/>
+          </div>
+          {% endfor %}
         </div>
-
-
-	<div style='position:absolute;right:35%'>
-                <img src='/static/img/osworld.jpg'width='200'>
-        </div>
-
-        </br></br></br></br></br></br></br></br>
-
-		 <div id="footer">
-                          Created by <a href="http://mrocznybibliotekarz.blogspot.com/">Agata Bublewicz</a> 2016
-
-
-                </div>
-
-    </body>
+      </div>
+    </div>
+  </div>
+  <div id="footer">
+    Created by <a href="http://mrocznybibliotekarz.blogspot.com/">Agata Bublewicz</a> 2016
+  </div>
+</body>
 </html>
- 
-

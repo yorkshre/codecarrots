@@ -69,3 +69,12 @@ color: #000000;
 
 }
 
+div.spons {
+  text-align:center;
+}
+
+.spons > img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
