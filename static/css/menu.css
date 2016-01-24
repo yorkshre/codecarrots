@@ -1,0 +1,145 @@
+/*Strip the ul of padding and list styling*/
+
+.menu {
+	height:20px;
+}
+.menu a {
+	text-decoration: none;
+}
+.menu ul {
+	list-style-type:none;
+	margin:0;
+	padding:0;
+	position: absolute;
+}
+
+/*Create a horizontal list with spacing*/
+.menu li {
+	display:inline-block;
+	float: left;
+	margin-right: 1px;
+}
+
+/*Style for menu links*/
+.menu li a {
+	display:block;
+	min-width:140px;
+	height: 50px;
+	text-align: center;
+	line-height: 50px;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	color: #000;
+	background: #E0C430;
+	text-decoration: none;
+}
+
+/*Hover state for top level links*/
+.menu li:hover a {
+	background: #FF9400;
+}
+
+/*Style for dropdown links*/
+.menu li:hover ul a {
+	background: #f3f3f3;
+	color: #2f3036;
+	height: 40px;
+	line-height: 40px;
+}
+
+/*Hover state for dropdown links*/
+.menu li:hover ul a:hover {
+	background: #ffB400;
+	color: #fff;
+}
+
+/*Hide dropdown links until they are needed*/
+.menu li ul {
+	display: none;
+	z-index: 1;
+}
+
+/*Make dropdown links vertical*/
+.menu li ul li {
+	display: block;
+	float: none;
+}
+
+/*Prevent text wrapping*/
+.menu li ul li a {
+	width: auto;
+	min-width: 100px;
+	padding: 0 20px;
+}
+
+/*Display the dropdown on hover*/
+.menu ul li a:hover + .submenu, .submenu:hover {
+	display: block;
+}
+
+/*Style 'show menu' label button and hide it by default*/
+.show-menu {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	text-decoration: none;
+	color: #000;
+	background: #ff9400;
+	text-align: center;
+	padding: 10px 0;
+	display: none;
+}
+
+/*Hide checkbox*/
+input[type=checkbox]{
+    display: none;
+}
+
+/*Show menu when invisible checkbox is checked*/
+input[type=checkbox]:checked ~ #menu{
+    display: block;
+}
+
+
+/*Responsive Styles*/
+
+@media screen and (max-width : 1024px){
+	/*Make dropdown links appear inline*/
+	.menu ul {
+		position: static;
+		display: none;
+	}
+	/*Create vertical spacing*/
+	.menu li {
+		margin-bottom: 1px;
+	}
+	/*Make all menu links full width*/
+  .menu	ul li, li a {
+		width: 100%;
+	}
+	/*Display 'show menu' link*/
+	.show-menu {
+		display:block;
+	}
+}
+
+.box-shadow-menu {
+  /*padding-left: 1.25em;*/
+  /*position: relative;*/
+}
+.box-shadow-menu:before {
+  content: "";
+	position:absolute;
+	/*overflow:auto;*/
+  float:right;
+  width: 70px;
+	height:61px;
+	right:100px;
+	top:-62px;
+  background: linear-gradient(
+    to bottom,
+    white, white 20%,
+    #ffA400 20%, #ffC430 40%,
+    white 40%, white 60%,
+	    #ffA400 60%, #ffC430 80%,
+    white 80%, white 100%
+  );
+}
+}

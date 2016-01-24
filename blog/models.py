@@ -18,3 +18,12 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+
+class Menu():
+    @staticmethod
+    def options():
+        return [
+            {'title':'O nas1', 'href':'/'},
+            {'title':'O nas2', 'href':'/'},
+            {'title':'O nas3', 'href':'/'},
+        ]

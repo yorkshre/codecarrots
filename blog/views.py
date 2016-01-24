@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.utils import timezone
 from .models import Post
+from .models import Menu
 from django.shortcuts import render, get_object_or_404
 
 
@@ -23,6 +24,7 @@ def post_list(request):
     size_partners = 12/len(partners)
     size_sponsors = 12/len(sponsors)
     return render(request, 'blog/post_list.html', {
+        'menu':Menu.options(),
         'posts':posts,
         'patrons':patrons,
         'partners':partners,
