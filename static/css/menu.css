@@ -2,6 +2,7 @@
 
 .menu {
 	height:20px;
+	z-index: 1;
 }
 .menu a {
 	text-decoration: none;
@@ -55,7 +56,6 @@
 /*Hide dropdown links until they are needed*/
 .menu li ul {
 	display: none;
-	z-index: 1;
 }
 
 /*Make dropdown links vertical*/
@@ -100,11 +100,12 @@ input[type=checkbox]:checked ~ #menu{
 
 /*Responsive Styles*/
 
-@media screen and (max-width : 1024px){
+@media screen and (max-width : 1280px){
 	/*Make dropdown links appear inline*/
 	.menu ul {
 		position: static;
 		display: none;
+		font-size:30px;
 	}
 	/*Create vertical spacing*/
 	.menu li {
@@ -120,10 +121,6 @@ input[type=checkbox]:checked ~ #menu{
 	}
 }
 
-.box-shadow-menu {
-  /*padding-left: 1.25em;*/
-  /*position: relative;*/
-}
 .box-shadow-menu:before {
   content: "";
 	position:absolute;
@@ -141,5 +138,4 @@ input[type=checkbox]:checked ~ #menu{
 	    #ffA400 60%, #ffC430 80%,
     white 80%, white 100%
   );
-}
 }

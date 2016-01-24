@@ -19,11 +19,35 @@ class Post(models.Model):
     def __str__(self):
         return self.title
 
+class Patronage():
+    @staticmethod
+    def list():
+        patrons = [
+        { "src":"/static/img/fundacja_infolet.jpg"},
+        { "src":"/static/img/osworld.jpg"},
+        ]
+        partners = [
+        { "src":"/static/img/infolet.jpg"},
+        { "src":"/static/img/osworld.jpg"},
+        ]
+        sponsors = [
+        { "src":"/static/img/indeks.jpeg"},
+        ]
+        return {
+        'patrons':patrons,
+        'partners':partners,
+        'sponsors':sponsors,
+        'size_patrons' : int(12/len(patrons)),
+        'size_partners': int(12/len(partners)),
+        'size_sponsors' : int(12/len(sponsors)),
+    }
+
+
 class Menu():
     @staticmethod
     def options():
         return [
-            {'title':'O nas1', 'href':'/'},
-            {'title':'O nas2', 'href':'/'},
-            {'title':'O nas3', 'href':'/'},
+            {'title':'Aktualności', 'href':'/'},
+            {'title':'O nas', 'href':'/onas'},
+            {'title':'Kontakt', 'href':'/kontakt'},
         ]
