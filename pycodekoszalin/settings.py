@@ -71,7 +71,8 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'pycodekoszalin.wsgi.application'
 
-
+MEDIA_ROOT = 'blog/static/media/'
+MEDIA_STATIC = 'media/'
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
 

@@ -31,36 +31,7 @@
   </div>
   <div class="container">
     <div class="row">
-      <div class="col-xs-4 spons">
-        <h3>Partnerzy</h3>
-        <div class="row">
-          {% for img in patronage.partners %}
-          <div class="col-xs-{{ patronage.size_partners }} spons">
-            <img src="{{ img.src }}" width="80%"/>
-          </div>
-          {% endfor %}
-        </div>
-      </div>
-      <div class="col-xs-4 spons">
-        <div class="row">
-          <h3>Sponsorzy</h3>
-          {% for img in patronage.sponsors %}
-          <div class="col-xs-{{ patronage.size_sponsors }} spons">
-            <img src="{{ img.src }}" width="80%"/>
-          </div>
-          {% endfor %}
-        </div>
-      </div>
-      <div class="col-xs-4 spons">
-        <h3>Patroni</h3>
-        <div class="row">
-          {% for img in patronage.patrons %}
-          <div class="col-xs-{{ patronage.size_patrons }} spons">
-            <img src="{{ img.src }}" width="80%"/>
-          </div>
-          {% endfor %}
-        </div>
-      </div>
+      {% include "blog/footer/patronage.html" %}
     </div>
   </div>
   <div id="footer">
