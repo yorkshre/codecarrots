@@ -103,6 +103,8 @@ USE_TZ = False
 
 STATIC_URL = '/static/'
 
+DROPBOX_OAUTH2_TOKEN = os.environ['DROPBOX_OAUTH2_TOKEN']
+
 import dj_database_url
 DATABASES['default'] =  dj_database_url.config()
 

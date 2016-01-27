@@ -17,4 +17,6 @@ sphinx-rtd-theme==0.1.9
 wheel==0.26.0
 whitenoise==2.0.6
 psycopg2==2.5.4
+django-storages
+django-dropbox
 Pillow

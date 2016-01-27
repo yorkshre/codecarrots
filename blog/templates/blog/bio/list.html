@@ -6,7 +6,7 @@
     {% for entry in bio %}
     <div class="col-xs-4">
         <a class="bio-anchor" data-href="{% url 'blog.views.aboutus.ajax' pk=entry.pk %}"
-           href="{% url 'blog.views.aboutus.detail' pk=entry.pk %}"><img src="/static/media/{{ entry.img }}"
+           href="{% url 'blog.views.aboutus.detail' pk=entry.pk %}"><img src="{{ entry.img.url }}"
                                                                          width="100%"/></a>
         <h3><a class="bio-anchor" data-href="{% url 'blog.views.aboutus.ajax' pk=entry.pk %}"
                href="{% url 'blog.views.aboutus.detail' pk=entry.pk %}">{{ entry.name }}</a></h3>
@@ -14,7 +14,7 @@
     {% endfor %}
     <div class="hidden bio-layer container">
             <h3 class="layer-name"></h3>
-           <img class="layer-img" src="" width="40%"/>
+           <img class="layer-img" src="" width="30%"/>
         <p class="layer-text">
 
         </p>
@@ -26,8 +26,8 @@
         z-index:5;
         background-color:#FFFFFF;
         position:fixed;
-        top:20%;
-        height:60%;
+        top:10%;
+        height:80%;
         left:20%;
         width:60%;
         border-radius: 10px;
@@ -42,8 +42,14 @@
         margin-left : 30px;
     }
     .layer-text {
-        font-size:2em;
+        font-size:1.5em;
     }
+
+    .bio-layer::-webkit-scrollbar { width: 0 !important }
+    .bio-layer { -ms-overflow-style: none; }
+    .bio-layer { overflow: -moz-scrollbars-none; }
+
+
     @media screen and (max-width : 1280px) {
         .bio-layer {
             top:10%;
@@ -55,7 +61,7 @@
             width:30%;
         }
         .layer-text {
-            font-size:1.5em;
+            font-size:1.3em;
         }
     }
 </style>
@@ -75,7 +81,7 @@
         $.get(link,function(data) {
             var el = $(".bio-layer");
             $(el).removeClass("hidden")
-            $(".layer-img").attr("src","/static/media/" + data.bio.img)
+            $(".layer-img").attr("src",data.bio.img)
             $(".layer-name").html(data.bio.name)
             $(".layer-text").html(data.bio.text)
         });

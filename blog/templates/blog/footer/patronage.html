@@ -23,7 +23,7 @@
   <div class="row">
     {% for img in patronage.patrons %}
     <div class="col-xs-{{ patronage.size_patrons }} spons">
-      <img src="/static/media/{{ img.img }}" width="80%"/>
+      <img src="{{ img.img.url }}" width="80%"/>
     </div>
     {% endfor %}
   </div>

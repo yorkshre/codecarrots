@@ -1,6 +1,8 @@
 from django.db import models
 from django.utils import timezone
+from blog.dropboxstorage import DropBoxStorage
 
+dstorage = DropBoxStorage()
 
 class Post(models.Model):
     author = models.ForeignKey('auth.User')
@@ -18,6 +20,11 @@ class Post(models.Model):
     def __str__(self):
         return self.title
 
+class DropboxImageField(models.ImageField):
+    def pre_save(self, model_instance, add):
+        file = super(models.ImageField, self).pre_save(model_instance,add)
+        file.name = self.storage.generate_url(file.name)
+        return file
 
 class Patronage(models.Model):
     PATRON = 0
@@ -29,7 +36,7 @@ class Patronage(models.Model):
         (SPONSOR, 'Sponsor'),
     )
     name = models.CharField(max_length=200)
-    img = models.ImageField(upload_to='partners/')
+    img = DropboxImageField(storage=dstorage)
     type = models.SmallIntegerField(choices=STATUS_CHOICES)
 
     @staticmethod
@@ -60,7 +67,7 @@ class Menu:
 class Bio(models.Model):
     name = models.CharField(max_length=200)
     text = models.TextField()
-    img = models.ImageField(upload_to='bios/')
+    img = DropboxImageField(storage=dstorage)
 
     def publish(self):
         self.save()
