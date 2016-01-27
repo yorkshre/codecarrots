@@ -3,7 +3,7 @@
   <div class="row">
     {% for img in patronage.partners %}
     <div class="col-xs-{{ patronage.size_partners }} spons">
-      <img src="/static/media/{{ img.img }}" width="80%"/>
+      <img src="{{ img.img.url }}" width="80%"/>
     </div>
     {% endfor %}
   </div>
@@ -13,7 +13,7 @@
     <h3>Sponsorzy</h3>
     {% for img in patronage.sponsors %}
     <div class="col-xs-{{ patronage.size_sponsors }} spons">
-      <img src="/static/media/{{ img.img }}" width="80%"/>
+      <img src="{{ img.img.url }}" width="80%"/>
     </div>
     {% endfor %}
   </div>
