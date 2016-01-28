@@ -48,19 +48,19 @@ class Patronage(models.Model):
             {
                 'label': "Partnerzy",
                 'list': partners,
-                'size': 6 if len(partners) <= 1 else int(12 / len(partners)),
+                'size': 6 if len(partners) <= 1 else 4 if len(partners) > 3 else int(12 / len(partners)),
                 'single': len(partners) == 1
             },
             {
                 'label': "Sponsorzy",
                 'list': sponsors,
-                'size': 6 if len(sponsors) <= 1 else int(12 / len(sponsors)),
+                'size': 6 if len(sponsors) <= 1 else 4 if len(sponsors) > 3 else int(12 / len(sponsors)),
                 'single': len(sponsors) == 1
             },
             {
                 'label': "Patroni",
                 'list': patrons,
-                'size': 6 if len(patrons) <= 1 else int(12 / len(patrons)),
+                'size': 6 if len(patrons) <= 1 else 4 if len(patrons) > 3 else int(12 / len(patrons)),
                 'single': len(patrons) == 1
             },
         ]
