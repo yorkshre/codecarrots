@@ -44,14 +44,26 @@ class Patronage(models.Model):
         patrons = Patronage.objects.all().filter(type=Patronage.PATRON)
         partners = Patronage.objects.all().filter(type=Patronage.PARTNER)
         sponsors = Patronage.objects.all().filter(type=Patronage.SPONSOR)
-        return {
-            'patrons': patrons,
-            'partners': partners,
-            'sponsors': sponsors,
-            'size_patrons': 0 if len(patrons) == 0 else int(12 / len(patrons)),
-            'size_partners': 0 if len(partners) == 0 else int(12 / len(partners)),
-            'size_sponsors': 0 if len(sponsors) == 0 else int(12 / len(sponsors)),
-        }
+        return [
+            {
+                'label': "Partnerzy",
+                'list': partners,
+                'size': 6 if len(partners) <= 1 else int(12 / len(partners)),
+                'single': len(partners) == 1
+            },
+            {
+                'label': "Sponsorzy",
+                'list': sponsors,
+                'size': 6 if len(sponsors) <= 1 else int(12 / len(sponsors)),
+                'single': len(sponsors) == 1
+            },
+            {
+                'label': "Patroni",
+                'list': patrons,
+                'size': 6 if len(patrons) <= 1 else int(12 / len(patrons)),
+                'single': len(patrons) == 1
+            },
+        ]
 
 
 class Menu:
