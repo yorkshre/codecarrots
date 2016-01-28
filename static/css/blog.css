@@ -72,7 +72,9 @@ color: #000000;
 
 div.spons {
   text-align:center;
+    padding:3%
 }
+
 @media screen and (max-width:1280px) {
   .spons {
     /*max-width:30%!important;*/
