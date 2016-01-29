@@ -23,6 +23,8 @@ class Post(models.Model):
 class DropboxImageField(models.ImageField):
     def pre_save(self, model_instance, add):
         file = super(models.ImageField, self).pre_save(model_instance,add)
+        if "dropboxusercontent" in file.name:
+            return file
         file.name = self.storage.generate_url(file.name)
         return file
 
@@ -38,6 +40,10 @@ class Patronage(models.Model):
     name = models.CharField(max_length=200)
     img = DropboxImageField(storage=dstorage)
     type = models.SmallIntegerField(choices=STATUS_CHOICES)
+    url = models.CharField(max_length=200, default="", blank=True)
+
+    def __str__(self):
+        return self.name
 
     @staticmethod
     def list():

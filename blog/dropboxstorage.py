@@ -8,7 +8,7 @@
 # DROPBOX_OAUTH2_TOKEN = 'YourOauthToken'
 
 from __future__ import absolute_import
-
+from django.utils.deconstruct import deconstructible
 from datetime import datetime
 import re
 from urllib import request
@@ -65,6 +65,9 @@ class DropBoxFile(File):
         self._storage._save(self.name, content)
 
 
+
+
+@deconstructible
 class DropBoxStorage(Storage):
     """DropBox Storage class for Django pluggable storage system."""
     def generate_url(self, name):
