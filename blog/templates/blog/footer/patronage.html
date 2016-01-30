@@ -1,17 +1,17 @@
 {% for partners in patronage %}
 <div class="col-xs-4 spons">
-  <h3>{{ partners.label }}</h3>
-  <div class="row">
-    {% if partners.single %}
-    <div class="col-xs-3"></div>
-      {% endif %}
-    {% for img in partners.list %}
-    {% if img.url %}<a href="{{ img.url }}" title="{{ img.name }}">{% endif %}
-    <div class="col-xs-{{ partners.size }} spons">
-      <img src="{{ img.img.url }}" title="{{ img.name}}" width="90%"/>
+    <h3>{{ partners.label }}</h3>
+    <div class="row">
+        {% if partners.single %}
+        <div class="col-xs-3"></div>
+        {% endif %}
+        {% for img in partners.list %}
+        {% if img.url %}<a href="{{ img.url }}" title="{{ img.name }}">{% endif %}
+        <div class="col-xs-{{ partners.size }} spons">
+            <img src="{{ img.img.url }}" title="{{ img.name}}" width="90%"/>
+        </div>
+        {% if img.url %}</a>{% endif %}
+        {% endfor %}
     </div>
-    {% if img.url %}</a>{% endif %}
-    {% endfor %}
-  </div>
 </div>
 {% endfor %}
