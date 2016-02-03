@@ -4,6 +4,16 @@
 <input type="checkbox" id="show-menu" role="button">
 <ul id="menu">
   {% for option in menu %}
+  {% if option.list %}
+  <li><a href="{{ option.href }}">{{ option.title }}</a>
+  <ul class="submenu">
+    {% for sub in option.list %}
+    <li class="submenu"><a class="submenu" href="{{ sub.href }}">{{ sub.title }}</a>
+    {% endfor %}
+  </ul>
+  </li>
+  {% else %}
   <li><a href="{{ option.href }}">{{ option.title }}</a></li>
+  {% endif %}
   {% endfor %}
 </ul>

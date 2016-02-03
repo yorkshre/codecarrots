@@ -78,6 +78,12 @@ class Menu:
         return [
             {'title': 'Aktualności', 'href': '/'},
             {'title': 'O nas', 'href': '/onas'},
+            {'title': 'Materiały', 'href': '/', 'list':
+                [
+                {'title': 'Html', 'href': '/static/doc/index.html'},
+                {'title': 'Pdf', 'href': '/static/doc/doc.pdf'}
+                ]
+            },
             {'title': 'Kontakt', 'href': '/kontakt'},
         ]
 
