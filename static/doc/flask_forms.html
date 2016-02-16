@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Flask: Forms &mdash; Django Carrots</title>
+    
+    <link rel="stylesheet" href="_static/carrots.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0dev1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Django Carrots" href="index.html" />
+    <link rel="next" title="Flask: Exercises" href="flask_exercises.html" />
+    <link rel="prev" title="Flask: Templates" href="flask_templates.html" /> 
+  </head>
+  <body role="document">
+  
+  
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="flask_exercises.html" title="Flask: Exercises"
+             accesskey="N">next</a></li>
+        <li class="right" >
+          <a href="flask_templates.html" title="Flask: Templates"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Django Carrots</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="flask-forms">
+<h1>Flask: Forms<a class="headerlink" href="#flask-forms" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="configuration">
+<h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h2>
+<p>To handle our web forms we are going to use the Flask-WTF extension, which in turn wraps the WTForms project in a way that integrates nicely with Flask apps.</p>
+<p>Many Flask extensions require some amount of configuration, so we are going to setup a configuration file inside our root app folder so that it is easily accessible if it needs to be edited. Here is what we will start with (file config.py):</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">WTF_CSRF_ENABLED</span> <span class="o">=</span> <span class="bp">True</span>
+<span class="n">SECRET_KEY</span> <span class="o">=</span> <span class="s">&#39;you-will-never-guess&#39;</span>
+</pre></div>
+</div>
+<p>Pretty simple, it&#8217;s just two settings that our Flask-WTF extension needs. The WTF_CSRF_ENABLED setting activates the cross-site request forgery prevention (note that this setting is enabled by default in current versions of Flask-WTF). In most cases you want to have this option enabled as it makes your app more secure.</p>
+<p>The SECRET_KEY setting is only needed when CSRF is enabled, and is used to create a cryptographic token that is used to validate a form. When you write your own apps make sure to set the secret key to something that is difficult to guess.</p>
+<p>Now that we have our config file we need to tell Flask to read it and use it. We can do this right after the Flask app object is created, as follows (file app/main.py):</p>
+<p>from flask import Flask</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
+<span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">from_object</span><span class="p">(</span><span class="s">&#39;config&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="the-user-login-form">
+<h2>The user login form<a class="headerlink" href="#the-user-login-form" title="Permalink to this headline">¶</a></h2>
+<p>Web forms are represented in Flask-WTF as classes, subclassed from base class Form. A form subclass simply defines the fields of the form as class variables.</p>
+<p>Now we will create a login form that users will use to identify with the system.
+The login mechanism that we will support in our app is the standard username/password type.</p>
+<p>Let&#8217;s write our first form:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">flask.ext.wtf</span> <span class="kn">import</span> <span class="n">Form</span>
+<span class="kn">from</span> <span class="nn">wtforms</span> <span class="kn">import</span> <span class="n">StringField</span><span class="p">,</span> <span class="n">PasswordField</span>
+<span class="kn">from</span> <span class="nn">wtforms.validators</span> <span class="kn">import</span> <span class="n">DataRequired</span>
+
+<span class="k">class</span> <span class="nc">LoginForm</span><span class="p">(</span><span class="n">Form</span><span class="p">):</span>
+<span class="n">username</span> <span class="o">=</span> <span class="n">StringField</span><span class="p">(</span>
+    <span class="s">&quot;description&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">password</span> <span class="o">=</span> <span class="n">PasswordField</span><span class="p">(</span>
+    <span class="s">&quot;password&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>I believe the class is pretty much self-explanatory. We imported the Form class, and the two form field classes that we need, StringField and BooleanField.</p>
+<p>The DataRequired import is a validator, a function that can be attached to a field to perform validation on the data submitted by the user.
+The DataRequired validator simply checks that the field is not submitted empty. There are many more validators included with Flask-WTF, we will use some more in the future.</p>
+</div>
+<div class="section" id="form-templates">
+<h2>Form templates<a class="headerlink" href="#form-templates" title="Permalink to this headline">¶</a></h2>
+<p>We will also need a template that contains the HTML that produces the form.
+The good news is that the LoginForm class that we just created knows how to render form fields as HTML, so we just need to concentrate on the layout.
+Here is our login template (file app/templates/login.html):</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="c">&lt;!-- extend from base layout --&gt;</span>
+{% extends &quot;base.html&quot; %}
+
+{% block content %}
+  <span class="nt">&lt;h1&gt;</span>Sign In<span class="nt">&lt;/h1&gt;</span>
+  <span class="nt">&lt;form</span> <span class="na">action=</span><span class="s">&quot;&quot;</span> <span class="na">method=</span><span class="s">&quot;post&quot;</span> <span class="na">name=</span><span class="s">&quot;login&quot;</span><span class="nt">&gt;</span>
+      {{ form.hidden_tag() }}
+      <span class="nt">&lt;p&gt;</span>
+          Please enter your Login:<span class="nt">&lt;br&gt;</span>
+          {{ form.username }}<span class="nt">&lt;br&gt;</span>
+          and Password:<span class="nt">&lt;br&gt;</span>
+          {{ form.password }}<span class="nt">&lt;br&gt;</span>
+      <span class="nt">&lt;/p&gt;</span>
+      <span class="nt">&lt;p&gt;&lt;input</span> <span class="na">type=</span><span class="s">&quot;submit&quot;</span> <span class="na">value=</span><span class="s">&quot;Sign In&quot;</span><span class="nt">&gt;&lt;/p&gt;</span>
+  <span class="nt">&lt;/form&gt;</span>
+{% endblock %}
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>Note that in this template we are reusing the base.html template through the extends template inheritance statement.</dt>
+<dd>We will actually do this with all our templates, to ensure a consistent layout across all pages.</dd>
+</dl>
+<p>There are a few interesting differences between a regular HTML form and our template.
+This template expects a form object instantiated from the form class we just defined stored in a template argument named form.
+We will take care of sending this template argument to the template next, when we write the view function that renders this template.</p>
+<p>The form.hidden_tag() template argument will get replaced with a hidden field that
+implements the CSRF prevention that we enabled in the configuration.
+This field needs to be in all your forms if you have CSRF enabled.</p>
+<blockquote>
+<div>The good news is that Flask-WTF handles it for us, we just need to make sure it is included in the form.</div></blockquote>
+<p>The actual fields of our form are rendered by the field objects,
+we just need to refer to a {{form.field_name}} template argument in the place where each
+field should be inserted. Some fields can take arguments.
+Since we have not defined the submit button in the form class we have to define
+it as a regular field. The submit field does not carry any data so it doesn&#8217;t need to be defined in the form class.</p>
+</div>
+<div class="section" id="form-views">
+<h2>Form views<a class="headerlink" href="#form-views" title="Permalink to this headline">¶</a></h2>
+<p>The final step before we can see our form is to code a view function that renders the template.</p>
+<p>This is actually quite simple since we just need to pass a form object to the template. Here is our new view function:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="nd">@app.route</span><span class="p">(</span><span class="s">&#39;/login&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;GET&#39;</span><span class="p">,</span> <span class="s">&#39;POST&#39;</span><span class="p">])</span>
+<span class="k">def</span> <span class="nf">login</span><span class="p">():</span>
+    <span class="n">form</span> <span class="o">=</span> <span class="n">LoginForm</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s">&#39;login.html&#39;</span><span class="p">,</span> <span class="n">form</span><span class="o">=</span><span class="n">form</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>So basically, we have imported our LoginForm class, instantiated an object from it,
+and sent it down to the template. This is all that is required to get form fields rendered.</p>
+<p>Let&#8217;s ignore for now the flash and redirect imports. We&#8217;ll use them a bit later.</p>
+<dl class="docutils">
+<dt>The only other thing that is new here is the methods argument in the route decorator.</dt>
+<dd>This tells Flask that this view function accepts GET and POST requests.
+Without this the view will only accept GET requests. We will want to receive the POST requests,
+these are the ones that will bring in the form data entered by the user.</dd>
+</dl>
+<p>At this point you can try the app and see the form in your web browser.
+After you start the application you will want to open <a class="reference external" href="http://localhost:5000/login">http://localhost:5000/login</a> in your web browser,</p>
+<blockquote>
+<div>as this is the route we have associated with the login view function.</div></blockquote>
+<p>We have not coded the part that accepts data yet, so pressing the submit button will not have any effect at this time.</p>
+</div>
+<div class="section" id="receiving-form-data">
+<h2>Receiving form data<a class="headerlink" href="#receiving-form-data" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt>Another area where Flask-WTF makes our job really easy is in the handling of the submitted form data.</dt>
+<dd>Here is an updated version of our login view function that validates and stores the form data:</dd>
+</dl>
+<div class="highlight-python"><div class="highlight"><pre><span class="nd">@app.route</span><span class="p">(</span><span class="s">&#39;/login&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;GET&#39;</span><span class="p">,</span> <span class="s">&#39;POST&#39;</span><span class="p">])</span>
+<span class="k">def</span> <span class="nf">login</span><span class="p">():</span>
+    <span class="n">form</span> <span class="o">=</span> <span class="n">LoginForm</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s">&#39;POST&#39;</span> <span class="ow">and</span> <span class="n">form</span><span class="o">.</span><span class="n">validate</span><span class="p">():</span>
+        <span class="n">user</span> <span class="o">=</span> <span class="n">User</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">filter_by</span><span class="p">(</span>
+            <span class="n">username</span><span class="o">=</span><span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="p">[</span><span class="s">&#39;username&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">first</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">user</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span> <span class="ow">and</span> <span class="n">bcrypt</span><span class="o">.</span><span class="n">check_password_hash</span><span class="p">(</span>
+                <span class="n">user</span><span class="o">.</span><span class="n">password</span><span class="p">,</span> <span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="p">[</span><span class="s">&#39;password&#39;</span><span class="p">]</span>
+        <span class="p">):</span>
+            <span class="n">login_user</span><span class="p">(</span><span class="n">user</span><span class="p">)</span>
+            <span class="n">flash</span><span class="p">(</span><span class="s">&#39;Hi {}{} ! You were logged in. Go Crazy.&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                <span class="n">user</span><span class="o">.</span><span class="n">username</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">upper</span><span class="p">(),</span> <span class="n">user</span><span class="o">.</span><span class="n">username</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+            <span class="p">))</span>
+            <span class="k">return</span> <span class="n">redirect</span><span class="p">(</span><span class="n">url_for</span><span class="p">(</span><span class="s">&#39;overview&#39;</span><span class="p">))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">flash</span><span class="p">(</span><span class="s">&#39;Invalid username or password.&#39;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s">&#39;login.html&#39;</span><span class="p">,</span> <span class="n">form</span><span class="o">=</span><span class="n">form</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The validate_on_submit method does all the form processing work. If you call it when the form is being
+presented to the user (i.e. before the user got a chance to enter data on it)
+then it will return False, so in that case you know that you have to render the template.</p>
+<p>When validate_on_submit is called as part of a form submission request, it will gather all the data,
+run all the validators attached to fields, and if everything is all right it will return True,
+indicating that the data is valid and can be processed. This is your indication that this data is safe to incorporate into the application.</p>
+<p>If at least one field fails validation then the function will return False and that will cause the
+form to be rendered back to the user, and this will give the user a chance to correct any mistakes.</p>
+<blockquote>
+<div>We will see later how to show an error message when validation fails.</div></blockquote>
+<p>When validate_on_submit returns True our login view function calls two new functions, imported from Flask.
+The flash function is a quick way to show a message on the next page presented to the user.
+In this case we will use it for debugging, since we don&#8217;t have all the infrastructure necessary to
+log in users yet, we will instead just display a message that shows the submitted data.
+The flash function is also extremely useful on production servers to provide feedback to the user regarding an action.</p>
+<p>The flashed messages will not appear automatically in our page, our templates need to display the messages
+in a way that works for the site layout. We will add these messages to the base template, so that all our templates inherit this functionality.
+This is the updated base template (file app/templates/_base.html):</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;html&gt;</span>
+  <span class="nt">&lt;head&gt;</span>
+    {% if title %}
+    <span class="nt">&lt;title&gt;</span>{{ title }} - App<span class="nt">&lt;/title&gt;</span>
+    {% else %}
+    <span class="nt">&lt;title&gt;</span>App<span class="nt">&lt;/title&gt;</span>
+    {% endif %}
+  <span class="nt">&lt;/head&gt;</span>
+  <span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;div&gt;</span>Microblog: <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;/index&quot;</span><span class="nt">&gt;</span>Home<span class="nt">&lt;/a&gt;&lt;/div&gt;</span>
+    <span class="nt">&lt;hr&gt;</span>
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <span class="nt">&lt;ul&gt;</span>
+        {% for message in messages %}
+            <span class="nt">&lt;li&gt;</span>{{ message }} <span class="nt">&lt;/li&gt;</span>
+        {% endfor %}
+        <span class="nt">&lt;/ul&gt;</span>
+      {% endif %}
+    {% endwith %}
+    {% block content %}{% endblock %}
+  <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</pre></div>
+</div>
+<p>The technique to display the flashed message is hopefully self-explanatory.
+One interesting property of flash messages is that once they are requested through
+the get_flashed_messages function they are removed from the message list, so these messages appear</p>
+<blockquote>
+<div>in the first page requested by the user after the flash function is called, and then they disappear.</div></blockquote>
+<p>The other new function we used in our login view is redirect. This function tells
+the client web browser to navigate to a different page instead of the one requested.
+In our view function we use it to redirect to the index page we developed in previous
+chapters. Note that flashed messages will display even if a view function ends in a redirect.</p>
+<dl class="docutils">
+<dt>This is a great time to start the app and test how the form works. Make sure you</dt>
+<dd>try submitting the form with the username field empty, to see how the DataRequired validator halts the submission process.</dd>
+</dl>
+</div>
+<div class="section" id="improving-field-validation">
+<h2>Improving field validation<a class="headerlink" href="#improving-field-validation" title="Permalink to this headline">¶</a></h2>
+<p>With the app in its current state, forms that are submitted with invalid data will not be accepted.
+Instead, the form will be presented back to the user to correct. This is exactly what we want.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">flask.ext.wtf</span> <span class="kn">import</span> <span class="n">Form</span>
+<span class="kn">from</span> <span class="nn">wtforms</span> <span class="kn">import</span> <span class="n">StringField</span><span class="p">,</span> <span class="n">PasswordField</span>
+<span class="kn">from</span> <span class="nn">wtforms.validators</span> <span class="kn">import</span> <span class="n">DataRequired</span>
+
+<span class="k">class</span> <span class="nc">LoginForm</span><span class="p">(</span><span class="n">Form</span><span class="p">):</span>
+<span class="n">username</span> <span class="o">=</span> <span class="n">StringField</span><span class="p">(</span>
+    <span class="s">&quot;description&quot;</span><span class="p">,</span>
+    <span class="n">validators</span><span class="o">=</span><span class="p">[</span><span class="n">validators</span><span class="o">.</span><span class="n">DataRequired</span><span class="p">(</span><span class="s">&#39;Please enter your name.&#39;</span><span class="p">)],</span>
+<span class="p">)</span>
+<span class="n">password</span> <span class="o">=</span> <span class="n">PasswordField</span><span class="p">(</span>
+    <span class="s">&quot;password&quot;</span><span class="p">,</span>
+    <span class="n">validators</span><span class="o">=</span><span class="p">[</span><span class="n">validators</span><span class="o">.</span><span class="n">DataRequired</span><span class="p">(</span><span class="s">&#39;Please enter your password.&#39;</span><span class="p">)],</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>What we are missing is an indication to the user of what is wrong with the form. Luckily, Flask-WTF also makes this an easy task.</p>
+<p>When a field fails validation Flask-WTF adds a descriptive error message to the form object. These messages are available to the template, so we just need to add a bit of logic that renders them.</p>
+<p>Here is our login template with field validation messages (file app/templates/login.html):</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="c">&lt;!-- extend base layout --&gt;</span>
+{% extends &quot;base.html&quot; %}
+
+{% block content %}
+  <span class="nt">&lt;h1&gt;</span>Sign In<span class="nt">&lt;/h1&gt;</span>
+            {% for error in form.errors %}
+            <span class="nt">&lt;span</span> <span class="na">style=</span><span class="s">&quot;color: red;&quot;</span><span class="nt">&gt;</span>[{{ error }}]<span class="nt">&lt;/span&gt;</span>
+          {% endfor %}<span class="nt">&lt;br&gt;</span>
+  <span class="nt">&lt;form</span> <span class="na">action=</span><span class="s">&quot;&quot;</span> <span class="na">method=</span><span class="s">&quot;post&quot;</span> <span class="na">name=</span><span class="s">&quot;login&quot;</span><span class="nt">&gt;</span>
+      {{ form.hidden_tag() }}
+      <span class="nt">&lt;p&gt;</span>
+          Please enter your Login:<span class="nt">&lt;br&gt;</span>
+          {{ form.username }}<span class="nt">&lt;br&gt;</span>
+          and Password:<span class="nt">&lt;br&gt;</span>
+          {{ form.password }}<span class="nt">&lt;br&gt;</span>
+      <span class="nt">&lt;/p&gt;</span>
+      <span class="nt">&lt;p&gt;&lt;input</span> <span class="na">type=</span><span class="s">&quot;submit&quot;</span> <span class="na">value=</span><span class="s">&quot;Sign In&quot;</span><span class="nt">&gt;&lt;/p&gt;</span>
+  <span class="nt">&lt;/form&gt;</span>
+{% endblock %}
+</pre></div>
+</div>
+<p>The only change we&#8217;ve made is to add a for loop that renders any messages added by
+the validators below the field. As a general rule, any fields that have validators
+attached will have errors added under form.field_name.errors.
+In our case we use form.errors. We display these messages in a red style to call the user&#8217;s attention.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <a href="index.html" class="logo"><img class="logo" src="_static/logo.png" style="width: 200px; height: 169px; margin: -10px 0 10px 0"></a>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction_to_algorithm.html">Introduction to Algorithm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python_quickstart.html">Introduction to Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python_logic.html">Python Logic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python_strings.html">Strings formatting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python_strings.html#methods">Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python_objects.html">Objects and classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python_objects.html#inheritance">Inheritance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python_xmas_tree.html">The for loop: Christmas Tree</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python_data.html">Python data storage types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python_loops.html">while loop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python_exercises.html">Python Summary: exercises</a></li>
+<li class="toctree-l1"><a class="reference internal" href="flask_quickstart.html">Flask: Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="flask_templates.html">Flask: Templates</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Flask: Forms</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#configuration">Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#the-user-login-form">The user login form</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#form-templates">Form templates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#form-views">Form views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#receiving-form-data">Receiving form data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#improving-field-validation">Improving field validation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="flask_exercises.html">Flask: Exercises</a></li>
+<li class="toctree-l1"><a class="reference internal" href="flask_sqlalchemy.html">Flask: SQL Alchemy - ORM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code_of_conduct.html">Geek Girls Carrots Code of Conduct</a></li>
+</ul>
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  <div class="footer">
+    &copy; Copyright Geek Girls Carrots and others.
+  </div>
+  
+  <a href="https://github.com/ggcarrots/django-carrots">
+      <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/652c5b9acfaddf3a9c326fa6bde407b87f7be0f4/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6f72616e67655f6666373630302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png">
+  </a>
+  </body>
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Introduction to Algorithm &mdash; Django Carrots</title>
+    
+    <link rel="stylesheet" href="_static/carrots.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0dev1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Django Carrots" href="index.html" />
+    <link rel="next" title="Introduction to Python" href="python_quickstart.html" />
+    <link rel="prev" title="Installation" href="install.html" /> 
+  </head>
+  <body role="document">
+  
+  
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="python_quickstart.html" title="Introduction to Python"
+             accesskey="N">next</a></li>
+        <li class="right" >
+          <a href="install.html" title="Installation"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Django Carrots</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="introduction-to-algorithm">
+<h1>Introduction to Algorithm<a class="headerlink" href="#introduction-to-algorithm" title="Permalink to this headline">¶</a></h1>
+<p>Algorithm is step-by-step set of operations to be performed. Like cocking recipe.</p>
+<div class="section" id="example">
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
+<p><strong>Example with Scrambled eggs:</strong></p>
+<p>Ingredients:</p>
+<ul class="simple">
+<li>eggs</li>
+<li>ham</li>
+<li>onion</li>
+<li>butter</li>
+<li>peper</li>
+<li>salt</li>
+</ul>
+<p><strong>Recipe:</strong></p>
+<p>In a cup or small bowl, whisk together the eggs, paper and salt using a fork.
+Slice the ham and onion into small pieces.
+Melt butter in a skillet over low heat.
+Start frying onion and ham until onion is gold.
+Pour in the eggs, and stir constantly as they cook.
+Cook until desired consistence, do not over cook.</p>
+</div>
+<div class="section" id="step-diagram">
+<h2>Step Diagram<a class="headerlink" href="#step-diagram" title="Permalink to this headline">¶</a></h2>
+<img alt="_images/scambled_eggs_diagram.png" src="_images/scambled_eggs_diagram.png" />
+</div>
+<div class="section" id="pseudo-code">
+<h2>Pseudo Code<a class="headerlink" href="#pseudo-code" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">ingredients</span> <span class="o">=</span> <span class="n">eggs</span><span class="p">,</span> <span class="n">ham</span><span class="p">,</span> <span class="n">onion</span><span class="p">,</span> <span class="n">butter</span><span class="p">,</span> <span class="n">peper</span><span class="p">,</span> <span class="n">salt</span>
+<span class="n">my_ingredients</span> <span class="o">=</span> <span class="n">get</span><span class="p">(</span><span class="n">ingredients</span><span class="p">)</span>
+<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">my_ingredients</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">ingredients</span> <span class="n">then</span> <span class="n">go</span> <span class="n">shopping</span>
+<span class="n">whisk</span><span class="p">(</span><span class="n">eggs</span><span class="p">,</span> <span class="n">peper</span><span class="p">,</span> <span class="n">salt</span><span class="p">)</span>
+<span class="nb">slice</span><span class="p">(</span><span class="n">ham</span><span class="p">)</span>
+<span class="nb">slice</span><span class="p">(</span><span class="n">onion</span><span class="p">)</span>
+<span class="k">while</span> <span class="n">butter</span><span class="o">.</span><span class="n">state</span> <span class="o">!=</span> <span class="s">&#39;liquid&#39;</span><span class="p">:</span> <span class="n">melt_using_skillet</span><span class="p">(</span><span class="n">butter</span><span class="p">)</span>
+<span class="k">while</span> <span class="n">onion</span><span class="o">.</span><span class="n">color</span> <span class="o">!=</span> <span class="s">&#39;gold&#39;</span><span class="p">:</span> <span class="n">fry</span><span class="p">(</span><span class="n">onion</span><span class="p">,</span> <span class="n">ham</span><span class="p">)</span>
+<span class="k">while</span> <span class="n">eggs</span><span class="o">.</span><span class="n">state</span> <span class="o">!=</span> <span class="n">desired_state</span><span class="p">:</span> <span class="n">cook_and_stir</span><span class="p">(</span><span class="nb">all</span><span class="p">)</span>
+<span class="n">eat</span><span class="p">(</span><span class="nb">all</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="exercises">
+<h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h2>
+<p>Exercises:
+Image Fun:</p>
+<ol class="arabic simple">
+<li>Create team name.</li>
+<li>Each TEAM creates random nonopen figure using 4-8 straight lines for ex. square or octagon on provided paper sheet.</li>
+<li>Sing the paper sheet with your team name.</li>
+<li>Shuffle all images across all teams.</li>
+<li>After receiving an image from other team: create instruction that will allow another team to recreate the same figure as closely as possible can be.</li>
+<li>Sing the paper sheet with previous team names and add your team name.</li>
+<li>Shuffle only instructions across all teams.</li>
+<li>After receiving instruction from other team, process the instruction and create the image it provides.</li>
+<li>Sing the paper sheet with previous team names and add your team name.</li>
+</ol>
+<p>Lets compare the images with originals, instructions. Think about the differences and why did they happen.</p>
+<p>Deaf phone:</p>
+<ol class="arabic simple">
+<li>Each team creates random sentence max 20 characters.</li>
+<li>Sing the paper sheet with your team name.</li>
+<li>Shuffle all sentence across all teams.</li>
+<li>Each team creates an encoding (ciphering) algorithm. Not more then 6 steps.</li>
+<li>Using the algorithm encode the received sentence and write the secret message on paper with encoding algorithm.</li>
+<li>Sing the paper sheet with previous team names and add your team name.</li>
+<li>Shuffle all encoded sentence with encoding mechanism across all teams.</li>
+<li>Each team decodes the sentence and writes down the decoding algorithm on a new sheet of paper.</li>
+<li>Write down the given encoded sentence on decoding algorithm paper</li>
+<li>Sing the paper sheet with previous team names and add your team name.</li>
+<li>Each team decodes the sentence.</li>
+<li>Sing the paper sheet with previous team names and add your team name.</li>
+<li>Now lets see if the sentences matches ? What have happened to them ?</li>
+</ol>
+<p>Can You now feel how useful is to use algorithm and how often do You use them in daily life unaware of it?</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <a href="index.html" class="logo"><img class="logo" src="_static/logo.png" style="width: 200px; height: 169px; margin: -10px 0 10px 0"></a>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Introduction to Algorithm</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#example">Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step-diagram">Step Diagram</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pseudo-code">Pseudo Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#exercises">Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="python_quickstart.html">Introduction to Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python_logic.html">Python Logic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python_strings.html">Strings formatting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python_strings.html#methods">Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python_objects.html">Objects and classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python_objects.html#inheritance">Inheritance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python_xmas_tree.html">The for loop: Christmas Tree</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python_data.html">Python data storage types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python_loops.html">while loop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python_exercises.html">Python Summary: exercises</a></li>
+<li class="toctree-l1"><a class="reference internal" href="flask_quickstart.html">Flask: Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="flask_templates.html">Flask: Templates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="flask_forms.html">Flask: Forms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="flask_exercises.html">Flask: Exercises</a></li>
+<li class="toctree-l1"><a class="reference internal" href="flask_sqlalchemy.html">Flask: SQL Alchemy - ORM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code_of_conduct.html">Geek Girls Carrots Code of Conduct</a></li>
+</ul>
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  <div class="footer">
+    &copy; Copyright Geek Girls Carrots and others.
+  </div>
+  
+  <a href="https://github.com/ggcarrots/django-carrots">
+      <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/652c5b9acfaddf3a9c326fa6bde407b87f7be0f4/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6f72616e67655f6666373630302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png">
+  </a>
+  </body>
+</html>

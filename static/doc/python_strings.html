@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Strings formatting &mdash; Django Carrots</title>
+    
+    <link rel="stylesheet" href="_static/carrots.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0dev1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Django Carrots" href="index.html" />
+    <link rel="next" title="Objects and classes" href="python_objects.html" />
+    <link rel="prev" title="Python Logic" href="python_logic.html" /> 
+  </head>
+  <body role="document">
+  
+  
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="python_objects.html" title="Objects and classes"
+             accesskey="N">next</a></li>
+        <li class="right" >
+          <a href="python_logic.html" title="Python Logic"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Django Carrots</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="strings-formatting">
+<h1>Strings formatting<a class="headerlink" href="#strings-formatting" title="Permalink to this headline">¶</a></h1>
+<p>The last issue which we have mentioned above was the problem with too many digits in a printed BMI.
+Out of the three problems we had, this one is the easiest to solve.</p>
+<p>That’s why we left it for the end of our &#8220;adventure&#8221; with the BMI calculator. We already know
+that we can add strings to each other and multiply them by integers. You will see that we can also
+format them. But first we will need one more type of data (except the strings and the numbers we
+already know).</p>
+<div class="section" id="tuples">
+<span id="bmi-tuples"></span><h2>Tuples<a class="headerlink" href="#tuples" title="Permalink to this headline">¶</a></h2>
+<p>At the beginning we mentioned that we can not use commas in numbers, because we will need them later
+while using tuples. And here they are:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span>
+<span class="go">(1, 2, 3)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="s">&quot;Ala&quot;</span><span class="p">,</span> <span class="mi">15</span><span class="p">)</span>
+<span class="go">(&#39;Ala&#39;, 15)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span><span class="mi">5</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="go">(1, 5)</span>
+</pre></div>
+</div>
+<p>A tuple is nothing more than a few values grouped into one. The values we want to group should be
+separated by commas. The whole thing can be enclosed in parentheses to make it more clear, but it is
+not required. Except when we want to group none of the elements (however strange it may sound):</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="p">()</span>
+<span class="go">()</span>
+</pre></div>
+</div>
+<p>Tuples can be combined:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">names</span> <span class="o">=</span> <span class="p">(</span><span class="s">&quot;Paulina&quot;</span><span class="p">,</span> <span class="s">&quot;Kowalska&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">details</span> <span class="o">=</span> <span class="p">(</span><span class="mi">27</span><span class="p">,</span> <span class="mf">1.70</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">names</span> <span class="o">+</span> <span class="n">details</span>
+<span class="go">(&#39;Paulina&#39;, &#39;Kowalska&#39;, 27, 1.7)</span>
+</pre></div>
+</div>
+<p>They may also contain other tuples e.g. information on a point on the map can be
+grouped as follows:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">point</span> <span class="o">=</span> <span class="p">(</span><span class="s">&quot;Name of point&quot;</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>where <code class="docutils literal"><span class="pre">x</span></code> and <code class="docutils literal"><span class="pre">y</span></code> are numbers.</p>
+<p>We can refer to the grouped values by using their positions in the tuple (counting form zero) e.g.:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">p</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">15</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>  <span class="c">#  first value</span>
+<span class="go">10</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>  <span class="c"># second value</span>
+<span class="go">15</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="formatting-plain">
+<h2>Formatting plain<a class="headerlink" href="#formatting-plain" title="Permalink to this headline">¶</a></h2>
+<p>Going back to our program: currently the result is reduced to a single line. Now we want to write the
+BMI as a number and the interval in which it is located, that is to say:</p>
+<div class="highlight-python"><div class="highlight"><pre>Your BMI is equal: 21.39 (normal weight)
+</pre></div>
+</div>
+<p>Modify the current program so that the calculated BMI would be available under the name of <code class="docutils literal"><span class="pre">bmi</span></code>,and
+the name of the interval under the name of <code class="docutils literal"><span class="pre">category</span></code>. Then we can use <a class="reference external" href="http://docs.python.org/3/library/functions.html#print" title="(in Python v3.5)"><code class="xref py py-func docutils literal"><span class="pre">print()</span></code></a> and obtain the
+required result:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">print</span><span class="p">(</span><span class="s">&quot;Your BMI is equal:&quot;</span><span class="p">,</span> <span class="n">bmi</span><span class="p">,</span> <span class="s">&quot;(&quot;</span> <span class="o">+</span> <span class="n">category</span> <span class="o">+</span> <span class="s">&quot;)&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Well, almost….We still have too many digits. We would also have a problem if we wanted to generate
+such a string and save with a name, because we use <a class="reference external" href="http://docs.python.org/3/library/functions.html#print" title="(in Python v3.5)"><code class="xref py py-func docutils literal"><span class="pre">print()</span></code></a> to separate the elements.
+Fortunately, there is a better way:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">bmi</span> <span class="o">=</span> <span class="mf">21.387755102040817</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">category</span> <span class="o">=</span> <span class="s">&quot;normal weight&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="s">&quot;Your BMI: </span><span class="si">%f</span><span class="s"> (</span><span class="si">%s</span><span class="s">)&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">bmi</span><span class="p">,</span> <span class="n">category</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">result</span>
+<span class="go">&#39;Your BMI: 21.387755 (normal weight)&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<span class="go">Your BMI: 21.387755 (normal weight)</span>
+</pre></div>
+</div>
+<p>We have here a string and a tuple joined by <code class="docutils literal"><span class="pre">%</span></code>. The string is a template which will be completed
+with values from the tuple. The spaces to be filled are also labeled with the percentage (<code class="docutils literal"><span class="pre">%</span></code>). .
+The letter that follows defines the type of a value we want to insert. The integers are represented
+by  <code class="docutils literal"><span class="pre">i</span></code> as <strong>integer</strong> (we can also use <code class="docutils literal"><span class="pre">d</span></code> as <strong>decimal</strong>),  strings are represented by <code class="docutils literal"><span class="pre">s</span></code> as
+<strong>string</strong>, and floating-point numbers are represented by <code class="docutils literal"><span class="pre">f</span></code> for <strong>float</strong>:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="s">&quot;String: </span><span class="si">%s</span><span class="s">, Numbers: </span><span class="si">%d</span><span class="s"> </span><span class="si">%f</span><span class="s">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="s">&quot;Ala&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mf">3.1415</span><span class="p">)</span>
+<span class="go">&#39;String: Ala, Numbers: 10 3.141500&#39;</span>
+</pre></div>
+</div>
+<p>Now instead of nine decimal places we always get six, but the formatting has the advantage that it
+allows us to have more control by putting between <code class="docutils literal"><span class="pre">%</span></code> and <code class="docutils literal"><span class="pre">f</span></code> additional information, e.g. if you
+want to display only two places after the decimal point:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="s">&quot;</span><span class="si">%.2f</span><span class="s">&quot;</span> <span class="o">%</span> <span class="mf">3.1415</span>
+<span class="go">&#39;3.14&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s">&quot;</span><span class="si">%.2f</span><span class="s">&quot;</span> <span class="o">%</span> <span class="mf">21.387755102040817</span>
+<span class="go">&#39;21.39&#39;</span>
+</pre></div>
+</div>
+<p>There are plenty options of formatting, so we will not show them all here. One of the most useful is
+the option of aligning to a specific number of characters:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">WIDTH</span> <span class="o">=</span> <span class="mi">28</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">&quot;-&quot;</span> <span class="o">*</span> <span class="n">WIDTH</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">&quot;| Name and last name |  Weight  |&quot;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">&quot;-&quot;</span> <span class="o">*</span> <span class="n">WIDTH</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">&quot;| </span><span class="si">%15s</span><span class="s"> | </span><span class="si">%6.2f</span><span class="s"> |&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="s">&quot;Łukasz&quot;</span><span class="p">,</span> <span class="mf">67.5</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">&quot;| </span><span class="si">%15s</span><span class="s"> | </span><span class="si">%6.2f</span><span class="s"> |&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="s">&quot;Pudzian&quot;</span><span class="p">,</span> <span class="mi">123</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">&quot;-&quot;</span> <span class="o">*</span> <span class="n">WIDTH</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-none"><div class="highlight"><pre>--------------------------------
+| Name and last name  |  Weight|
+--------------------------------
+|              Łukasz |  67.50 |
+|             Pudzian | 123.00 |
+--------------------------------
+</pre></div>
+</div>
+<p>We can also align the string <code class="docutils literal"><span class="pre">-</span></code>  to the left by putting before the number of characters:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">WIDTH</span> <span class="o">=</span> <span class="mi">28</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">&quot;-&quot;</span> <span class="o">*</span> <span class="n">WIDTH</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">&quot;| Name and last name |  Weight |&quot;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">&quot;-&quot;</span> <span class="o">*</span> <span class="n">WIDTH</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">&quot;| </span><span class="si">%-15s</span><span class="s"> | </span><span class="si">%6.2f</span><span class="s"> |&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="s">&quot;Łukasz&quot;</span><span class="p">,</span> <span class="mf">67.5</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">&quot;| </span><span class="si">%-15s</span><span class="s"> | </span><span class="si">%6.2f</span><span class="s"> |&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="s">&quot;Pudzian&quot;</span><span class="p">,</span> <span class="mi">123</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">&quot;-&quot;</span> <span class="o">*</span> <span class="n">WIDTH</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-none"><div class="highlight"><pre>-------------------------------
+| Name and last name|  Weight |
+-------------------------------
+| Łukasz            |  67.50  |
+| Pudzian           | 123.00  |
+-------------------------------
+</pre></div>
+</div>
+<p>Aligning towards the centre is an additional exercise for you :).</p>
+</div>
+<div class="section" id="formatting-more-pythonic-way">
+<h2>Formatting more Pythonic way<a class="headerlink" href="#formatting-more-pythonic-way" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+<div class="section" id="methods">
+<h1>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h1>
+<p>With string there is a lot of methods implemented already.</p>
+<ol class="arabic simple">
+<li>capitalize() - Capitalizes first letter of string</li>
+<li>count(str, beg= 0,end=len(string)) - Counts how many times str occurs in string or in a substring of string if starting index beg and ending index end are given.</li>
+<li>endswith(suffix, beg=0, end=len(string)) - Determines if string or a substring of string (if starting index beg and ending index end are given) ends with suffix; returns true if so and false otherwise.</li>
+<li>find(str, beg=0 end=len(string)) - Determine if str occurs in string or in a substring of string if starting index beg and ending index end are given returns index if found and -1 otherwise.</li>
+<li>index(str, beg=0, end=len(string)) - Same as find(), but raises an exception if str not found.</li>
+<li>isalnum() - Returns true if string has at least 1 character and all characters are alphanumeric and false otherwise.</li>
+<li>isalpha() - Returns true if string has at least 1 character and all characters are alphabetic and false otherwise.</li>
+<li>isdigit() - Returns true if string contains only digits and false otherwise.</li>
+<li>islower() - Returns true if string has at least 1 cased character and all cased characters are in lowercase and false otherwise.</li>
+<li>isnumeric() - Returns true if a unicode string contains only numeric characters and false otherwise.</li>
+<li>isspace() - Returns true if string contains only whitespace characters and false otherwise.</li>
+<li>istitle() - Returns true if string is properly &#8220;titlecased&#8221; and false otherwise.</li>
+<li>isupper() - Returns true if string has at least one cased character and all cased characters are in uppercase and false otherwise.</li>
+<li>join(seq) - Merges (concatenates) the string representations of elements in sequence seq into a string, with separator string.</li>
+<li>len(string) - Returns the length of the string</li>
+<li>lower() - Converts all uppercase letters in string to lowercase.</li>
+<li>lstrip() - Removes all leading whitespace in string.</li>
+<li>max(str) - Returns the max alphabetical character from the string str.</li>
+<li>min(str) - Returns the min alphabetical character from the string str.</li>
+<li>replace(old, new [, max]) - Replaces all occurrences of old in string with new or at most max occurrences if max given.</li>
+<li>rfind(str, beg=0,end=len(string)) - Same as find(), but search backwards in string.</li>
+<li>rindex( str, beg=0, end=len(string)) - Same as index(), but search backwards in string.</li>
+<li>rstrip() - Removes all trailing whitespace of string.</li>
+<li>split(str=&#8221;&#8221;, num=string.count(str)) - Splits string according to delimiter str (space if not provided) and returns list of substrings; split into at most num substrings if given.</li>
+<li>splitlines( num=string.count(&#8216;n&#8217;)) - Splits string at all (or num) NEWLINEs and returns a list of each line with NEWLINEs removed.</li>
+<li>startswith(str, beg=0,end=len(string)) - Determines if string or a substring of string (if starting index beg and ending index end are given) starts with substring str; returns true if so and false otherwise.</li>
+<li>strip([chars]) - Performs both lstrip() and rstrip() on string</li>
+<li>swapcase() - Inverts case for all letters in string.</li>
+<li>title() - Returns &#8220;titlecased&#8221; version of string, that is, all words begin with uppercase and the rest are lowercase.</li>
+<li>upper() - Converts lowercase letters in string to uppercase.</li>
+</ol>
+<p>There is over 10 more methods but they are much more advanced.</p>
+<div class="section" id="exercises">
+<h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="obligatory-task">
+<h2>Obligatory task<a class="headerlink" href="#obligatory-task" title="Permalink to this headline">¶</a></h2>
+<p>Type in interpreter:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">antigravity</span>
+</pre></div>
+</div>
+<p>This is very important library use it wise :)</p>
+</div>
+<div class="section" id="method-play-ground">
+<h2>Method play ground<a class="headerlink" href="#method-play-ground" title="Permalink to this headline">¶</a></h2>
+<p>Create a string and use all methods mentioned above.</p>
+</div>
+<div class="section" id="method-play-ground-level-2-combining-string-methods">
+<h2>Method play ground level 2: Combining string methods<a class="headerlink" href="#method-play-ground-level-2-combining-string-methods" title="Permalink to this headline">¶</a></h2>
+<p>Try to use methods as a chain reaction.</p>
+</div>
+<div class="section" id="palindrome">
+<h2>Palindrome<a class="headerlink" href="#palindrome" title="Permalink to this headline">¶</a></h2>
+<p>Write (if You can in one line) if the world is a palindrome - a string that reads the same forwards and backwards.
+For example</p>
+<ul class="simple">
+<li>kayak</li>
+<li>mr owl ate my metal worm.</li>
+<li>go hang a salami Im a lasagna hog.</li>
+</ul>
+</div>
+<div class="section" id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<p>We also know now that indentations can be important, especially when we want to use
+the instruction <a class="reference external" href="http://docs.python.org/3/reference/compound_stmts.html#if" title="(in Python v3.5)"><code class="xref std std-keyword docutils literal"><span class="pre">if</span></code></a> (also in connection with <a class="reference external" href="http://docs.python.org/3/reference/compound_stmts.html#else" title="(in Python v3.5)"><code class="xref std std-keyword docutils literal"><span class="pre">else</span></code></a> and <a class="reference external" href="http://docs.python.org/3/reference/compound_stmts.html#elif" title="(in Python v3.5)"><code class="xref std std-keyword docutils literal"><span class="pre">elif</span></code></a>).</p>
+<p>This is quite a lot like for a first program. We still have a lot of work, anyhow you can be proud of
+what we have done so far!</p>
+<p>And if You did the obligatory task 1 You know there are some easter eggs in python and thats not all of them.
+Here is one more:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="bp">True</span> <span class="o">+</span> <span class="bp">True</span>
+</pre></div>
+</div>
+<p>:-)</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <a href="index.html" class="logo"><img class="logo" src="_static/logo.png" style="width: 200px; height: 169px; margin: -10px 0 10px 0"></a>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction_to_algorithm.html">Introduction to Algorithm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python_quickstart.html">Introduction to Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python_logic.html">Python Logic</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Strings formatting</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#tuples">Tuples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#formatting-plain">Formatting plain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#formatting-more-pythonic-way">Formatting more Pythonic way</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#methods">Methods</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#exercises">Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#obligatory-task">Obligatory task</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#method-play-ground">Method play ground</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#method-play-ground-level-2-combining-string-methods">Method play ground level 2: Combining string methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#palindrome">Palindrome</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#summary">Summary</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="python_objects.html">Objects and classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python_objects.html#inheritance">Inheritance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python_xmas_tree.html">The for loop: Christmas Tree</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python_data.html">Python data storage types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python_loops.html">while loop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python_exercises.html">Python Summary: exercises</a></li>
+<li class="toctree-l1"><a class="reference internal" href="flask_quickstart.html">Flask: Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="flask_templates.html">Flask: Templates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="flask_forms.html">Flask: Forms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="flask_exercises.html">Flask: Exercises</a></li>
+<li class="toctree-l1"><a class="reference internal" href="flask_sqlalchemy.html">Flask: SQL Alchemy - ORM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code_of_conduct.html">Geek Girls Carrots Code of Conduct</a></li>
+</ul>
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  <div class="footer">
+    &copy; Copyright Geek Girls Carrots and others.
+  </div>
+  
+  <a href="https://github.com/ggcarrots/django-carrots">
+      <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/652c5b9acfaddf3a9c326fa6bde407b87f7be0f4/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6f72616e67655f6666373630302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png">
+  </a>
+  </body>
+</html>

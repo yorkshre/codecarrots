@@ -5,7 +5,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Geek Girls Carrots Code of Conduct &mdash; Django Carrots</title>
+    <title>Flask: Exercises &mdash; Django Carrots</title>
     
     <link rel="stylesheet" href="_static/carrots.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -23,7 +23,8 @@
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="top" title="Django Carrots" href="index.html" />
-    <link rel="prev" title="Flask: SQL Alchemy - ORM" href="flask_sqlalchemy.html" /> 
+    <link rel="next" title="Flask: SQL Alchemy - ORM" href="flask_sqlalchemy.html" />
+    <link rel="prev" title="Flask: Forms" href="flask_forms.html" /> 
   </head>
   <body role="document">
   
@@ -34,7 +35,10 @@
       <ul>
         <li class="right" style="margin-right: 10px">
           <a href="flask_sqlalchemy.html" title="Flask: SQL Alchemy - ORM"
-             accesskey="P">previous</a></li>
+             accesskey="N">next</a></li>
+        <li class="right" >
+          <a href="flask_forms.html" title="Flask: Forms"
+             accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">Django Carrots</a> &raquo;</li> 
       </ul>
     </div>  
@@ -44,33 +48,39 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="geek-girls-carrots-code-of-conduct">
-<h1>Geek Girls Carrots Code of Conduct<a class="headerlink" href="#geek-girls-carrots-code-of-conduct" title="Permalink to this headline">¶</a></h1>
-<p>Geek Girls Carrots (otherwise known as GGC) seeks to foster an encouraging and supportive
-learning environment in which individuals from all walks of life can comfortably participate,
-regardless of race, color, ethnicity, age, religion, political affiliation, physical ability,
-gender identity, sexual orientation or socioeconomic status.</p>
-<p>Geek Girls Carrots is dedicated to providing a respectful, harassment-free community for everyone.
-We do not tolerate harassment or bullying of any community member in any form. This not only
-extends to members of Geek Girls Carrots, but to anyone who chooses to become involved in the
-larger Geek Girls Carrots community of users, developers and integrators through events or
-interactions. Harassment includes offensive verbal/electronic comments related to personal
-characteristics or choices; sexual images or comments in public or online spaces; deliberate
-intimidation, bullying, stalking, following, harassing photography or recording; sustained disruption
-of talks, IRC (Internet Relay Chat), electronic meetings, physical meetings or other events;
-inappropriate physical contact, or unwelcome sexual attention. Participants asked to stop any
-harassing or bullying behavior are expected to comply immediately.</p>
-<p>If a participant engages in harassing behavior, representatives of the community may take
-reasonable action they deem appropriate, including warning the offender, expulsion from any Geek
-Girls Carrots event, or expulsion from mailing lists, IRC, discussion boards and other electronic
-communications channels to resolve the issue. This may include rescinding Geek Girls Carrots
-Membership in its entirety. If you are being harassed, notice that someone else is being harassed, or
-have any other concerns, please act to intercede or ask for help from any member of Geek Girls
-Carrots, IRC Administrators, website Administrators, or Organizers/Representatives of any physical
-events put on under the auspices of Geek Girls Carrots.</p>
-<p>Portions of this document have been adapted from the PyLadies Code of Conduct, which was in
-turn adapted from the Plone Foundation Code of Conduct; this particular Code of Conduct has been
-expanded and edited to suit the specific needs of Geek Girls Carrots.</p>
+  <div class="section" id="flask-exercises">
+<h1>Flask: Exercises<a class="headerlink" href="#flask-exercises" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="guess-a-number-game">
+<h2>1. Guess a number game<a class="headerlink" href="#guess-a-number-game" title="Permalink to this headline">¶</a></h2>
+<p>You can port the game from the python exercises !
+Write a simple game against computer that allows you to guess a number from
+a) 1 to 100 in 5 chances
+b) 1 to 1000 in 7 chances
+c) User can choose the a or b when he start the game
+After the game there should be information how many games were played, won, lost.</p>
+</div>
+<div class="section" id="create-an-application-that-allows-to-learn-japanese-words">
+<h2>3. Create an application that allows to learn Japanese words.<a class="headerlink" href="#create-an-application-that-allows-to-learn-japanese-words" title="Permalink to this headline">¶</a></h2>
+<p>You can port the game from the python exercises !
+Write a simple application that will allow you to learn basic Japanese words.
+There is a file jap_dict.txt provided, your task is to:
+a) copy + past the text or use open(file_name) function to get the data
+b) change the string to data structure
+c) ask a question to translate from english to Japanese word or a phrase
+d) check if it was done correctly if yes don&#8217;t show this particular one anymore
+e) inform about how many words were guest and how many are left
+f) congratulate at the end
+optional:
+g) show the difference in spelling</p>
+</div>
+<div class="section" id="lest-play-hangman">
+<h2>4. Lest play hangman<a class="headerlink" href="#lest-play-hangman" title="Permalink to this headline">¶</a></h2>
+<p>You can port the game from the python exercises !
+Create a hangman game in python. User should see the progress of the game
+there is a file with ASCII hangman pictures - hangman.py.
+Remember if a word has more then one asked letter You need to show all of them
+for ex. &#8216;mama&#8217; is good testing word.</p>
+</div>
 </div>
 
 
@@ -96,9 +106,14 @@ expanded and edited to suit the specific needs of Geek Girls Carrots.</p>
 <li class="toctree-l1"><a class="reference internal" href="flask_quickstart.html">Flask: Quick Start</a></li>
 <li class="toctree-l1"><a class="reference internal" href="flask_templates.html">Flask: Templates</a></li>
 <li class="toctree-l1"><a class="reference internal" href="flask_forms.html">Flask: Forms</a></li>
-<li class="toctree-l1"><a class="reference internal" href="flask_exercises.html">Flask: Exercises</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Flask: Exercises</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#guess-a-number-game">1. Guess a number game</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#create-an-application-that-allows-to-learn-japanese-words">3. Create an application that allows to learn Japanese words.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#lest-play-hangman">4. Lest play hangman</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="flask_sqlalchemy.html">Flask: SQL Alchemy - ORM</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">Geek Girls Carrots Code of Conduct</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code_of_conduct.html">Geek Girls Carrots Code of Conduct</a></li>
 </ul>
 
         </div>

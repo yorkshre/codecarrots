@@ -5,7 +5,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Introduction to Django &mdash; Code Carrots</title>
+    <title>Introduction to Django &mdash; Django Carrots</title>
     
     <link rel="stylesheet" href="_static/carrots.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -13,7 +13,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '2.1',
+        VERSION:     '1.0dev1',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -22,7 +22,7 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="Code Carrots" href="index.html" /> 
+    <link rel="top" title="Django Carrots" href="index.html" /> 
   </head>
   <body role="document">
   
@@ -31,7 +31,7 @@
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
-        <li class="nav-item nav-item-0"><a href="index.html">Code Carrots</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Django Carrots</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -61,7 +61,7 @@ learned about earlier, but more complex), and classes that facilitate the creati
 <div class="section" id="installation">
 <h3>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h3>
 <p>Install Django by running it on the console <code class="docutils literal"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">django==1.8.2</span></code>:</p>
-<div class="highlight-sh"><div class="highlight"><pre><span class="o">(</span>workshops<span class="o">)</span> ~$ pip install <span class="nv">django</span><span class="o">==</span>1.8.2
+<div class="highlight-sh"><div class="highlight"><pre><span class="o">(</span>workshops<span class="o">)</span> ~<span class="nv">$ </span>pip install <span class="nv">django</span><span class="o">==</span>1.8.2
 Downloading/unpacking <span class="nv">django</span><span class="o">==</span>1.8.2
 Downloading Django-1.8.2-py2.py3-none-any.whl <span class="o">(</span>6.2MB<span class="o">)</span>: 6.2MB downloaded
 Installing collected packages: django
@@ -77,10 +77,10 @@ where you can find many useful libraries.</p>
 <p>Django provides the administrative script <code class="docutils literal"><span class="pre">django-admin.py</span></code>. It allows you to create the basic scheme of our
 site.</p>
 <p>To create a new project with the site, launch <code class="docutils literal"><span class="pre">django-admin.py</span> <span class="pre">startproject</span> <span class="pre">carrots</span></code>:</p>
-<div class="highlight-sh"><div class="highlight"><pre><span class="c1"># Linux</span>
+<div class="highlight-sh"><div class="highlight"><pre><span class="c"># Linux</span>
 
-<span class="o">(</span>workshops<span class="o">)</span> ~$ django-admin.py startproject carrots
-<span class="o">(</span>workshops<span class="o">)</span> ~$ tree carrots
+<span class="o">(</span>workshops<span class="o">)</span> ~<span class="nv">$ </span>django-admin.py startproject carrots
+<span class="o">(</span>workshops<span class="o">)</span> ~<span class="nv">$ </span>tree carrots
 carrots/
 ├── carrots
 │   ├── __init__.py
@@ -92,13 +92,13 @@ carrots/
 <span class="m">1</span> directory, <span class="m">5</span> files
 </pre></div>
 </div>
-<div class="highlight-bat"><div class="highlight"><pre><span class="p">:</span><span class="c1">: Windows</span>
+<div class="highlight-bat"><div class="highlight"><pre><span class="c">:: Windows</span>
 
-<span class="p">(</span>workshops<span class="p">)</span> C:\Users\TeddyBear<span class="p">&gt;</span> python -m django-admin startproject carrots
-<span class="p">(</span>workshops<span class="p">)</span> C:\Users\TeddyBear<span class="p">&gt;</span> tree /f carrots
+(workshops) C:\Users\TeddyBear<span class="p">&gt;</span> <span class="n">python</span> -m django-admin startproject carrots
+(workshops) C:\Users\TeddyBear<span class="p">&gt;</span> <span class="n">tree</span> <span class="n">/f</span> carrots
 Folder PATH listing
-Volume serial number is 00FA-07FF
-C<span class="p">:</span><span class="nl">\USERS\TEDDYBEAR\DOCUMENTS\CARROTS</span>
+Volume serial number is <span class="m">00</span>FA<span class="m">-07</span>FF
+C:\USERS\TEDDYBEAR\DOCUMENTS\CARROTS
 │   manage.py
 │
 └───carrots
@@ -124,9 +124,9 @@ you can find more information through Google.</p>
 <div class="section" id="settings-of-application">
 <h3>Settings of application<a class="headerlink" href="#settings-of-application" title="Permalink to this headline">¶</a></h3>
 <p>In the <code class="docutils literal"><span class="pre">carrots/settings.py</span></code> file, find <code class="docutils literal"><span class="pre">TIME_ZONE</span></code> and set time zone as Warsaw. You should get the following:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">TIME_ZONE</span> <span class="o">=</span> <span class="s1">&#39;Europe/Luxembourg&#39;</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">TIME_ZONE</span> <span class="o">=</span> <span class="s">&#39;Europe/Luxembourg&#39;</span>
 
-<span class="n">LANGUAGE_CODE</span> <span class="o">=</span> <span class="s1">&#39;en_uk&#39;</span>
+<span class="n">LANGUAGE_CODE</span> <span class="o">=</span> <span class="s">&#39;en_uk&#39;</span>
 </pre></div>
 </div>
 <p>To make it simpler we also exclude the advanced support for time zones in the database - it will not be needed in our project.
@@ -138,8 +138,8 @@ In the file <code class="docutils literal"><span class="pre">settings.py</span><
 <div class="section" id="database">
 <h3>Database<a class="headerlink" href="#database" title="Permalink to this headline">¶</a></h3>
 <p>Now it&#8217;s time to use the previously described file <code class="docutils literal"><span class="pre">manage.py</span></code> to create the database. For this purpose we execute the option <code class="docutils literal"><span class="pre">migrate</span></code>. In the project directory run <code class="docutils literal"><span class="pre">python</span> <span class="pre">manage.py</span> <span class="pre">migrate</span></code>:</p>
-<div class="highlight-sh"><div class="highlight"><pre><span class="o">(</span>workshops<span class="o">)</span> ~$ <span class="nb">cd</span> carrots
-<span class="o">(</span>workshops<span class="o">)</span> ~/carrots$ python manage.py migrate
+<div class="highlight-sh"><div class="highlight"><pre><span class="o">(</span>workshops<span class="o">)</span> ~<span class="nv">$ </span><span class="nb">cd </span>carrots
+<span class="o">(</span>workshops<span class="o">)</span> ~/carrots<span class="nv">$ </span>python manage.py migrate
 Operations to perform:
   Synchronize unmigrated apps: staticfiles, messages
   Apply all migrations: admin, contenttypes, auth, sessions
@@ -159,7 +159,7 @@ Running migrations:
   Applying auth.0005_alter_user_last_login_null... OK
   Applying auth.0006_require_contenttypes_0002... OK
   Applying sessions.0001_initial... OK
-<span class="o">(</span>workshops<span class="o">)</span> ~/carrots$ python manage.py createsuperuser
+<span class="o">(</span>workshops<span class="o">)</span> ~/carrots<span class="nv">$ </span>python manage.py createsuperuser
 Username <span class="o">(</span>leave blank to use <span class="s1">&#39;beans&#39;</span><span class="o">)</span>: beans
 Email address: beans@beans.com
 Password:
@@ -171,19 +171,19 @@ Superuser created successfully.
 leave as it is proposed, you can give any e-mail address.  Memorize the provided data (i.e, username
 and password) so that you can log in the control panel. In the above example, the user will be <code class="docutils literal"><span class="pre">beans</span></code>.</p>
 <p>If you want to learn more about <code class="docutils literal"><span class="pre">manage.py</span></code>, run python <code class="docutils literal"><span class="pre">manage.py</span> <span class="pre">help</span></code>:</p>
-<div class="highlight-sh"><div class="highlight"><pre><span class="o">(</span>workshops<span class="o">)</span> ~/carrots$ python manage.py <span class="nb">help</span>
+<div class="highlight-sh"><div class="highlight"><pre><span class="o">(</span>workshops<span class="o">)</span> ~/carrots<span class="nv">$ </span>python manage.py <span class="nb">help</span>
 </pre></div>
 </div>
 <p>You will get a list of all commands and options supported by <code class="docutils literal"><span class="pre">manage.py</span></code>.</p>
 <p>To get help on a single command, run  <code class="docutils literal"><span class="pre">manage.py</span> <span class="pre">help</span></code> command:</p>
-<div class="highlight-sh"><div class="highlight"><pre><span class="o">(</span>workshops<span class="o">)</span> ~/carrots$ python manage.py <span class="nb">help</span> migrate
+<div class="highlight-sh"><div class="highlight"><pre><span class="o">(</span>workshops<span class="o">)</span> ~/carrots<span class="nv">$ </span>python manage.py <span class="nb">help </span>migrate
 </pre></div>
 </div>
 </div>
 <div class="section" id="administration-interface">
 <h3>Administration interface<a class="headerlink" href="#administration-interface" title="Permalink to this headline">¶</a></h3>
 <p>Now we can run our application. Run the server by typing <code class="docutils literal"><span class="pre">python</span> <span class="pre">manage.py</span> <span class="pre">runserver</span></code>:</p>
-<div class="highlight-sh"><div class="highlight"><pre><span class="o">(</span>workshops<span class="o">)</span> ~/carrots$ python manage.py runserver
+<div class="highlight-sh"><div class="highlight"><pre><span class="o">(</span>workshops<span class="o">)</span> ~/carrots<span class="nv">$ </span>python manage.py runserver
 Validating models...
 
 <span class="m">0</span> errors found
@@ -226,13 +226,13 @@ specific functions.</p>
 <p>After creating the application, it must be activated in our project. In the file <code class="docutils literal"><span class="pre">carrots/settings.py</span></code>
 we have to add the application <code class="docutils literal"><span class="pre">polls</span></code> to <code class="docutils literal"><span class="pre">INSTALLED_APPS</span></code>. The result should look like this:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">INSTALLED_APPS</span> <span class="o">=</span> <span class="p">(</span>
-    <span class="s1">&#39;django.contrib.admin&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;django.contrib.auth&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;django.contrib.contenttypes&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;django.contrib.sessions&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;django.contrib.messages&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;django.contrib.staticfiles&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;polls&#39;</span>
+    <span class="s">&#39;django.contrib.admin&#39;</span><span class="p">,</span>
+    <span class="s">&#39;django.contrib.auth&#39;</span><span class="p">,</span>
+    <span class="s">&#39;django.contrib.contenttypes&#39;</span><span class="p">,</span>
+    <span class="s">&#39;django.contrib.sessions&#39;</span><span class="p">,</span>
+    <span class="s">&#39;django.contrib.messages&#39;</span><span class="p">,</span>
+    <span class="s">&#39;django.contrib.staticfiles&#39;</span><span class="p">,</span>
+    <span class="s">&#39;polls&#39;</span>
 <span class="p">)</span>
 </pre></div>
 </div>
@@ -247,38 +247,38 @@ we have to add the application <code class="docutils literal"><span class="pre">
 <div class="section" id="summary">
 <h3>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h3>
 <p>Django installation:</p>
-<div class="highlight-sh"><div class="highlight"><pre><span class="o">(</span>workshops<span class="o">)</span> ~$ pip install <span class="nv">django</span><span class="o">==</span>1.8.2
+<div class="highlight-sh"><div class="highlight"><pre><span class="o">(</span>workshops<span class="o">)</span> ~<span class="nv">$ </span>pip install <span class="nv">django</span><span class="o">==</span>1.8.2
 </pre></div>
 </div>
 <p>Project directory creation:</p>
-<div class="highlight-sh"><div class="highlight"><pre><span class="c1"># Linux</span>
+<div class="highlight-sh"><div class="highlight"><pre><span class="c"># Linux</span>
 
-<span class="o">(</span>workshops<span class="o">)</span> ~$ django-admin.py startproject carrots
+<span class="o">(</span>workshops<span class="o">)</span> ~<span class="nv">$ </span>django-admin.py startproject carrots
 </pre></div>
 </div>
-<div class="highlight-bat"><div class="highlight"><pre><span class="p">:</span><span class="c1">: Windows</span>
+<div class="highlight-bat"><div class="highlight"><pre><span class="c">:: Windows</span>
 
-<span class="p">(</span>workshops<span class="p">)</span> C:\Users\TeddyBear<span class="p">&gt;</span> python -m django-admin startproject carrots
+(workshops) C:\Users\TeddyBear<span class="p">&gt;</span> <span class="n">python</span> -m django-admin startproject carrots
 </pre></div>
 </div>
 <p>Setup of time zone in <code class="docutils literal"><span class="pre">carrots/settings.py</span></code> file:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">TIME_ZONE</span> <span class="o">=</span> <span class="s1">&#39;Europe/Warsaw&#39;</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">TIME_ZONE</span> <span class="o">=</span> <span class="s">&#39;Europe/Warsaw&#39;</span>
 
-<span class="n">LANGUAGE_CODE</span> <span class="o">=</span> <span class="s1">&#39;pl&#39;</span>
+<span class="n">LANGUAGE_CODE</span> <span class="o">=</span> <span class="s">&#39;pl&#39;</span>
 
 <span class="n">USE_TZ</span> <span class="o">=</span> <span class="bp">False</span>
 </pre></div>
 </div>
 <p>Creation of database (you need to run that command after adding every new model):</p>
-<div class="highlight-sh"><div class="highlight"><pre><span class="o">(</span>workshops<span class="o">)</span> ~/carrots$ python manage.py migrate
+<div class="highlight-sh"><div class="highlight"><pre><span class="o">(</span>workshops<span class="o">)</span> ~/carrots<span class="nv">$ </span>python manage.py migrate
 </pre></div>
 </div>
 <p>Server start-up:</p>
-<div class="highlight-sh"><div class="highlight"><pre><span class="o">(</span>workshops<span class="o">)</span> ~/carrots$ python manage.py runserver
+<div class="highlight-sh"><div class="highlight"><pre><span class="o">(</span>workshops<span class="o">)</span> ~/carrots<span class="nv">$ </span>python manage.py runserver
 </pre></div>
 </div>
 <p>Creation of the new application named <code class="docutils literal"><span class="pre">polls</span></code>:</p>
-<div class="highlight-sh"><div class="highlight"><pre><span class="o">(</span>workshops<span class="o">)</span> ~/carrots$ python manage.py startapp polls
+<div class="highlight-sh"><div class="highlight"><pre><span class="o">(</span>workshops<span class="o">)</span> ~/carrots<span class="nv">$ </span>python manage.py startapp polls
 </pre></div>
 </div>
 <p>Just remember that after creating an application you should add it to <code class="docutils literal"><span class="pre">INSTALLED_APPS</span></code>.</p>
@@ -295,11 +295,22 @@ we have to add the application <code class="docutils literal"><span class="pre">
   <a href="index.html" class="logo"><img class="logo" src="_static/logo.png" style="width: 200px; height: 169px; margin: -10px 0 10px 0"></a>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction_to_algorithm.html">Introduction to Algorithm</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python_quickstart.html">Introduction to Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="python_xmas_tree.html">Christmas Tree</a></li>
-<li class="toctree-l1"><a class="reference internal" href="python_dictionaries.html">Dictionaries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python_logic.html">Python Logic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python_strings.html">Strings formatting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python_strings.html#methods">Methods</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python_objects.html">Objects and classes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="python_import.html">Multiple Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python_objects.html#inheritance">Inheritance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python_xmas_tree.html">The for loop: Christmas Tree</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python_data.html">Python data storage types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python_loops.html">while loop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python_exercises.html">Python Summary: exercises</a></li>
+<li class="toctree-l1"><a class="reference internal" href="flask_quickstart.html">Flask: Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="flask_templates.html">Flask: Templates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="flask_forms.html">Flask: Forms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="flask_exercises.html">Flask: Exercises</a></li>
+<li class="toctree-l1"><a class="reference internal" href="flask_sqlalchemy.html">Flask: SQL Alchemy - ORM</a></li>
 <li class="toctree-l1"><a class="reference internal" href="code_of_conduct.html">Geek Girls Carrots Code of Conduct</a></li>
 </ul>
 
@@ -308,7 +319,7 @@ we have to add the application <code class="docutils literal"><span class="pre">
       <div class="clearer"></div>
     </div>
   <div class="footer">
-    &copy; Copyright Code Carrots.
+    &copy; Copyright Geek Girls Carrots and others.
   </div>
   
   <a href="https://github.com/ggcarrots/django-carrots">

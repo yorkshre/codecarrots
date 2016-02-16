@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Python Logic &mdash; Django Carrots</title>
+    
+    <link rel="stylesheet" href="_static/carrots.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0dev1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Django Carrots" href="index.html" />
+    <link rel="next" title="Strings formatting" href="python_strings.html" />
+    <link rel="prev" title="Introduction to Python" href="python_quickstart.html" /> 
+  </head>
+  <body role="document">
+  
+  
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="python_strings.html" title="Strings formatting"
+             accesskey="N">next</a></li>
+        <li class="right" >
+          <a href="python_quickstart.html" title="Introduction to Python"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Django Carrots</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="python-logic">
+<h1>Python Logic<a class="headerlink" href="#python-logic" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="checking-conditions">
+<h2>Checking conditions<a class="headerlink" href="#checking-conditions" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="comparisons-true-or-false">
+<h3>Comparisons:  true or false?<a class="headerlink" href="#comparisons-true-or-false" title="Permalink to this headline">¶</a></h3>
+<p>Let us now talk about comparisons. Let&#8217;s look at how they behave in a short math lesson:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="mi">2</span> <span class="o">&gt;</span> <span class="mi">1</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="mi">1</span> <span class="o">==</span> <span class="mi">2</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="mi">1</span> <span class="o">==</span> <span class="mf">1.0</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="mi">10</span> <span class="o">&gt;=</span> <span class="mi">10</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="mi">13</span> <span class="o">&lt;=</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">3</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="o">-</span><span class="mi">1</span> <span class="o">!=</span> <span class="mi">0</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<p>The result of a comparison is always <code class="docutils literal"><span class="pre">True</span></code> or <code class="docutils literal"><span class="pre">False</span></code>.
+Comparisons can be combined into more complex conditions by using the words <a class="reference external" href="http://docs.python.org/3/reference/expressions.html#and" title="(in Python v3.5)"><code class="xref std std-keyword docutils literal"><span class="pre">and</span></code></a> and
+<a class="reference external" href="http://docs.python.org/3/reference/expressions.html#or" title="(in Python v3.5)"><code class="xref std std-keyword docutils literal"><span class="pre">or</span></code></a>:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">&lt;</span> <span class="mi">10</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="mi">2</span><span class="o">*</span><span class="n">x</span> <span class="o">&gt;</span> <span class="n">x</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="n">x</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span> <span class="o">&gt;</span> <span class="n">x</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="n">x</span> <span class="o">!=</span> <span class="mi">5</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">x</span> <span class="o">!=</span> <span class="mi">4</span><span class="p">)</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="n">x</span> <span class="o">!=</span> <span class="mi">5</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">x</span> <span class="o">!=</span> <span class="mi">4</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">x</span> <span class="o">==</span> <span class="mi">5</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="python-love-exercise">
+<h3>Python Love - exercise<a class="headerlink" href="#python-love-exercise" title="Permalink to this headline">¶</a></h3>
+<p>Now lest talk about love with our wonderful snake. Write this in your interpreter.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">this</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">love</span> <span class="o">=</span> <span class="n">this</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">love</span> <span class="ow">is</span> <span class="n">this</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">love</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">True</span> <span class="ow">or</span> <span class="bp">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">love</span> <span class="ow">is</span> <span class="n">love</span>
+</pre></div>
+</div>
+<p>In python we can compere using few different operators:</p>
+<ul class="simple">
+<li>==</li>
+<li>is</li>
+<li>!=</li>
+<li>not</li>
+<li>&gt;=</li>
+<li>&lt;=</li>
+<li>in</li>
+</ul>
+<p>and connect the expressions with:</p>
+<ul class="simple">
+<li>and</li>
+<li>or</li>
+</ul>
+</div>
+<div class="section" id="is-same-as">
+<h3>Is same as == ?<a class="headerlink" href="#is-same-as" title="Permalink to this headline">¶</a></h3>
+<p>Lest make few test if &#8216;is&#8217; is the same as &#8216;==&#8217;:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="mi">1000</span> <span class="ow">is</span> <span class="mi">10</span><span class="o">**</span><span class="mi">3</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="mi">1000</span> <span class="o">==</span> <span class="mi">10</span><span class="o">**</span><span class="mi">3</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="s">&quot;a&quot;</span> <span class="ow">is</span> <span class="s">&quot;a&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s">&quot;aa&quot;</span> <span class="ow">is</span> <span class="s">&quot;a&quot;</span> <span class="o">*</span> <span class="mi">2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="s">&quot;a&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s">&quot;aa&quot;</span> <span class="ow">is</span> <span class="n">x</span> <span class="o">*</span> <span class="mi">2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s">&quot;aa&quot;</span> <span class="o">==</span> <span class="n">x</span> <span class="o">*</span> <span class="mi">2</span>
+</pre></div>
+</div>
+<p>Conclusion:
+is will return True if two variables point to the same object, == if the objects referred to by the variables are equal.</p>
+</div>
+<div class="section" id="bmi-fat-or-not-let-the-python-decide-for-you">
+<h3>BMI: Fat or not ? let the python decide for You<a class="headerlink" href="#bmi-fat-or-not-let-the-python-decide-for-you" title="Permalink to this headline">¶</a></h3>
+<p>Let’s go to our next problem. We want our program to print the appropriate
+classification for the calculated BMI by using the table below:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="54%" />
+<col width="46%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">BMI</th>
+<th class="head">Classification</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>&lt; 18,5</td>
+<td>underweight</td>
+</tr>
+<tr class="row-odd"><td>18,5 – 24,99</td>
+<td>normal weight</td>
+</tr>
+<tr class="row-even"><td>25,0 – 29,99</td>
+<td>overweight</td>
+</tr>
+<tr class="row-odd"><td>≥ 30,0</td>
+<td>obesity</td>
+</tr>
+</tbody>
+</table>
+<p>We need to use the “conditional statement” <a class="reference external" href="http://docs.python.org/3/reference/compound_stmts.html#if" title="(in Python v3.5)"><code class="xref std std-keyword docutils literal"><span class="pre">if</span></code></a>. It will execute the rest of the program
+depending on a given condition:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">print</span><span class="p">(</span><span class="s">&quot;Enter your height in meters:&quot;</span><span class="p">)</span>
+<span class="n">height</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
+<span class="n">height</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">height</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">&quot;Enter your weight in kilograms:&quot;</span><span class="p">)</span>
+<span class="n">weight</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
+<span class="n">weight</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">weight</span><span class="p">)</span>
+
+<span class="n">bmi</span> <span class="o">=</span> <span class="n">weight</span> <span class="o">/</span> <span class="n">height</span><span class="o">**</span><span class="mi">2</span>  <span class="c"># Calculate BMI</span>
+
+<span class="k">if</span> <span class="n">bmi</span> <span class="o">&lt;</span> <span class="mf">18.5</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">&quot;underweight&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">bmi</span> <span class="o">&lt;</span> <span class="mf">25.0</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">&quot;normal weight&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">bmi</span> <span class="o">&lt;</span> <span class="mf">30.0</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">&quot;overweight&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">&quot;obesity&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-none"><div class="highlight"><pre>Enter your height in meters:
+1.75
+Enter your weight in kilograms:
+65.5
+normal weight
+</pre></div>
+</div>
+</div>
+<div class="section" id="exercise-simple-python-calculator">
+<h3>Exercise simple python calculator<a class="headerlink" href="#exercise-simple-python-calculator" title="Permalink to this headline">¶</a></h3>
+<p>Write a simple calculator script that will take two numbers and calculation sign (+, -, <a href="#id1"><span class="problematic" id="id2">*</span></a>, /).
+And output a nice string show whole calculation and the solution.
+Remember: string + string = new string :-)
+Example:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;Enter first number&#39;</span>
+<span class="go">10</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;Enter first number math sign (+, -, *, /)&#39;</span>
+<span class="go">+</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;Enter second number&#39;</span>
+<span class="go">5</span>
+<span class="go">&#39;10 + 5 = 15&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="indentations">
+<h3>Indentations<a class="headerlink" href="#indentations" title="Permalink to this headline">¶</a></h3>
+<p>Another thing you should pay attention to is the indentation in the code. Open the interactive mode
+and enter a simple condition such as:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">if</span> <span class="mi">2</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+<span class="gp">...</span>
+</pre></div>
+</div>
+<p>So far nothing has happened, as evidenced by dots <code class="docutils literal"><span class="pre">...</span></code> instead of a prompt <code class="docutils literal"><span class="pre">&gt;&gt;&gt;</span></code>, which we
+have seen so far. Python expects us to give further instructions that are supposed to be executed if the
+condition <code class="docutils literal"><span class="pre">2</span> <span class="pre">&gt;</span> <span class="pre">1</span></code>  turns out to be true. Let’s try to make Python print &#8220;OK&#8221;:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">if</span> <span class="mi">2</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+<span class="gp">... </span><span class="k">print</span><span class="p">(</span><span class="s">&quot;OK&quot;</span><span class="p">)</span>
+  File <span class="nb">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">2</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">&quot;OK&quot;</span><span class="p">)</span>
+        <span class="o">^</span>
+<span class="gr">IndentationError</span>: <span class="n">expected an indented block</span>
+</pre></div>
+</div>
+<p>Unfortunately, we did not succeed. Python needs to know whether the instruction we have written is a
+continuation of <a class="reference external" href="http://docs.python.org/3/reference/compound_stmts.html#if" title="(in Python v3.5)"><code class="xref std std-keyword docutils literal"><span class="pre">if</span></code></a> or it is the next instruction not covered by the condition. To this
+purpose, we need to indent our code:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">if</span> <span class="mi">2</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+<span class="gp">... </span> <span class="k">print</span><span class="p">(</span><span class="s">&quot;OK&quot;</span><span class="p">)</span>
+<span class="gp">...</span>
+<span class="go">OK</span>
+</pre></div>
+</div>
+<p>All you need is one space or <code class="docutils literal"><span class="pre">TAB</span></code>. However, all the lines that are supposed to be executed one
+after another should be indented the same way:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">if</span> <span class="o">-</span><span class="mi">1</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+<span class="gp">... </span> <span class="k">print</span><span class="p">(</span><span class="s">&quot;A&quot;</span><span class="p">)</span>
+<span class="gp">... </span>  <span class="k">print</span><span class="p">(</span><span class="s">&quot;B&quot;</span><span class="p">)</span>
+  File <span class="nb">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">3</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">&quot;B&quot;</span><span class="p">)</span>
+    <span class="o">^</span>
+<span class="gr">IndentationError</span>: <span class="n">unexpected indent</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="k">if</span> <span class="o">-</span><span class="mi">1</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="k">print</span><span class="p">(</span><span class="s">&quot;A&quot;</span><span class="p">)</span>
+<span class="gp">... </span>  <span class="k">print</span><span class="p">(</span><span class="s">&quot;B&quot;</span><span class="p">)</span>
+  File <span class="nb">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">3</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">&quot;B&quot;</span><span class="p">)</span>
+            <span class="o">^</span>
+<span class="gr">IndentationError</span>: <span class="n">unindent does not match any outer indentation level</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="k">if</span> <span class="o">-</span><span class="mi">1</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+<span class="gp">... </span>  <span class="k">print</span><span class="p">(</span><span class="s">&quot;A&quot;</span><span class="p">)</span>
+<span class="gp">... </span>  <span class="k">print</span><span class="p">(</span><span class="s">&quot;B&quot;</span><span class="p">)</span>
+<span class="gp">...</span>
+<span class="go">A</span>
+<span class="go">B</span>
+</pre></div>
+</div>
+<p>To avoid chaos, most Python programmers use four spaces for each level of indentation. We will
+do the same:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">if</span> <span class="mi">2</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="k">if</span> <span class="mi">3</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">:</span>
+<span class="gp">... </span>        <span class="k">print</span><span class="p">(</span><span class="s">&quot;OK&quot;</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="k">else</span><span class="p">:</span>
+<span class="gp">... </span>        <span class="k">print</span><span class="p">(</span><span class="s">&quot;FAIL&quot;</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="k">print</span><span class="p">(</span><span class="s">&quot;DONE&quot;</span><span class="p">)</span>
+<span class="go">OK</span>
+<span class="go">DONE</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="what-if-not">
+<h3>What if not?<a class="headerlink" href="#what-if-not" title="Permalink to this headline">¶</a></h3>
+<p>Actually, we could write our program just by using <a class="reference external" href="http://docs.python.org/3/reference/compound_stmts.html#if" title="(in Python v3.5)"><code class="xref std std-keyword docutils literal"><span class="pre">if</span></code></a></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">if</span> <span class="n">bmi</span> <span class="o">&lt;</span> <span class="mf">18.5</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">&quot;underweight&quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">bmi</span> <span class="o">&gt;=</span> <span class="mf">18.5</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">bmi</span> <span class="o">&lt;</span> <span class="mf">25.0</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">&quot;normal weight&quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">bmi</span> <span class="o">&gt;=</span> <span class="mf">25.0</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">&quot;overweight&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>We can also use <a class="reference external" href="http://docs.python.org/3/reference/compound_stmts.html#else" title="(in Python v3.5)"><code class="xref std std-keyword docutils literal"><span class="pre">else</span></code></a> and <a class="reference external" href="http://docs.python.org/3/reference/compound_stmts.html#elif" title="(in Python v3.5)"><code class="xref std std-keyword docutils literal"><span class="pre">elif</span></code></a> to avoid repeating similar conditions and increase readability. In more complex programs it may not be obvious from
+the beginning that a certain condition is the opposite of the previous one.</p>
+<p>Using <a class="reference external" href="http://docs.python.org/3/reference/compound_stmts.html#else" title="(in Python v3.5)"><code class="xref std std-keyword docutils literal"><span class="pre">else</span></code></a> , we have the guarantee that the given instructions will be executed only if the instructions printed under <a class="reference external" href="http://docs.python.org/3/reference/compound_stmts.html#if" title="(in Python v3.5)"><code class="xref std std-keyword docutils literal"><span class="pre">if</span></code></a> haven’t been executed:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">if</span> <span class="n">bmi</span> <span class="o">&lt;</span> <span class="mf">18.5</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">&quot;underweight&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="c"># If your program executes this instruction,</span>
+    <span class="c"># for sure bmi &gt;= 18.5 !</span>
+    <span class="k">if</span> <span class="n">bmi</span> <span class="o">&lt;</span> <span class="mf">25.0</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">&quot;normal weight&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="c"># now for sure bmi &gt;= 25.0, we don’t have to</span>
+        <span class="c"># check it</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">&quot;overweight&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Pay particular attention to the indentations. Every use of <a class="reference external" href="http://docs.python.org/3/reference/compound_stmts.html#else" title="(in Python v3.5)"><code class="xref std std-keyword docutils literal"><span class="pre">else</span></code></a>,
+will cause an increased indentation of our code. It is very annoying when you have to check a few or a
+dozen or so conditions which exclude one another . Therefore the authors of Python added a little
+&#8216;improvement&#8217; in the form of <a class="reference external" href="http://docs.python.org/3/reference/compound_stmts.html#elif" title="(in Python v3.5)"><code class="xref std std-keyword docutils literal"><span class="pre">elif</span></code></a>, instruction, which allows you to check another condition
+immediately:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">if</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">&quot;one&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+    <span class="c"># if it wasn’t n &lt; 1, and now it is n &lt; 2</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">&quot;two&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">:</span>
+    <span class="c"># ,if none of the previous condition was true.</span>
+    <span class="c"># n &gt;= 1 i n&gt;= 2, ale n &lt; 3</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">&quot;three&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="c"># trolls can count only to three</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">&quot;more&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<p>We now know some basic python logic, and we can use it.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <a href="index.html" class="logo"><img class="logo" src="_static/logo.png" style="width: 200px; height: 169px; margin: -10px 0 10px 0"></a>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction_to_algorithm.html">Introduction to Algorithm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python_quickstart.html">Introduction to Python</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Python Logic</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#checking-conditions">Checking conditions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#comparisons-true-or-false">Comparisons:  true or false?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#python-love-exercise">Python Love - exercise</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#is-same-as">Is same as == ?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#bmi-fat-or-not-let-the-python-decide-for-you">BMI: Fat or not ? let the python decide for You</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#exercise-simple-python-calculator">Exercise simple python calculator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#indentations">Indentations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#what-if-not">What if not?</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#summary">Summary</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="python_strings.html">Strings formatting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python_strings.html#methods">Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python_objects.html">Objects and classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python_objects.html#inheritance">Inheritance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python_xmas_tree.html">The for loop: Christmas Tree</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python_data.html">Python data storage types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python_loops.html">while loop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python_exercises.html">Python Summary: exercises</a></li>
+<li class="toctree-l1"><a class="reference internal" href="flask_quickstart.html">Flask: Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="flask_templates.html">Flask: Templates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="flask_forms.html">Flask: Forms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="flask_exercises.html">Flask: Exercises</a></li>
+<li class="toctree-l1"><a class="reference internal" href="flask_sqlalchemy.html">Flask: SQL Alchemy - ORM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code_of_conduct.html">Geek Girls Carrots Code of Conduct</a></li>
+</ul>
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  <div class="footer">
+    &copy; Copyright Geek Girls Carrots and others.
+  </div>
+  
+  <a href="https://github.com/ggcarrots/django-carrots">
+      <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/652c5b9acfaddf3a9c326fa6bde407b87f7be0f4/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6f72616e67655f6666373630302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png">
+  </a>
+  </body>
+</html>

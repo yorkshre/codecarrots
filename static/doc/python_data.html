@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Python data storage types &mdash; Django Carrots</title>
+    
+    <link rel="stylesheet" href="_static/carrots.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0dev1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Django Carrots" href="index.html" />
+    <link rel="next" title="while loop" href="python_loops.html" />
+    <link rel="prev" title="The for loop: Christmas Tree" href="python_xmas_tree.html" /> 
+  </head>
+  <body role="document">
+  
+  
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="python_loops.html" title="while loop"
+             accesskey="N">next</a></li>
+        <li class="right" >
+          <a href="python_xmas_tree.html" title="The for loop: Christmas Tree"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Django Carrots</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="python-data-storage-types">
+<h1>Python data storage types<a class="headerlink" href="#python-data-storage-types" title="Permalink to this headline">¶</a></h1>
+<p>Python has five standard data types −</p>
+<ul class="simple">
+<li>Numbers</li>
+<li>String</li>
+<li>List</li>
+<li>Tuple</li>
+<li>Dictionary</li>
+</ul>
+<p>We already used numbers(ints and floats), string and tuples. Now it is time to learn about Lists and Dictionaries.</p>
+<div class="section" id="cute-wabbit">
+<h2>Cute Wabbit<a class="headerlink" href="#cute-wabbit" title="Permalink to this headline">¶</a></h2>
+<p>A little girl goes into a pet show and asks for a wabbit. The shop keeper looks down at her, smiles and says:</p>
+<p>&#8220;Would you like a lovely fluffy little white rabbit, or a cutesy wootesly little brown rabbit?&#8221;</p>
+<p>&#8220;Actually&#8221;, says the little girl, &#8220;I don&#8217;t think my python would notice.&#8221;</p>
+<p>Now lets get back to learning :)</p>
+</div>
+<div class="section" id="list">
+<h2>List<a class="headerlink" href="#list" title="Permalink to this headline">¶</a></h2>
+<p>Still we haven’t said anything about lists, as they do not differ much from the intuitive concept of
+lists in the everyday life. We can easily think of lists in Python as we think of any other list (a
+shopping list, a guest list, exam results etc.) written on a paper and numbered.</p>
+<p>Let&#8217;s start with a blank page by starting a new python interpreter:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">L</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">L</span>
+<span class="go">[]</span>
+</pre></div>
+</div>
+<p>At any time we can check how many items we have saved on our list by using the function <a class="reference external" href="http://docs.python.org/3/library/functions.html#len" title="(in Python v3.5)"><code class="xref py py-func docutils literal"><span class="pre">len()</span></code></a>.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">L</span><span class="p">)</span>
+<span class="go">0</span>
+</pre></div>
+</div>
+<p>Let&#8217;s make another list (which can have the same name or a different one):</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">L</span> <span class="o">=</span> <span class="p">[</span><span class="s">&quot;Ala&quot;</span><span class="p">,</span> <span class="s">&quot;Ola&quot;</span><span class="p">,</span> <span class="s">&quot;Jacek&quot;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">L</span><span class="p">)</span>
+<span class="go">3</span>
+</pre></div>
+</div>
+<p>As in the case of tuples, consecutive elements of the list are separated by commas. Unlike tuples,
+brackets <code class="docutils literal"><span class="pre">[</span></code> and <code class="docutils literal"><span class="pre">]</span></code> are obligatory.</p>
+<div class="section" id="accessing-values-in-lists">
+<h3>Accessing Values in Lists<a class="headerlink" href="#accessing-values-in-lists" title="Permalink to this headline">¶</a></h3>
+<p>To preview a particular position of an element on the list (remember that we count the positions from 0 ):</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">L</span> <span class="o">=</span> <span class="p">[</span><span class="s">&quot;Ala&quot;</span><span class="p">,</span> <span class="s">&quot;Ola&quot;</span><span class="p">,</span> <span class="s">&quot;Jacek&quot;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">L</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="go">&#39;Ala&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">L</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="go">&#39;Ola&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">L</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+<span class="go">&#39;Jacek&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">L</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+<span class="gt">Traceback (most recent call last):</span>
+<span class="gr"> File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;</span>
+<span class="gr">IndexError</span>: <span class="n">list index out of range</span>
+</pre></div>
+</div>
+<p>We can also use the loop <a class="reference external" href="http://docs.python.org/3/reference/compound_stmts.html#for" title="(in Python v3.5)"><code class="xref std std-keyword docutils literal"><span class="pre">for</span></code></a>,to execute instructions for every element of the list:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">L</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="k">print</span><span class="p">(</span><span class="s">&quot;Name:&quot;</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+<span class="gp">...</span>
+<span class="go">Name: Ala</span>
+<span class="go">Name: Ola</span>
+<span class="go">Name: Jacek</span>
+</pre></div>
+</div>
+<p>In the same way, we can print the first part of our half of the Christmas tree:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">lst</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">lst</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="k">print</span><span class="p">(</span><span class="s">&quot;*&quot;</span><span class="o">*</span><span class="n">n</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="basic-list-operations">
+<h3>Basic List Operations<a class="headerlink" href="#basic-list-operations" title="Permalink to this headline">¶</a></h3>
+<p>Lists respond to the + and * operators much like strings; they mean concatenation and repetition here too, except that the result is a new list, not a string.</p>
+<p>In fact, lists respond to all of the general sequence operations we used on strings in the prior chapter.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span> <span class="c"># Length</span>
+<span class="go">3</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>   <span class="c"># Concatenation</span>
+<span class="go">[1, 2, 3, 4, 5, 6]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">[</span><span class="s">&#39;Hi!&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="mi">4</span>     <span class="c"># Repetition</span>
+<span class="go">[&#39;Hi!&#39;, &#39;Hi!&#39;, &#39;Hi!&#39;, &#39;Hi!&#39;]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="mi">3</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span> <span class="c"># Membership</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">L</span> <span class="o">=</span> <span class="p">[</span><span class="s">&quot;Ala&quot;</span><span class="p">,</span> <span class="s">&quot;Ola&quot;</span><span class="p">,</span> <span class="s">&quot;Jacek&quot;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">L</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="go">&#39;Ola&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">L</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="go">&#39;Jacek&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">L</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+<span class="go">[&#39;Ola&#39;, &#39;Jacek&#39;]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">L</span><span class="p">[:</span><span class="mi">1</span><span class="p">]</span>
+<span class="go">[&#39;Ala&#39;]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">L</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span>
+<span class="go">[&#39;Ola&#39;]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">L</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span> <span class="c"># L[3] will end up with error !</span>
+<span class="go">[&#39;Ola&#39;, &#39;Jacek&#39;]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="range">
+<h3>Range<a class="headerlink" href="#range" title="Permalink to this headline">¶</a></h3>
+<p>Well, unfortunately we still have to type the entire contents of the list. This problem can be solved
+by the function <code class="xref py py-func docutils literal"><span class="pre">range()</span></code>. Check <code class="docutils literal"><span class="pre">help(range)</span></code>
+for the full story, or check these quick examples:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+<span class="go">[0, 1]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">))</span>
+<span class="go">[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+<span class="go">[1, 3, 5, 7, 9]</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="updating-lists">
+<h3>Updating Lists<a class="headerlink" href="#updating-lists" title="Permalink to this headline">¶</a></h3>
+<p>You can update single or multiple elements of lists by giving the slice on the left-hand side of the assignment operator, and you can add to elements in a list with the append() method.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;physics&#39;</span><span class="p">,</span> <span class="s">&#39;chemistry&#39;</span><span class="p">,</span> <span class="mi">1997</span><span class="p">,</span> <span class="mi">2000</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="nb">list</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2001</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="nb">list</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">list_2</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;a&#39;</span><span class="p">,</span> <span class="s">&#39;b&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">list_2</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s">&#39;c&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">list_2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="delete-list-elements">
+<h3>Delete List Elements<a class="headerlink" href="#delete-list-elements" title="Permalink to this headline">¶</a></h3>
+<p>To remove a list element, you can use either the del statement if you know exactly which element(s) you are deleting or the remove() method if you do not know. For example −</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">list1</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;physics&#39;</span><span class="p">,</span> <span class="s">&#39;chemistry&#39;</span><span class="p">,</span> <span class="mi">1997</span><span class="p">,</span> <span class="mi">2000</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">list1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">del</span> <span class="n">list1</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">list1</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="dictionary">
+<h2>Dictionary<a class="headerlink" href="#dictionary" title="Permalink to this headline">¶</a></h2>
+<p>Dictionary is an data type composed of a collection of (key, value) pairs, such
+that each possible key appears just once in the collection. Except the unique condition
+it is very similar to normal dictionary.</p>
+<p>Each key is separated from its value by a colon (:), the items are separated by commas,
+and the whole thing is enclosed in curly braces. An empty dictionary without any items
+is written with just two curly braces, like this: {}.</p>
+<p>Keys are unique within a dictionary while values may not be. The values of a dictionary
+can be of any type, but the keys must be of an immutable data type such as strings, numbers, or tuples.</p>
+<div class="section" id="accessing-values-in-dictionary">
+<h3>Accessing Values in Dictionary:<a class="headerlink" href="#accessing-values-in-dictionary" title="Permalink to this headline">¶</a></h3>
+<p>To access dictionary elements, you can use the familiar square brackets along with the key to obtain its value. Following is a simple example −</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">a_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;Name&#39;</span><span class="p">:</span> <span class="s">&#39;Martha&#39;</span><span class="p">,</span> <span class="s">&#39;Age&#39;</span><span class="p">:</span> <span class="mi">21</span><span class="p">,</span> <span class="s">&#39;Profession&#39;</span><span class="p">:</span> <span class="s">&#39;Python Developer&#39;</span><span class="p">}</span>
+<span class="k">print</span><span class="p">(</span><span class="n">a_dict</span><span class="p">[</span><span class="s">&#39;Name&#39;</span><span class="p">])</span>
+<span class="k">print</span><span class="p">(</span><span class="n">a_dict</span><span class="p">[</span><span class="s">&#39;Age&#39;</span><span class="p">])</span>
+<span class="k">print</span><span class="p">(</span><span class="n">a_dict</span><span class="p">[</span><span class="s">&#39;Profession&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>When the above code is executed, it produces the following result:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">Martha</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="mi">21</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Python</span> <span class="n">Developer</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="updating-dictionary">
+<h3>Updating Dictionary<a class="headerlink" href="#updating-dictionary" title="Permalink to this headline">¶</a></h3>
+<p>You can update a dictionary by adding a new entry or a key-value pair, modifying an existing entry as shown below in the simple example −</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">a_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;Name&#39;</span><span class="p">:</span> <span class="s">&#39;Martha&#39;</span><span class="p">,</span> <span class="s">&#39;Age&#39;</span><span class="p">:</span> <span class="mi">21</span><span class="p">,</span> <span class="s">&#39;Profession&#39;</span><span class="p">:</span> <span class="s">&#39;Python Developer&#39;</span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a_dict</span><span class="p">[</span><span class="s">&#39;Age&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">8</span> <span class="c"># update existing entry</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a_dict</span><span class="p">[</span><span class="s">&#39;Profession&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s">&#39;Student&#39;</span> <span class="c"># update existing entry</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a_dict</span><span class="p">[</span><span class="s">&#39;School&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s">&quot;Primary School&quot;</span> <span class="c"># Add new entry</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">a_dict</span><span class="p">[</span><span class="s">&#39;Age&#39;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">a_dict</span><span class="p">[</span><span class="s">&#39;School&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="delete-dictionary-elements">
+<h3>Delete Dictionary Elements<a class="headerlink" href="#delete-dictionary-elements" title="Permalink to this headline">¶</a></h3>
+<p>You can either remove individual dictionary elements or clear the entire contents of a dictionary. You can also delete entire dictionary in a single operation.</p>
+<p>To explicitly remove an entire dictionary, just use the del statement. Following is a simple example −</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">a_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;Name&#39;</span><span class="p">:</span> <span class="s">&#39;Martha&#39;</span><span class="p">,</span> <span class="s">&#39;Age&#39;</span><span class="p">:</span> <span class="mi">21</span><span class="p">,</span> <span class="s">&#39;Profession&#39;</span><span class="p">:</span> <span class="s">&#39;Python Developer&#39;</span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">del</span> <span class="n">a_dict</span><span class="p">[</span><span class="s">&#39;Name&#39;</span><span class="p">]</span> <span class="c"># remove entry with key &#39;Name&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">a_dict</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a_dict</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>    <span class="c"># remove all entries in dict</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">a_dict</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">del</span> <span class="n">a_dict</span>       <span class="c"># delete entire dictionary</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="nesting">
+<h2>Nesting<a class="headerlink" href="#nesting" title="Permalink to this headline">¶</a></h2>
+<p>In Python You can create nested objects like:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">ZOO</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">&#39;animals&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s">&#39;python&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s">&#39;food&#39;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s">&#39;mouses&#39;</span><span class="p">,</span>
+                <span class="s">&#39;rabbits&#39;</span><span class="p">,</span>
+                <span class="s">&#39;rats&#39;</span><span class="p">,</span>
+            <span class="p">]</span>
+            <span class="s">&#39;environment&#39;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s">&#39;temp&#39;</span><span class="p">:</span> <span class="mi">25</span><span class="p">,</span>
+                <span class="s">&#39;humidity&#39;</span><span class="p">:</span> <span class="mi">80</span><span class="p">,</span>
+            <span class="p">}</span>
+            <span class="s">&#39;location&#39;</span><span class="p">:</span> <span class="s">&#39;cage&#39;</span><span class="p">,</span>
+        <span class="p">},</span>
+        <span class="s">&#39;cute_little_rabbit&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s">&#39;food&#39;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s">&#39;carrots&#39;</span><span class="p">,</span>
+                <span class="s">&#39;carrots&#39;</span><span class="p">,</span>
+                <span class="s">&#39;carrots&#39;</span><span class="p">,</span>
+            <span class="p">]</span>
+            <span class="s">&#39;environment&#39;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s">&#39;temp&#39;</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
+                <span class="s">&#39;humidity&#39;</span><span class="p">:</span> <span class="mi">35</span><span class="p">,</span>
+            <span class="p">}</span>
+            <span class="s">&#39;location&#39;</span><span class="p">:</span> <span class="s">&#39;run free&#39;</span><span class="p">,</span>
+        <span class="p">},</span>
+    <span class="s">&#39;contact&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s">&#39;telphone&#39;</span><span class="p">:</span> <span class="mi">0</span> <span class="mi">700</span> <span class="mi">800</span> <span class="mi">900</span><span class="p">,</span>
+        <span class="s">&#39;email&#39;</span><span class="p">:</span> <span class="s">&#39;zoo@zoo.zoo&#39;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>As You can see there can be a dict or a list inside of a dict of dicts :)</p>
+</div>
+<div class="section" id="exercises">
+<h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h2>
+<p>1. Design and create a data storage that will handle all of You group members
+data like: name, age, occupation, favourite color of mouse pointer, etc.
+Compare the solutions across the group and ask the Mentor which one is the best and why.
+Create the best solution.</p>
+<p>2. Remember how You can format a string using &#8216;&#8217;.format() ? Ask mentor about
+magic ** dictionary unpack and write a scrip that will print out a sentence for each team member (in &#8220;&#8221; should be data from the 1. exercise):
+a) &#8220;name&#8221; is &#8220;age&#8221; old and is working as &#8220;occupation&#8221;. &#8220;name&#8221; prefers &#8220;fav_mouse_color_point&#8221; mouse pointer.
+b - harder one) &#8220;name&#8221; is &#8220;age&#8221; old and is working as &#8220;occupation&#8221;. &#8220;He/She - based on gender&#8221; prefers &#8220;x&#8221; operating system.
+X - MacOS = Black, Linux = White, other = Windows.</p>
+<p>3. On dicts you can use few methods. Try out:
+.get(key), .has_key(key), .items(), .keys(), .update(dict_2), .values()
+a) Find out the difference between a_dict[key] and a_dict.get(key)
+b) What a_dict.get(key, &#8216;Python&#8217;) means, how can it be useful ?</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <a href="index.html" class="logo"><img class="logo" src="_static/logo.png" style="width: 200px; height: 169px; margin: -10px 0 10px 0"></a>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction_to_algorithm.html">Introduction to Algorithm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python_quickstart.html">Introduction to Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python_logic.html">Python Logic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python_strings.html">Strings formatting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python_strings.html#methods">Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python_objects.html">Objects and classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python_objects.html#inheritance">Inheritance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python_xmas_tree.html">The for loop: Christmas Tree</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Python data storage types</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#cute-wabbit">Cute Wabbit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#list">List</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#accessing-values-in-lists">Accessing Values in Lists</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#basic-list-operations">Basic List Operations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#range">Range</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#updating-lists">Updating Lists</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#delete-list-elements">Delete List Elements</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#dictionary">Dictionary</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#accessing-values-in-dictionary">Accessing Values in Dictionary:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#updating-dictionary">Updating Dictionary</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#delete-dictionary-elements">Delete Dictionary Elements</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#nesting">Nesting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#exercises">Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="python_loops.html">while loop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python_exercises.html">Python Summary: exercises</a></li>
+<li class="toctree-l1"><a class="reference internal" href="flask_quickstart.html">Flask: Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="flask_templates.html">Flask: Templates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="flask_forms.html">Flask: Forms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="flask_exercises.html">Flask: Exercises</a></li>
+<li class="toctree-l1"><a class="reference internal" href="flask_sqlalchemy.html">Flask: SQL Alchemy - ORM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code_of_conduct.html">Geek Girls Carrots Code of Conduct</a></li>
+</ul>
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  <div class="footer">
+    &copy; Copyright Geek Girls Carrots and others.
+  </div>
+  
+  <a href="https://github.com/ggcarrots/django-carrots">
+      <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/652c5b9acfaddf3a9c326fa6bde407b87f7be0f4/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6f72616e67655f6666373630302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png">
+  </a>
+  </body>
+</html>
