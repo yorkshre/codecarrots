@@ -121,7 +121,7 @@ ALLOWED_HOSTS = ['*']
 
 STATIC_ROOT = 'staticfiles'
 
-DEBUG = False
+DEBUG = True if os.environ['DEBUG'] == 1 else False
 
 try:
     from .local_settings import *
