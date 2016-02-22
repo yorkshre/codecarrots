@@ -1,0 +1,44 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+<style>
+    .contact-element {
+    margin-top:20px;
+    }
+</style>
+<div class="row contact-element">
+    <form action="" method="post">
+        {% csrf_token %}
+        {% if error %}
+        <div class="col-md-8 alert alert-danger .contact-element" role="alert">
+            <span class="sr-only">Error:</span>
+            {{ error }}
+        </div>
+        {% endif %}
+        {% if success %}
+        <div class="col-md-8 alert alert-success .contact-element" role="alert">
+            <span class="sr-only">Error:</span>
+            {{ success }}
+        </div>
+        {% endif %}
+        <div class="col-md-8">
+            <label for="contact-text"><h3>Napisz do nas:</h3></label>
+            <textarea style="height:200px" value="{{ contact_text }}" name="contact-text" id="contact-text" class="form-control"
+                      rows="3">{{ contact_text }}</textarea>
+        </div>
+        <div class="col-md-8 contact-element">
+            <label for="contact-email"><h4>Twój email: </h4></label>
+            <input id="contact-email" value="{{ contact_email }}" class="form-control" type="text" name="contact-email"/>
+        </div>
+        <div class="col-md-8 contact-element">
+            <div class="g-recaptcha contact-element" data-sitekey="6Le54RgTAAAAAM7VSunQuCUlxRO3hx_UIIYo0iMh"></div>
+        </div>
+        <div class="col-md-8 contact-element">
+            <input name="contact-send" value="Wyślij" type="submit" class="btn-primary"/>
+        </div>
+
+</div>
+<script src='https://www.google.com/recaptcha/api.js'></script>
+{% endblock %}
+
+
+

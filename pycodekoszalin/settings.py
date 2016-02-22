@@ -105,6 +105,13 @@ STATIC_URL = '/static/'
 
 DROPBOX_OAUTH2_TOKEN = os.environ['DROPBOX_OAUTH2_TOKEN']
 
+NOREPLY_ACCOUNT = os.environ['NOREPLY_ACCOUNT']
+NOREPLY_PASSWORD = os.environ['NOREPLY_PASSWORD']
+NOREPLY_TARGET = os.environ['NOREPLY_TARGET']
+
+RECAPTCHA_SITE_KEY = os.environ['RECAPTCHA_SITE_KEY']
+RECAPTCHA_SECRET_KEY = os.environ['RECAPTCHA_SECRET_KEY']
+
 import dj_database_url
 DATABASES['default'] =  dj_database_url.config()
 
