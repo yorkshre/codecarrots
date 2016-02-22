@@ -17,6 +17,8 @@ from django.conf import settings
 def main(request):
     error = None
     success = None
+    contact_email = ""
+    contact_text = ""
     if request.POST:
         contact_text = request.POST.get("contact-text")
         contact_email = request.POST.get("contact-email")
