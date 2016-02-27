@@ -38,6 +38,9 @@
     background-image: -webkit-gradient(linear, left top, left bottom,
      color-stop(0.000, rgb(255,228,0)),color-stop(0.566, rgb(255,136,0)),
     color-stop(1.000, rgb(230,109,29)));
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#FFE400FF, endColorstr=#FF880000);
+    /* IE10 */
+    background-image: -ms-linear-gradient(top, #FFE400 0%, #FF8800 100%);
 	text-decoration: none;
 	padding-top:2px;
 	padding-right:4px;
@@ -62,6 +65,7 @@
 .menu li:hover ul a:hover {
 	background: #ffB400;
 	color: #fff;
+	z-index:10;
 }
 
 /*Hide dropdown links until they are needed*/
@@ -85,6 +89,7 @@
 /*Display the dropdown on hover*/
 .menu ul li a:hover + .submenu, .submenu:hover {
 	display: block;
+	z-index:10;
 }
 
 /*Style 'show menu' label button and hide it by default*/

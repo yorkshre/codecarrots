@@ -80,8 +80,8 @@ class Menu:
             {'title': 'O nas', 'href': '/onas'},
             {'title': 'Materiały', 'href': '/', 'list':
                 [
-                {'title': 'Html', 'href': '/static/doc/index.html'},
-                {'title': 'Pdf', 'href': '/static/doc/doc.pdf'}
+                {'title': 'Warsztaty', 'href': '/static/doc/index.html'},
+                {'title': 'Python', 'href': 'https://docs.python.org/3/'}
                 ]
             },
             {'title': 'Kontakt', 'href': '/kontakt'},
