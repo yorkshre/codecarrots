@@ -8,6 +8,6 @@ urlpatterns = [
     url(r'^onas/(?P<pk>[0-9]+)/$', blog.views.aboutus.detail),
     url(r'^onas/ajax/(?P<pk>[0-9]+)/$', blog.views.aboutus.ajax),
     url(r'^onas$', blog.views.aboutus.list),
-
+    url(r'^pliki$', blog.views.files.list),
     url(r'^kontakt$', blog.views.contact.main)
  ]

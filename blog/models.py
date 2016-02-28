@@ -81,10 +81,24 @@ class Menu:
             {'title': 'Materiały', 'href': '/', 'list':
                 [
                 {'title': 'Warsztaty', 'href': '/static/doc/index.html'},
-                {'title': 'Python', 'href': 'https://docs.python.org/3/'}
+                {'title': 'Python', 'href': 'https://docs.python.org/3/'},
+                {'title': 'Pliki', 'href': '/pliki'}
                 ]
             },
             {'title': 'Kontakt', 'href': '/kontakt'},
+        ]
+
+class Links:
+    @staticmethod
+    def all():
+        return [
+            {'name': 'jap_dict.txt', 'url': 'https://dl.dropboxusercontent.com/s/mlv6i2tqk7dckdr/jap_dict.txt?dl=1'},
+            {'name': 'encoded_msg.txt', 'url': 'https://dl.dropboxusercontent.com/s/34nctd0z6je733f/encoded_msg.txt?dl=1'},
+            {'name': 'hangman.py', 'url': 'https://dl.dropboxusercontent.com/s/a4u6m39krie4cc5/hangman.py?dl=1'},
+            {'name': 'message.py', 'url': 'https://dl.dropboxusercontent.com/s/y7gfweav7vchnn5/message.py?dl=1'},
+            {'name': 'japanise_agata.py', 'url': 'https://dl.dropboxusercontent.com/s/xsoiq7l3tdqoxwb/japanise_agata.py?dl=1'},
+            {'name': 'palindrom_agata.py', 'url': 'https://dl.dropboxusercontent.com/s/hxcqn2tempnkems/palindrom_agata.py?dl=1'},
+            {'name': 'number_game_agata.py', 'url': 'https://dl.dropboxusercontent.com/s/ebncuafrtb3i9wh/number_game_agata.py?dl=1'}
         ]
 
 
