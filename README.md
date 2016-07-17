@@ -38,7 +38,7 @@ heroku create
 Wynikiem działnia będzie dodanie listy repozytoriów repozytorium heroku.
 ### Ustawiamy niezbędne zmienne
 ```bash
-heroku config:set DISABLE_COLLECTSTATIC=1
+heroku config:set DJANGO_STATIC_HOST="codecarrots-koszalin.herokuapp.com"
 heroku config:set DROPBOX_OAUTH2_TOKEN="**TU TWOJ TOKEN APLIKACJI DROPBOX**"
 heroku config:set NOREPLY_ACCOUNT="twoj_adres@email.com"
 heroku config:set NOREPLY_PASSWORD="magiczneHaslo"
