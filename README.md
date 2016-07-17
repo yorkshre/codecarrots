@@ -9,7 +9,6 @@ virtualenv -p /usr/bin/python3.4 venv
 ### Musimy posiadać konto w serwisie dropbox. Tworzymy nową aplikację https://www.dropbox.com/developers/apps/create, najlepiej z dedykowanym folderem. Klikamy "Generate acccess token". Przyjmując, że nasz wirtualenv jest w folderze .venv konfigurujemy skyrpt .venv/bin/activate,
 dodajemy wpis:
 ```bash
-DROPBOX_OAUTH2_TOKEN="**TU TWOJ TOKEN APLIKACJI DROPBOX**"
 echo '
 export DROPBOX_OAUTH2_TOKEN="**TU TWOJ TOKEN APLIKACJI DROPBOX**"
 export NOREPLY_ACCOUNT="twoj_adres@email.com"
@@ -17,11 +16,15 @@ export NOREPLY_PASSWORD="magiczneHaslo"
 export NOREPLY_TARGET=""
 export RECAPTCHA_SITE_KEY=""
 export RECAPTCHA_SECRET_KEY=""
-' > ~/.bashrc
+' >> ~/.bashrc
 ```
 ### Tworzymy pustą bazę sqllite i migrujemy modele.
 ```bash
 python manage.py migrate
+```
+### Na wszelki wypadek zbieramy wszystkie elementy statyczne
+```bash
+python manage.py collectstatic
 ```
 ### Uruchamiamy aplikację.
 ```bash
@@ -55,6 +58,10 @@ heroku ps:scale web=1
 ### Uruchamiamy migracje
 ```bash
 heroku run python manage.py migrate
+```
+### A następnie kolekcjonujemy wszystkie elementy statyczne w jedno
+```bash
+heroku run python manage.py collectstatic
 ```
 ### Otwieramy strone apki
 ```bash
