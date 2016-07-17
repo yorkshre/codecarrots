@@ -55,11 +55,15 @@ git push heroku master
 ```bash
 heroku ps:scale web=1
 ```
-5. Otwieramy strone apki
+5. Uruchamiamy migracje
+```bash
+heroku run python manage.py migrate
+```
+6. Otwieramy strone apki
 ```bash
 heroku open
 ```
-6. W przypadku błędów sprawdzamy logi.
+7. W przypadku błędów sprawdzamy logi.
 ```bash
 heroku logs --tail
 ```
