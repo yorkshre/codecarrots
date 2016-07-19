@@ -140,9 +140,9 @@ You can update single or multiple elements of lists by giving the slice on the l
 
 
     >>> list = ['physics', 'chemistry', 1997, 2000]
-    >>> print list[2]
+    >>> print(list[2])
     >>> list[2] = 2001
-    >>> print list[2]
+    >>> print(list[2])
 
     >>> list_2 = ['a', 'b']
     >>> list_2.append('c')
@@ -155,9 +155,9 @@ Delete List Elements
 To remove a list element, you can use either the del statement if you know exactly which element(s) you are deleting or the remove() method if you do not know. For example −
 
     >>> list1 = ['physics', 'chemistry', 1997, 2000]
-    >>> print list1
+    >>> print(list1)
     >>> del list1[2]
-    >>> print list1
+    >>> print(list1)
 
 
 Dictionary
@@ -234,7 +234,7 @@ In Python You can create nested objects like:
         'animals': {
             'python': {
                 'food': [
-                    'mouses',
+                    'mice',
                     'rabbits',
                     'rats',
                 ]
@@ -269,18 +269,27 @@ Exercises
 ===================
 
 
-1. Design and create a data storage that will handle all of You group members
+1. Data storage
+
+Design and create a data storage that will handle all of You group members
 data like: name, age, occupation, favourite color of mouse pointer, etc.
+
 Compare the solutions across the group and ask the Mentor which one is the best and why.
+
 Create the best solution.
 
-2. Remember how You can format a string using ''.format() ? Ask mentor about
-magic ** dictionary unpack and write a scrip that will print out a sentence for each team member (in "" should be data from the 1. exercise):
-a) "name" is "age" old and is working as "occupation". "name" prefers "fav_mouse_color_point" mouse pointer.
-b - harder one) "name" is "age" old and is working as "occupation". "He/She - based on gender" prefers "x" operating system.
-X - MacOS = Black, Linux = White, other = Windows.
+2. Sentences
 
-3. On dicts you can use few methods. Try out:
-.get(key), .has_key(key), .items(), .keys(), .update(dict_2), .values()
-a) Find out the difference between a_dict[key] and a_dict.get(key)
-b) What a_dict.get(key, 'Python') means, how can it be useful ?
+Remember how You can format a string using ''.format() ? Ask mentor about magic ** dictionary unpack and write a scrip that will print out a sentence for each team member (in "" should be data from the 1. exercise):
+
+Option a) "name" is "age" old and is working as "occupation". "name" prefers "fav_mouse_color_point" mouse pointer.
+
+Option b) (harder) "name" is "age" old and is working as "occupation". "He/She - based on gender" prefers "x" operating system:  MacOS = Black, Linux = White, other = Windows.
+
+3. Dictionary methods
+
+Try out: .get(key), .has_key(key), .items(), .keys(), .update(dict_2), .values()
+
+Option a) Find out the difference between a_dict[key] and a_dict.get(key)
+
+Option b) What a_dict.get(key, 'Python') means, how can it be useful?

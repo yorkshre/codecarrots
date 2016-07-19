@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en_GB">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
@@ -53,22 +53,22 @@
 <p>Christmas are coming, Christmas presents time and, at least for Christmas trees :) in every shopping center. As an exercise, we will try to draw a tree in the
 console.</p>
 <p>We are going to start from the most basic version of this exercise so that we can later extend it to a more functional version. As an incentive, let’s make a half of the Christmas tree:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="k">print</span><span class="p">(</span><span class="s">&quot;*&quot;</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s">&quot;**&quot;</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s">&quot;***&quot;</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s">&quot;*&quot;</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s">&quot;**&quot;</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s">&quot;***&quot;</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s">&quot;****&quot;</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s">&quot;*&quot;</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s">&quot;**&quot;</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s">&quot;***&quot;</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s">&quot;****&quot;</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s">&quot;*****&quot;</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s">&quot;******&quot;</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;*&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;**&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;***&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;*&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;**&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;***&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;****&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;*&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;**&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;***&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;****&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;*****&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;******&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="highlight-none"><div class="highlight"><pre>*
+<div class="highlight-none"><div class="highlight"><pre><span></span>*
 **
 ***
 *
@@ -95,19 +95,19 @@ imagine for a moment that we are the Santa Claus and we have to deliver Christma
 one is omitted, will be to check sequentially the list and deliver their gifts to one after another.
 Aside from the physical aspects of the task <a href="#id3"><span class="problematic" id="id4"><span id="id1"></span>[#speed]_</span></a>, the procedure of delivering the gifts could
 look like this:</p>
-<div class="highlight-python"><div class="highlight"><pre>Let the People List contain people who should receive gifts.
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Let</span> <span class="n">the</span> <span class="n">People</span> <span class="n">List</span> <span class="n">contain</span> <span class="n">people</span> <span class="n">who</span> <span class="n">should</span> <span class="n">receive</span> <span class="n">gifts</span><span class="o">.</span>
 
-For each person (known as the Person), which is on the list of people:
-    Provide a gift to the Person
+<span class="n">For</span> <span class="n">each</span> <span class="n">person</span> <span class="p">(</span><span class="n">known</span> <span class="k">as</span> <span class="n">the</span> <span class="n">Person</span><span class="p">),</span> <span class="n">which</span> <span class="ow">is</span> <span class="n">on</span> <span class="n">the</span> <span class="nb">list</span> <span class="n">of</span> <span class="n">people</span><span class="p">:</span>
+    <span class="n">Provide</span> <span class="n">a</span> <span class="n">gift</span> <span class="n">to</span> <span class="n">the</span> <span class="n">Person</span>
 </pre></div>
 </div>
 <p>Formatting of text above is not accidental. This is actually a disguised program in Python:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">gift_list</span> <span class="o">=</span> <span class="n">people_who_deserve_gifts</span><span class="p">()</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">gift_list</span> <span class="o">=</span> <span class="n">people_who_deserve_gifts</span><span class="p">()</span>
 
 <span class="k">for</span> <span class="n">person</span> <span class="ow">in</span> <span class="n">gift_list</span><span class="p">:</span>
     <span class="n">deliver_gift</span><span class="p">(</span><span class="n">person</span><span class="p">)</span>
-    <span class="k">print</span><span class="p">(</span><span class="s">&quot;Gift delivered to:&quot;</span><span class="p">,</span> <span class="n">person</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s">&quot;All gifts delivered&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Gift delivered to:&quot;</span><span class="p">,</span> <span class="n">person</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;All gifts delivered&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Most of the things should look familiar to you. We are calling here two functions:
@@ -116,17 +116,17 @@ Claus. The result of the first one can be named <cite>gift_list</cite>, so that 
 the same as described above).</p>
 <p>A new element is a loop itself, which consists of:</p>
 <ul class="simple">
-<li>the word <a class="reference external" href="http://docs.python.org/3/reference/compound_stmts.html#for" title="(in Python v3.5)"><code class="xref std std-keyword docutils literal"><span class="pre">for</span></code></a>,</li>
+<li>the word <a class="reference external" href="https://docs.python.org/3/reference/compound_stmts.html#for" title="(in Python v3.5)"><code class="xref std std-keyword docutils literal"><span class="pre">for</span></code></a>,</li>
 <li>names we want to give to the next elements,</li>
-<li>the word <a class="reference external" href="http://docs.python.org/3/reference/expressions.html#in" title="(in Python v3.5)"><code class="xref std std-keyword docutils literal"><span class="pre">in</span></code></a>,</li>
+<li>the word <a class="reference external" href="https://docs.python.org/3/reference/expressions.html#in" title="(in Python v3.5)"><code class="xref std std-keyword docutils literal"><span class="pre">in</span></code></a>,</li>
 <li>the value of a list or the name that refers to it.</li>
-<li>the content indented of one level (the same way as in the case of <a class="reference external" href="http://docs.python.org/3/reference/compound_stmts.html#if" title="(in Python v3.5)"><code class="xref std std-keyword docutils literal"><span class="pre">if</span></code></a>).</li>
+<li>the content indented of one level (the same way as in the case of <a class="reference external" href="https://docs.python.org/3/reference/compound_stmts.html#if" title="(in Python v3.5)"><code class="xref std std-keyword docutils literal"><span class="pre">if</span></code></a>).</li>
 </ul>
 <p>The <code class="xref py py-func docutils literal"><span class="pre">range()</span></code> function does not directly create a list, but it returns a generator. Generators
 generate the elements of a sequence one at a time, thereby avoiding to store the full sequence in memory.
 In order to obtain a list of the sequence, we use the function <code class="xref py py-func docutils literal"><span class="pre">list()</span></code>. If we skip <code class="xref py py-func docutils literal"><span class="pre">list()</span></code> call,
 the result will look like this:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
 <span class="go">range(1, 4)</span>
 </pre></div>
 </div>
@@ -134,9 +134,9 @@ the result will look like this:</p>
 given number. The other forms allow you to specify the start of the range and a step. The created
 sequence never includes the end of the specified range.</p>
 <p>Then let’s print a larger Christmas tree:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">lst</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">lst</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">lst</span><span class="p">:</span>
-<span class="gp">... </span>    <span class="k">print</span><span class="p">(</span><span class="s">&quot;*&quot;</span><span class="o">*</span><span class="n">i</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;*&quot;</span><span class="o">*</span><span class="n">i</span><span class="p">)</span>
 <span class="go">*</span>
 <span class="go">**</span>
 <span class="go">***</span>
@@ -150,18 +150,18 @@ sequence never includes the end of the specified range.</p>
 </pre></div>
 </div>
 <p><code class="xref py py-func docutils literal"><span class="pre">range()</span></code> has saved a lot of our time. We can save even more if we omit naming the list:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">):</span>
-<span class="gp">... </span>    <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="o">*</span><span class="s">&quot;#&quot;</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="o">*</span><span class="s2">&quot;#&quot;</span><span class="p">)</span>
 <span class="go">#</span>
 <span class="go">##</span>
 <span class="go">###</span>
 <span class="go">####</span>
 </pre></div>
 </div>
-<p>When you use the keyword <a class="reference external" href="http://docs.python.org/3/reference/compound_stmts.html#for" title="(in Python v3.5)"><code class="xref std std-keyword docutils literal"><span class="pre">for</span></code></a>, we do not have to use the
-<code class="xref py py-func docutils literal"><span class="pre">list()</span></code>. <a class="reference external" href="http://docs.python.org/3/reference/compound_stmts.html#for" title="(in Python v3.5)"><code class="xref std std-keyword docutils literal"><span class="pre">for</span></code></a> can handle the generator given by <cite>range</cite>. Hence, we can simplify our program even more:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">):</span>
-<span class="gp">... </span>    <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="o">*</span><span class="s">&quot;#&quot;</span><span class="p">)</span>
+<p>When you use the keyword <a class="reference external" href="https://docs.python.org/3/reference/compound_stmts.html#for" title="(in Python v3.5)"><code class="xref std std-keyword docutils literal"><span class="pre">for</span></code></a>, we do not have to use the
+<code class="xref py py-func docutils literal"><span class="pre">list()</span></code>. <a class="reference external" href="https://docs.python.org/3/reference/compound_stmts.html#for" title="(in Python v3.5)"><code class="xref std std-keyword docutils literal"><span class="pre">for</span></code></a> can handle the generator given by <cite>range</cite>. Hence, we can simplify our program even more:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="o">*</span><span class="s2">&quot;#&quot;</span><span class="p">)</span>
 <span class="go">#</span>
 <span class="go">##</span>
 <span class="go">###</span>
@@ -170,9 +170,9 @@ sequence never includes the end of the specified range.</p>
 </div>
 <p>Nothing prevents us to put one loop inside another loop, so let&#8217;s do it! Just remember to use appropriate
 indentations and use different names e.g. <code class="docutils literal"><span class="pre">i</span></code> and <code class="docutils literal"><span class="pre">j</span></code> (or more associated with the list content):</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">):</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">):</span>
 <span class="gp">... </span>   <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="mi">14</span><span class="p">):</span>
-<span class="gp">... </span>       <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span>
+<span class="gp">... </span>       <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span>
 <span class="go">1 11</span>
 <span class="go">1 12</span>
 <span class="go">1 13</span>
@@ -185,9 +185,9 @@ indentations and use different names e.g. <code class="docutils literal"><span c
 outer loop that iterates from 1 to 2. As you can see, items from inner loop are printed twice, for each iteration
 of outer loop.</p>
 <p>Using this technique, we can repeat our piece of the Christmas tree:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span> <span class="c"># repeats 3 times</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span> <span class="c1"># repeats 3 times</span>
 <span class="gp">... </span>   <span class="k">for</span> <span class="n">size</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">):</span>
-<span class="gp">... </span>       <span class="k">print</span><span class="p">(</span><span class="n">size</span><span class="o">*</span><span class="s">&quot;*&quot;</span><span class="p">)</span>
+<span class="gp">... </span>       <span class="nb">print</span><span class="p">(</span><span class="n">size</span><span class="o">*</span><span class="s2">&quot;*&quot;</span><span class="p">)</span>
 <span class="go">*</span>
 <span class="go">**</span>
 <span class="go">***</span>
@@ -211,9 +211,9 @@ chapter.</p>
 Sometimes we must solve a problem on our own. If it occurs often in our program, it would be nice to
 have a function that solves it for us.</p>
 <p>We can do it like this in Python:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">print_triangle</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">print_triangle</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
 <span class="gp">... </span>    <span class="k">for</span> <span class="n">size</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
-<span class="gp">... </span>        <span class="k">print</span><span class="p">(</span><span class="n">size</span><span class="o">*</span><span class="s">&quot;*&quot;</span><span class="p">)</span>
+<span class="gp">... </span>        <span class="nb">print</span><span class="p">(</span><span class="n">size</span><span class="o">*</span><span class="s2">&quot;*&quot;</span><span class="p">)</span>
 <span class="gp">...</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">print_triangle</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 <span class="go">*</span>
@@ -228,24 +228,24 @@ have a function that solves it for us.</p>
 </pre></div>
 </div>
 <p>Let&#8217;s have a closer look at the function <code class="xref py py-func docutils literal"><span class="pre">print_triangle()</span></code>:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">print_triangle</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">print_triangle</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
     <span class="k">for</span> <span class="n">size</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
-        <span class="k">print</span><span class="p">(</span><span class="n">size</span><span class="o">*</span><span class="s">&quot;*&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">size</span><span class="o">*</span><span class="s2">&quot;*&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>The definition of a function always starts with the word <a class="reference external" href="http://docs.python.org/3/reference/compound_stmts.html#def" title="(in Python v3.5)"><code class="xref std std-keyword docutils literal"><span class="pre">def</span></code></a>. Next, we give the name to our
+<p>The definition of a function always starts with the word <a class="reference external" href="https://docs.python.org/3/reference/compound_stmts.html#def" title="(in Python v3.5)"><code class="xref std std-keyword docutils literal"><span class="pre">def</span></code></a>. Next, we give the name to our
 function. Between the parenthesizes, we indicate what names should be given to its arguments when the function is
 called. In the following lines we provide instructions to be executed when we use the function.</p>
 <p>As shown in the example, the instructions in the function may include names that we have given as the
 names of the arguments. The principle of operation is as follows - if you create a function with
 three arguments:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
-<span class="gp">... </span>    <span class="k">print</span><span class="p">(</span><span class="s">&quot;FOO&quot;</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;FOO&quot;</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>When you call this new function, you need to
 specify a value for each argument. This just like all the functions we called before:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">foo</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s">&quot;Ala&quot;</span><span class="p">,</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span> <span class="o">+</span> <span class="mi">4</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">foo</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Ala&quot;</span><span class="p">,</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span> <span class="o">+</span> <span class="mi">4</span><span class="p">)</span>
 <span class="go">FOO 1 Ala 9</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="mi">42</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">foo</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span>
@@ -254,9 +254,9 @@ specify a value for each argument. This just like all the functions we called be
 </div>
 <p>Note that the argument name is just a label. If we change the value attached to a label for another one, the other labels will not
 change – the same happens with the arguments:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">plus_five</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">plus_five</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
 <span class="gp">... </span>    <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">5</span>
-<span class="gp">... </span>    <span class="k">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="mi">43</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">plus_five</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 <span class="go">48</span>
@@ -271,7 +271,7 @@ argument value to to each of the argument names it just created.</p>
 and forgotten after the call. That is, if you try now to access
 the argument name <code class="docutils literal"><span class="pre">n</span></code> we defined in our <code class="xref py py-func docutils literal"><span class="pre">plus_five()</span></code> function outside of the function&#8217;s code,
 Python tells you it is not defined:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">n</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">n</span>
 <span class="gt">Traceback (most recent call last):</span>
   File <span class="nb">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">1</span>, in <span class="n">&lt;module&gt;</span>
 <span class="gr">NameError</span>: <span class="n">name &#39;n&#39; is not defined</span>
@@ -283,25 +283,25 @@ Python tells you it is not defined:</p>
 <p>The functions which we have previously used had one important property that is missing in the
 functions created by ourselves - they gave back the value they computed
 instead of printing it immediately. To
-achieve the same effect, you need to use the instruction <a class="reference external" href="http://docs.python.org/3/reference/simple_stmts.html#return" title="(in Python v3.5)"><code class="xref std std-keyword docutils literal"><span class="pre">return</span></code></a>. This is a special
+achieve the same effect, you need to use the instruction <a class="reference external" href="https://docs.python.org/3/reference/simple_stmts.html#return" title="(in Python v3.5)"><code class="xref std std-keyword docutils literal"><span class="pre">return</span></code></a>. This is a special
 instruction that can be found only in functions.</p>
 <p>We can now improve our BMI calculator by adding a function to compute BMI:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">calc_bmi</span><span class="p">(</span><span class="n">height</span><span class="p">,</span> <span class="n">weight</span><span class="p">):</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">calc_bmi</span><span class="p">(</span><span class="n">height</span><span class="p">,</span> <span class="n">weight</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">weight</span> <span class="o">/</span> <span class="n">height</span> <span class="o">**</span> <span class="mi">2</span>
 </pre></div>
 </div>
 <p>Finally, as a last example on functions, here is a solution to the problem from the end of the previous chapter:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="c"># xmas.py</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># xmas.py</span>
 
 <span class="k">def</span> <span class="nf">print_triangle</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
     <span class="k">for</span> <span class="n">size</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
-        <span class="k">print</span><span class="p">(</span><span class="n">size</span> <span class="o">*</span> <span class="s">&quot;*&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">size</span> <span class="o">*</span> <span class="s2">&quot;*&quot;</span><span class="p">)</span>
 
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">):</span>
     <span class="n">print_triangle</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="highlight-none"><div class="highlight"><pre>*
+<div class="highlight-none"><div class="highlight"><pre><span></span>*
 **
 *
 **
@@ -319,11 +319,11 @@ instruction that can be found only in functions.</p>
 <p>The previous chapter was fairly theoretical, so now we&#8217;ll use some of this new knowledge
 to complete our program to display a Christmas tree.</p>
 <p>For the record:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="c"># xmas.py</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># xmas.py</span>
 
 <span class="k">def</span> <span class="nf">print_triangle</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
     <span class="k">for</span> <span class="n">size</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
-        <span class="k">print</span><span class="p">(</span><span class="n">size</span> <span class="o">*</span> <span class="s">&quot;*&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">size</span> <span class="o">*</span> <span class="s2">&quot;*&quot;</span><span class="p">)</span>
 
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">):</span>
     <span class="n">print_triangle</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
@@ -333,49 +333,49 @@ to complete our program to display a Christmas tree.</p>
 tree, not just half of it?</p>
 <p>First of all, let’s determine how we want our result to look like for the exact value of argument  <code class="docutils literal"><span class="pre">n</span></code>.
 It seems to make sense that, <code class="docutils literal"><span class="pre">n</span></code> would be the width. Then for <code class="docutils literal"><span class="pre">n</span> <span class="pre">=</span> <span class="pre">5</span></code>, we would expect:</p>
-<div class="highlight-python"><div class="highlight"><pre>  *
- ***
-*****
+<div class="highlight-default"><div class="highlight"><pre><span></span>  <span class="o">*</span>
+ <span class="o">***</span>
+<span class="o">*****</span>
 </pre></div>
 </div>
 <p>It is worth noting that each line consists of two asterix more than the previous one. So we can use
 the third argument <code class="xref py py-func docutils literal"><span class="pre">range()</span></code>:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">print_segment</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">print_segment</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
     <span class="k">for</span> <span class="n">size</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">):</span>
-        <span class="k">print</span><span class="p">(</span><span class="n">size</span> <span class="o">*</span> <span class="s">&quot;*&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">size</span> <span class="o">*</span> <span class="s2">&quot;*&quot;</span><span class="p">)</span>
 
 <span class="n">print_segment</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="highlight-none"><div class="highlight"><pre>*
+<div class="highlight-none"><div class="highlight"><pre><span></span>*
 ***
 *****
 </pre></div>
 </div>
 <p>It is not exactly what we have wanted, as it should be aligned in the centre. The method/function
 <code class="xref py py-func docutils literal"><span class="pre">unicode.center()</span></code> mentioned in the previous section, helps us:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">print_segment</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">print_segment</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
     <span class="k">for</span> <span class="n">size</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">):</span>
-        <span class="k">print</span><span class="p">((</span><span class="n">size</span> <span class="o">*</span> <span class="s">&quot;*&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">center</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
+        <span class="nb">print</span><span class="p">((</span><span class="n">size</span> <span class="o">*</span> <span class="s2">&quot;*&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">center</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
 
 <span class="n">print_segment</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="highlight-none"><div class="highlight"><pre>  *
+<div class="highlight-none"><div class="highlight"><pre><span></span>  *
  ***
 *****
 </pre></div>
 </div>
 <p>However, a new problem appears:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">print_segment</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">print_segment</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
     <span class="k">for</span> <span class="n">size</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">):</span>
-        <span class="k">print</span><span class="p">((</span><span class="n">size</span> <span class="o">*</span> <span class="s">&quot;*&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">center</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
+        <span class="nb">print</span><span class="p">((</span><span class="n">size</span> <span class="o">*</span> <span class="s2">&quot;*&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">center</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
 
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">2</span><span class="p">):</span>
     <span class="n">print_segment</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="highlight-none"><div class="highlight"><pre> *
+<div class="highlight-none"><div class="highlight"><pre><span></span> *
 ***
   *
  ***
@@ -389,20 +389,20 @@ the third argument <code class="xref py py-func docutils literal"><span class="p
 <p>If we know in advance, what size the widest segment is, we can add an additional argument to
 <code class="xref py py-func docutils literal"><span class="pre">print_segment()</span></code>,  to align to the width. Combining all of the knowledge we have
 acquired up to the moment:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">print_segment</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">total_width</span><span class="p">):</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">print_segment</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">total_width</span><span class="p">):</span>
     <span class="k">for</span> <span class="n">size</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">):</span>
-        <span class="k">print</span><span class="p">((</span><span class="n">size</span> <span class="o">*</span> <span class="s">&quot;*&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">center</span><span class="p">(</span><span class="n">total_width</span><span class="p">))</span>
+        <span class="nb">print</span><span class="p">((</span><span class="n">size</span> <span class="o">*</span> <span class="s2">&quot;*&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">center</span><span class="p">(</span><span class="n">total_width</span><span class="p">))</span>
 
 <span class="k">def</span> <span class="nf">print_tree</span><span class="p">(</span><span class="n">size</span><span class="p">):</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">size</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">):</span>
         <span class="n">print_segment</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">size</span><span class="p">)</span>
 
-<span class="k">print</span><span class="p">(</span><span class="s">&quot;Choose size of the Christmas tree:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Choose size of the Christmas tree:&quot;</span><span class="p">)</span>
 <span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
 <span class="n">print_tree</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="highlight-none"><div class="highlight"><pre>Choose size of the Christmas tree:
+<div class="highlight-none"><div class="highlight"><pre><span></span>Choose size of the Christmas tree:
 7
    *
   ***
@@ -427,14 +427,14 @@ acquired up to the moment:</p>
   <a href="index.html" class="logo"><img class="logo" src="_static/logo.png" style="width: 200px; height: 169px; margin: -10px 0 10px 0"></a>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
-
+<li class="toctree-l1"><a class="reference internal" href="introduction_to_algorithm.html">Introduction to Algorithm</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python_quickstart.html">Introduction to Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python_logic.html">Python Logic</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python_strings.html">Strings formatting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python_strings.html#methods">Methods</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python_objects.html">Objects and classes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python_objects.html#inheritance">Inheritance</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">The for loop: Christmas Tree</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">The for loop: Christmas Tree</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#the-for-loop">The <code class="docutils literal"><span class="pre">for</span></code> loop</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#defining-a-function">Defining a function</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#returning-values">Returning values</a></li>
@@ -446,11 +446,9 @@ acquired up to the moment:</p>
 <li class="toctree-l1"><a class="reference internal" href="python_data.html">Python data storage types</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python_loops.html">while loop</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python_exercises.html">Python Summary: exercises</a></li>
-<li class="toctree-l1"><a class="reference internal" href="flask_quickstart.html">Flask: Quick Start</a></li>
-<li class="toctree-l1"><a class="reference internal" href="flask_templates.html">Flask: Templates</a></li>
-<li class="toctree-l1"><a class="reference internal" href="flask_forms.html">Flask: Forms</a></li>
-<li class="toctree-l1"><a class="reference internal" href="flask_exercises.html">Flask: Exercises</a></li>
-<li class="toctree-l1"><a class="reference internal" href="flask_sqlalchemy.html">Flask: SQL Alchemy - ORM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="django_in_action.html">Introduction to Django</a></li>
+<li class="toctree-l1"><a class="reference internal" href="django_models.html">Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="django_views.html">Rendering websites</a></li>
 <li class="toctree-l1"><a class="reference internal" href="code_of_conduct.html">Geek Girls Carrots Code of Conduct</a></li>
 </ul>
 

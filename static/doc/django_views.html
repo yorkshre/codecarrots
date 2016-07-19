@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en_GB">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
@@ -22,7 +22,9 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="Django Carrots" href="index.html" /> 
+    <link rel="top" title="Django Carrots" href="index.html" />
+    <link rel="next" title="Geek Girls Carrots Code of Conduct" href="code_of_conduct.html" />
+    <link rel="prev" title="Models" href="django_models.html" /> 
   </head>
   <body role="document">
   
@@ -31,6 +33,12 @@
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="code_of_conduct.html" title="Geek Girls Carrots Code of Conduct"
+             accesskey="N">next</a></li>
+        <li class="right" >
+          <a href="django_models.html" title="Models"
+             accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">Django Carrots</a> &raquo;</li> 
       </ul>
     </div>  
@@ -48,17 +56,17 @@ that!</p>
 will want to see a list of all the questionnaires on the site, let users vote and display the
 aggregated results of the questionnaire.</p>
 <p>Let&#8217;s open the file <code class="docutils literal"><span class="pre">urls.py</span></code> again and add four new entries. Eventually the file should look like this:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">django.conf.urls</span> <span class="kn">import</span> <span class="n">patterns</span><span class="p">,</span> <span class="n">include</span><span class="p">,</span> <span class="n">url</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">django.conf.urls</span> <span class="k">import</span> <span class="n">patterns</span><span class="p">,</span> <span class="n">include</span><span class="p">,</span> <span class="n">url</span>
 
-<span class="kn">from</span> <span class="nn">django.contrib</span> <span class="kn">import</span> <span class="n">admin</span>
+<span class="kn">from</span> <span class="nn">django.contrib</span> <span class="k">import</span> <span class="n">admin</span>
 <span class="n">admin</span><span class="o">.</span><span class="n">autodiscover</span><span class="p">()</span>
 
-<span class="n">urlpatterns</span> <span class="o">=</span> <span class="n">patterns</span><span class="p">(</span><span class="s">&#39;&#39;</span><span class="p">,</span>
-    <span class="n">url</span><span class="p">(</span><span class="s">r&#39;^polls/$&#39;</span><span class="p">,</span> <span class="s">&#39;polls.views.index&#39;</span><span class="p">),</span>
-    <span class="n">url</span><span class="p">(</span><span class="s">r&#39;^polls/(?P&lt;poll_id&gt;\d+)/$&#39;</span><span class="p">,</span> <span class="s">&#39;polls.views.detail&#39;</span><span class="p">),</span>
-    <span class="n">url</span><span class="p">(</span><span class="s">r&#39;^polls/(?P&lt;poll_id&gt;\d+)/results/$&#39;</span><span class="p">,</span> <span class="s">&#39;polls.views.results&#39;</span><span class="p">),</span>
-    <span class="n">url</span><span class="p">(</span><span class="s">r&#39;^polls/(?P&lt;poll_id&gt;\d+)/vote/$&#39;</span><span class="p">,</span> <span class="s">&#39;polls.views.vote&#39;</span><span class="p">),</span>
-    <span class="n">url</span><span class="p">(</span><span class="s">r&#39;^admin/&#39;</span><span class="p">,</span> <span class="n">include</span><span class="p">(</span><span class="n">admin</span><span class="o">.</span><span class="n">site</span><span class="o">.</span><span class="n">urls</span><span class="p">)),</span>
+<span class="n">urlpatterns</span> <span class="o">=</span> <span class="n">patterns</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span>
+    <span class="n">url</span><span class="p">(</span><span class="s1">r&#39;^polls/$&#39;</span><span class="p">,</span> <span class="s1">&#39;polls.views.index&#39;</span><span class="p">),</span>
+    <span class="n">url</span><span class="p">(</span><span class="s1">r&#39;^polls/(?P&lt;poll_id&gt;\d+)/$&#39;</span><span class="p">,</span> <span class="s1">&#39;polls.views.detail&#39;</span><span class="p">),</span>
+    <span class="n">url</span><span class="p">(</span><span class="s1">r&#39;^polls/(?P&lt;poll_id&gt;\d+)/results/$&#39;</span><span class="p">,</span> <span class="s1">&#39;polls.views.results&#39;</span><span class="p">),</span>
+    <span class="n">url</span><span class="p">(</span><span class="s1">r&#39;^polls/(?P&lt;poll_id&gt;\d+)/vote/$&#39;</span><span class="p">,</span> <span class="s1">&#39;polls.views.vote&#39;</span><span class="p">),</span>
+    <span class="n">url</span><span class="p">(</span><span class="s1">r&#39;^admin/&#39;</span><span class="p">,</span> <span class="n">include</span><span class="p">(</span><span class="n">admin</span><span class="o">.</span><span class="n">site</span><span class="o">.</span><span class="n">urls</span><span class="p">)),</span>
 <span class="p">)</span>
 </pre></div>
 </div>
@@ -66,7 +74,7 @@ aggregated results of the questionnaire.</p>
 concise representation of text patterns.</p>
 <p>When a user tries to enter a specific address on our website, such as: <a class="reference external" href="http://localhost:8000/polls/1/">http://localhost:8000/polls/1/</a>,
 Django selects the third part of the URL after the slash (in this case, <code class="docutils literal"><span class="pre">polls/1/</span></code>) and tries to turn it into a regular expression to match the <code class="docutils literal"><span class="pre">urlpatterns</span></code>. Let&#8217;s look at an example of such expressions:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="s">r&#39;^polls/(?P&lt;poll_id&gt;\d+)/vote/$&#39;</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="s1">r&#39;^polls/(?P&lt;poll_id&gt;\d+)/vote/$&#39;</span>
 </pre></div>
 </div>
 <p>This is a normal string (except for the initial <code class="docutils literal"><span class="pre">r</span></code>, which is used here only for
@@ -104,27 +112,27 @@ groups will be transferred to the view as arguments of the same name.</p>
 <h2>First view<a class="headerlink" href="#first-view" title="Permalink to this headline">¶</a></h2>
 <p>Ok, let&#8217;s see how it works in practice. Unfortunately, entering the address
 <a class="reference external" href="http://localhost:8000/polls/1/">http://localhost:8000/polls/1/</a> does not end well:</p>
-<div class="highlight-python"><div class="highlight"><pre>ViewDoesNotExist at /polls/1/
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ViewDoesNotExist</span> <span class="n">at</span> <span class="o">/</span><span class="n">polls</span><span class="o">/</span><span class="mi">1</span><span class="o">/</span>
 
-Could not import polls.views.detail. View does not exist in module polls.views.
+<span class="n">Could</span> <span class="ow">not</span> <span class="kn">import</span> <span class="nn">polls.views.detail.</span> <span class="n">View</span> <span class="n">does</span> <span class="ow">not</span> <span class="n">exist</span> <span class="ow">in</span> <span class="n">module</span> <span class="n">polls</span><span class="o">.</span><span class="n">views</span><span class="o">.</span>
 </pre></div>
 </div>
 <p>This is because we have not defined the view yet (Django tells us that it was looking for <code class="docutils literal"><span class="pre">polls.views.</span>
 <span class="pre">detail</span></code>, unfortunately without any success).</p>
 <p>Let’s open the file <code class="docutils literal"><span class="pre">polls/views.py</span></code> and add a few new features:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">django.http</span> <span class="kn">import</span> <span class="n">HttpResponse</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">django.http</span> <span class="k">import</span> <span class="n">HttpResponse</span>
 
 <span class="k">def</span> <span class="nf">index</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">HttpResponse</span><span class="p">(</span><span class="s">&quot;Hello, world. You&#39;re at the poll index.&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">HttpResponse</span><span class="p">(</span><span class="s2">&quot;Hello, world. You&#39;re at the poll index.&quot;</span><span class="p">)</span>
 
 <span class="k">def</span> <span class="nf">detail</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">poll_id</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">HttpResponse</span><span class="p">(</span><span class="s">&quot;You&#39;re looking at poll </span><span class="si">%s</span><span class="s">.&quot;</span> <span class="o">%</span> <span class="n">poll_id</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">HttpResponse</span><span class="p">(</span><span class="s2">&quot;You&#39;re looking at poll </span><span class="si">%s</span><span class="s2">.&quot;</span> <span class="o">%</span> <span class="n">poll_id</span><span class="p">)</span>
 
 <span class="k">def</span> <span class="nf">results</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">poll_id</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">HttpResponse</span><span class="p">(</span><span class="s">&quot;You&#39;re looking at the results of poll </span><span class="si">%s</span><span class="s">.&quot;</span> <span class="o">%</span> <span class="n">poll_id</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">HttpResponse</span><span class="p">(</span><span class="s2">&quot;You&#39;re looking at the results of poll </span><span class="si">%s</span><span class="s2">.&quot;</span> <span class="o">%</span> <span class="n">poll_id</span><span class="p">)</span>
 
 <span class="k">def</span> <span class="nf">vote</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">poll_id</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">HttpResponse</span><span class="p">(</span><span class="s">&quot;You&#39;re voting on poll </span><span class="si">%s</span><span class="s">.&quot;</span> <span class="o">%</span> <span class="n">poll_id</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">HttpResponse</span><span class="p">(</span><span class="s2">&quot;You&#39;re voting on poll </span><span class="si">%s</span><span class="s2">.&quot;</span> <span class="o">%</span> <span class="n">poll_id</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>These are the simplest possible views. They do not return regular strings, like the function that
@@ -139,14 +147,14 @@ address <a class="reference external" href="http://localhost:8000/polls/1/">http
 <a class="reference external" href="https://docs.djangoproject.com/en/1.4/ref/request-response/#django.http.HttpResponse">HttpResponse</a>
 object or a thrown exception. All the rest is under our control. For example, we can use the functions that we learned in the interactive mode to display all the polls for the user.</p>
 <p>At the beginning of the <code class="docutils literal"><span class="pre">polls/views.py</span></code> file append:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">django.http</span> <span class="kn">import</span> <span class="n">HttpResponse</span>
-<span class="kn">from</span> <span class="nn">polls.models</span> <span class="kn">import</span> <span class="n">Poll</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">django.http</span> <span class="k">import</span> <span class="n">HttpResponse</span>
+<span class="kn">from</span> <span class="nn">polls.models</span> <span class="k">import</span> <span class="n">Poll</span>
 </pre></div>
 </div>
 <p>Expand function <code class="docutils literal"><span class="pre">index</span></code> to look as below:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">index</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
-    <span class="n">latest_poll_list</span> <span class="o">=</span> <span class="n">Poll</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">()</span><span class="o">.</span><span class="n">order_by</span><span class="p">(</span><span class="s">&#39;-pub_date&#39;</span><span class="p">)[:</span><span class="mi">5</span><span class="p">]</span>
-    <span class="n">output</span> <span class="o">=</span> <span class="s">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">p</span><span class="o">.</span><span class="n">question</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">latest_poll_list</span><span class="p">])</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">index</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+    <span class="n">latest_poll_list</span> <span class="o">=</span> <span class="n">Poll</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">()</span><span class="o">.</span><span class="n">order_by</span><span class="p">(</span><span class="s1">&#39;-pub_date&#39;</span><span class="p">)[:</span><span class="mi">5</span><span class="p">]</span>
+    <span class="n">output</span> <span class="o">=</span> <span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">p</span><span class="o">.</span><span class="n">question</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">latest_poll_list</span><span class="p">])</span>
     <span class="k">return</span> <span class="n">HttpResponse</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -159,16 +167,16 @@ returned, but also in what format it should be returned to the site user. One of
 skills of a programmer is the ability to distinguish and divide those two independent things.</p>
 <p>Django programmers thought about it and decided to create a system of templates:</p>
 <p>At the beginning of the <code class="docutils literal"><span class="pre">polls/views.py</span></code> file append:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">django.template</span> <span class="kn">import</span> <span class="n">Context</span><span class="p">,</span> <span class="n">loader</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">django.template</span> <span class="k">import</span> <span class="n">Context</span><span class="p">,</span> <span class="n">loader</span>
 </pre></div>
 </div>
 <p>This will let us use the template system.</p>
 <p>In the same file, expand the function <code class="docutils literal"><span class="pre">index</span></code> into this:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">index</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
-    <span class="n">latest_poll_list</span> <span class="o">=</span> <span class="n">Poll</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">()</span><span class="o">.</span><span class="n">order_by</span><span class="p">(</span><span class="s">&#39;-pub_date&#39;</span><span class="p">)[:</span><span class="mi">5</span><span class="p">]</span>
-    <span class="n">t</span> <span class="o">=</span> <span class="n">loader</span><span class="o">.</span><span class="n">get_template</span><span class="p">(</span><span class="s">&#39;polls/index.html&#39;</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">index</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+    <span class="n">latest_poll_list</span> <span class="o">=</span> <span class="n">Poll</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">()</span><span class="o">.</span><span class="n">order_by</span><span class="p">(</span><span class="s1">&#39;-pub_date&#39;</span><span class="p">)[:</span><span class="mi">5</span><span class="p">]</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="n">loader</span><span class="o">.</span><span class="n">get_template</span><span class="p">(</span><span class="s1">&#39;polls/index.html&#39;</span><span class="p">)</span>
     <span class="n">c</span> <span class="o">=</span> <span class="n">Context</span><span class="p">({</span>
-        <span class="s">&#39;latest_poll_list&#39;</span><span class="p">:</span> <span class="n">latest_poll_list</span><span class="p">,</span>
+        <span class="s1">&#39;latest_poll_list&#39;</span><span class="p">:</span> <span class="n">latest_poll_list</span><span class="p">,</span>
     <span class="p">})</span>
     <span class="k">return</span> <span class="n">HttpResponse</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="n">c</span><span class="p">))</span>
 </pre></div>
@@ -177,12 +185,12 @@ skills of a programmer is the ability to distinguish and divide those two indepe
 to be delivered to the user) are responsible for our template handling.</p>
 <p>The code is a bit longer, but we will see soon that everything is much clearer. First,
 let’s load the page <a class="reference external" href="http://localhost:8000/polls/">http://localhost:8000/polls/</a> to see the result of our work:</p>
-<div class="highlight-python"><div class="highlight"><pre>TemplateDoesNotExist at /polls/
-polls/index.html
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">TemplateDoesNotExist</span> <span class="n">at</span> <span class="o">/</span><span class="n">polls</span><span class="o">/</span>
+<span class="n">polls</span><span class="o">/</span><span class="n">index</span><span class="o">.</span><span class="n">html</span>
 </pre></div>
 </div>
 <p>Oops! Well, we still haven’t added the template. To do this, let&#8217;s create a file <code class="docutils literal"><span class="pre">polls/templates/polls/index.html</span></code> and add to it:</p>
-<div class="highlight-django"><div class="highlight"><pre><span class="cp">{%</span> <span class="k">if</span> <span class="nv">latest_poll_list</span> <span class="cp">%}</span><span class="x"></span>
+<div class="highlight-django"><div class="highlight"><pre><span></span><span class="cp">{%</span> <span class="k">if</span> <span class="nv">latest_poll_list</span> <span class="cp">%}</span><span class="x"></span>
 <span class="x">&lt;ul&gt;</span>
 <span class="x">    </span><span class="cp">{%</span> <span class="k">for</span> <span class="nv">poll</span> <span class="k">in</span> <span class="nv">latest_poll_list</span> <span class="cp">%}</span><span class="x"></span>
 <span class="x">        &lt;li&gt;&lt;a href=&quot;/polls/</span><span class="cp">{{</span> <span class="nv">poll.id</span> <span class="cp">}}</span><span class="x">/&quot;&gt;</span><span class="cp">{{</span> <span class="nv">poll.question</span> <span class="cp">}}</span><span class="x">&lt;/a&gt;&lt;/li&gt;</span>
@@ -211,17 +219,17 @@ The incredible characteristics of the Web is that HTML and CSS codes of every si
 <p>In almost every view, you will eventually need to use a template. Therefore, in Django there is a
 function <code class="docutils literal"><span class="pre">render</span></code> which allows you to do this in a shorter way:</p>
 <p>Please correct the beginning of the file <code class="docutils literal"><span class="pre">polls/views.py</span></code> to look like this:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">django.shortcuts</span> <span class="kn">import</span> <span class="n">render</span>
-<span class="kn">from</span> <span class="nn">polls.models</span> <span class="kn">import</span> <span class="n">Poll</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">django.shortcuts</span> <span class="k">import</span> <span class="n">render</span>
+<span class="kn">from</span> <span class="nn">polls.models</span> <span class="k">import</span> <span class="n">Poll</span>
 </pre></div>
 </div>
 <p>Please correct the <code class="docutils literal"><span class="pre">index</span></code> function to look like this:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">index</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
-    <span class="n">latest_poll_list</span> <span class="o">=</span> <span class="n">Poll</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">()</span><span class="o">.</span><span class="n">order_by</span><span class="p">(</span><span class="s">&#39;-pub_date&#39;</span><span class="p">)[:</span><span class="mi">5</span><span class="p">]</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">index</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+    <span class="n">latest_poll_list</span> <span class="o">=</span> <span class="n">Poll</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">()</span><span class="o">.</span><span class="n">order_by</span><span class="p">(</span><span class="s1">&#39;-pub_date&#39;</span><span class="p">)[:</span><span class="mi">5</span><span class="p">]</span>
     <span class="k">return</span> <span class="n">render</span><span class="p">(</span>
         <span class="n">request</span><span class="p">,</span>
-        <span class="s">&#39;polls/index.html&#39;</span><span class="p">,</span>
-        <span class="p">{</span><span class="s">&#39;latest_poll_list&#39;</span><span class="p">:</span> <span class="n">latest_poll_list</span><span class="p">})</span>
+        <span class="s1">&#39;polls/index.html&#39;</span><span class="p">,</span>
+        <span class="p">{</span><span class="s1">&#39;latest_poll_list&#39;</span><span class="p">:</span> <span class="n">latest_poll_list</span><span class="p">})</span>
 </pre></div>
 </div>
 </div>
@@ -230,7 +238,7 @@ function <code class="docutils literal"><span class="pre">render</span></code> w
 <p>Now let’s focus on the view of the poll details – a site which displays questions from a defined
 questionnaire.</p>
 <p>At the beginning of the file <code class="docutils literal"><span class="pre">polls/views.py</span></code>, append:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">django.http</span> <span class="kn">import</span> <span class="n">Http404</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">django.http</span> <span class="k">import</span> <span class="n">Http404</span>
 </pre></div>
 </div>
 <p><code class="docutils literal"><span class="pre">Http404</span></code> is an exception shared by Django. We can use this exception in case our application can’t
@@ -241,16 +249,16 @@ find the poll desired by the user (by writing <code class="docutils literal"><sp
 <p class="last">You can change the page displayed by Django in case of the error 404 (the page does not exist) and 500 (unexpected server error). To do this, you need to create templates <code class="docutils literal"><span class="pre">404.html</span></code> and <code class="docutils literal"><span class="pre">500.html</span></code>. Before checking if it works, change <code class="docutils literal"><span class="pre">DEBUG</span></code> in the <code class="docutils literal"><span class="pre">settings.py</span></code> file to <code class="docutils literal"><span class="pre">False</span></code>. Otherwise, Django will continue to display its auxiliary yellow pages.</p>
 </div>
 <p>Change the function <code class="docutils literal"><span class="pre">detail</span></code> as below:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">detail</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">poll_id</span><span class="p">):</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">detail</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">poll_id</span><span class="p">):</span>
     <span class="k">try</span><span class="p">:</span>
         <span class="n">p</span> <span class="o">=</span> <span class="n">Poll</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="n">poll_id</span><span class="p">)</span>
     <span class="k">except</span> <span class="n">Poll</span><span class="o">.</span><span class="n">DoesNotExist</span><span class="p">:</span>
         <span class="k">raise</span> <span class="n">Http404</span>
-    <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="s">&#39;polls/detail.html&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s">&#39;poll&#39;</span><span class="p">:</span> <span class="n">p</span><span class="p">})</span>
+    <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="s1">&#39;polls/detail.html&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;poll&#39;</span><span class="p">:</span> <span class="n">p</span><span class="p">})</span>
 </pre></div>
 </div>
 <p>Then create the <code class="docutils literal"><span class="pre">polls/templates/polls/detail.html</span></code> file with content as below:</p>
-<div class="highlight-django"><div class="highlight"><pre><span class="x">&lt;h1&gt;</span><span class="cp">{{</span> <span class="nv">poll.question</span> <span class="cp">}}</span><span class="x">&lt;/h1&gt;</span>
+<div class="highlight-django"><div class="highlight"><pre><span></span><span class="x">&lt;h1&gt;</span><span class="cp">{{</span> <span class="nv">poll.question</span> <span class="cp">}}</span><span class="x">&lt;/h1&gt;</span>
 <span class="x">&lt;ul&gt;</span>
 <span class="cp">{%</span> <span class="k">for</span> <span class="nv">choice</span> <span class="k">in</span> <span class="nv">poll.choice_set.all</span> <span class="cp">%}</span><span class="x"></span>
 <span class="x">    &lt;li&gt;</span><span class="cp">{{</span> <span class="nv">choice.choice_text</span> <span class="cp">}}</span><span class="x">&lt;/li&gt;</span>
@@ -263,7 +271,7 @@ find the poll desired by the user (by writing <code class="docutils literal"><sp
 <h2>Form management<a class="headerlink" href="#form-management" title="Permalink to this headline">¶</a></h2>
 <p>Let&#8217;s change the template <code class="docutils literal"><span class="pre">polls/templates/polls/details.html</span></code> by adding a simple HTML form.</p>
 <p>Change the file <code class="docutils literal"><span class="pre">polls/templates/polls/details.html</span></code> as below:</p>
-<div class="highlight-django"><div class="highlight"><pre><span class="x">&lt;h1&gt;</span><span class="cp">{{</span> <span class="nv">poll.question</span> <span class="cp">}}</span><span class="x">&lt;/h1&gt;</span>
+<div class="highlight-django"><div class="highlight"><pre><span></span><span class="x">&lt;h1&gt;</span><span class="cp">{{</span> <span class="nv">poll.question</span> <span class="cp">}}</span><span class="x">&lt;/h1&gt;</span>
 
 <span class="cp">{%</span> <span class="k">if</span> <span class="nv">error_message</span> <span class="cp">%}</span><span class="x">&lt;p&gt;&lt;strong&gt;</span><span class="cp">{{</span> <span class="nv">error_message</span> <span class="cp">}}</span><span class="x">&lt;/strong&gt;&lt;/p&gt;</span><span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span><span class="x"></span>
 
@@ -285,36 +293,36 @@ find the poll desired by the user (by writing <code class="docutils literal"><sp
 <p>Attentive readers will note that the form is sent to the <code class="docutils literal"><span class="pre">/polls/{{</span> <span class="pre">poll.id</span> <span class="pre">}}/vote/</span></code> address, which does not yet
 support data from forms. Let&#8217;s add support for forms.</p>
 <p>At the beginning of the file <code class="docutils literal"><span class="pre">polls/views.py</span></code> append:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">django.http</span> <span class="kn">import</span> <span class="n">HttpResponseRedirect</span>
-<span class="kn">from</span> <span class="nn">django.core.urlresolvers</span> <span class="kn">import</span> <span class="n">reverse</span>
-<span class="kn">from</span> <span class="nn">django.shortcuts</span> <span class="kn">import</span> <span class="n">get_object_or_404</span>
-<span class="kn">from</span> <span class="nn">polls.models</span> <span class="kn">import</span> <span class="n">Choice</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">django.http</span> <span class="k">import</span> <span class="n">HttpResponseRedirect</span>
+<span class="kn">from</span> <span class="nn">django.core.urlresolvers</span> <span class="k">import</span> <span class="n">reverse</span>
+<span class="kn">from</span> <span class="nn">django.shortcuts</span> <span class="k">import</span> <span class="n">get_object_or_404</span>
+<span class="kn">from</span> <span class="nn">polls.models</span> <span class="k">import</span> <span class="n">Choice</span>
 </pre></div>
 </div>
 <p>Correct the function <code class="docutils literal"><span class="pre">vote</span></code> as below:</p>
-<div class="highlight-python"><div class="highlight"><pre>def vote(request, poll_id):
-    p = get_object_or_404(Poll, id=poll_id)
-    try:
-        selected_choice = p.choice_set.get(id=request.POST[&#39;choice&#39;])
-    except (KeyError, Choice.DoesNotExist):
-        # If the user chooses the wrong option, show error
-        return render(request, &#39;polls/detail.html&#39;, {
-            &#39;poll&#39;: p,
-            &#39;error_message&#39;: &quot;You have to choose the correct option.&quot;,
-        })
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">vote</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">poll_id</span><span class="p">):</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="n">get_object_or_404</span><span class="p">(</span><span class="n">Poll</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="n">poll_id</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">selected_choice</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">choice_set</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="n">request</span><span class="o">.</span><span class="n">POST</span><span class="p">[</span><span class="s1">&#39;choice&#39;</span><span class="p">])</span>
+    <span class="k">except</span> <span class="p">(</span><span class="ne">KeyError</span><span class="p">,</span> <span class="n">Choice</span><span class="o">.</span><span class="n">DoesNotExist</span><span class="p">):</span>
+        <span class="c1"># If the user chooses the wrong option, show error</span>
+        <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="s1">&#39;polls/detail.html&#39;</span><span class="p">,</span> <span class="p">{</span>
+            <span class="s1">&#39;poll&#39;</span><span class="p">:</span> <span class="n">p</span><span class="p">,</span>
+            <span class="s1">&#39;error_message&#39;</span><span class="p">:</span> <span class="s2">&quot;You have to choose the correct option.&quot;</span><span class="p">,</span>
+        <span class="p">})</span>
 
-    # Save the new number of votes
-    selected_choice.votes += 1
-    selected_choice.save()
-    # Redirect a user to the detail view of the poll on which he or she just voted.
-   return HttpResponseRedirect(reverse(&#39;polls.views.results&#39;, args=(p.id,)))
+    <span class="c1"># Save the new number of votes</span>
+    <span class="n">selected_choice</span><span class="o">.</span><span class="n">votes</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="n">selected_choice</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+    <span class="c1"># Redirect a user to the detail view of the poll on which he or she just voted.</span>
+   <span class="k">return</span> <span class="n">HttpResponseRedirect</span><span class="p">(</span><span class="n">reverse</span><span class="p">(</span><span class="s1">&#39;polls.views.results&#39;</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">id</span><span class="p">,)))</span>
 </pre></div>
 </div>
 <p>In the view there are a lot of new ideas we have not yet discussed.</p>
 <p>The <code class="docutils literal"><span class="pre">request</span></code> object contains the data sent by the user, and <code class="docutils literal"><span class="pre">request.POST</span></code> contains the form data sent by the user. This lets us know which option was selected.</p>
 <p>Here comes the important question: it may turn out that the view received a nonexistent answer. We
 always have to check the data received from the user and respond to a situation when the data does not make
-sense. This is what happens in the <a class="reference external" href="http://docs.python.org/3/reference/compound_stmts.html#except" title="(in Python v3.5)"><code class="xref std std-keyword docutils literal"><span class="pre">except</span></code></a> clause. In such a case, we redirect the user to the
+sense. This is what happens in the <a class="reference external" href="https://docs.python.org/3/reference/compound_stmts.html#except" title="(in Python v3.5)"><code class="xref std std-keyword docutils literal"><span class="pre">except</span></code></a> clause. In such a case, we redirect the user to the
 questionnaire and display the error.</p>
 <p>If the user selects the correct option, we can increase the number of votes and save the changes. Then,
 we redirect to the view of the questionnaire details we wrote previously by using <code class="docutils literal"><span class="pre">HttpResponseRedirect</span></code>.</p>
@@ -324,13 +332,13 @@ user starts playing with the back and forward buttons in the browser, or just re
 pressing F5). To prevent this, we should always redirect with HttpResponseRedirect after the correct form is submitted (in this case, voting for a poll).</p>
 <p>At the end we still have to develop a view of the poll results to display after voting.</p>
 <p>Correct <code class="docutils literal"><span class="pre">results</span> <span class="pre">function</span></code>, as below:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">results</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">poll_id</span><span class="p">):</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">results</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">poll_id</span><span class="p">):</span>
     <span class="n">p</span> <span class="o">=</span> <span class="n">get_object_or_404</span><span class="p">(</span><span class="n">Poll</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="n">poll_id</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="s">&#39;polls/results.html&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s">&#39;poll&#39;</span><span class="p">:</span> <span class="n">p</span><span class="p">})</span>
+    <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="s1">&#39;polls/results.html&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;poll&#39;</span><span class="p">:</span> <span class="n">p</span><span class="p">})</span>
 </pre></div>
 </div>
 <p>Create the file <code class="docutils literal"><span class="pre">polls/templates/polls/results.html</span></code> with the following content:</p>
-<div class="highlight-django"><div class="highlight"><pre><span class="x">&lt;h1&gt;</span><span class="cp">{{</span> <span class="nv">poll.question</span> <span class="cp">}}</span><span class="x">&lt;/h1&gt;</span>
+<div class="highlight-django"><div class="highlight"><pre><span></span><span class="x">&lt;h1&gt;</span><span class="cp">{{</span> <span class="nv">poll.question</span> <span class="cp">}}</span><span class="x">&lt;/h1&gt;</span>
 
 <span class="x">&lt;ul&gt;</span>
 <span class="cp">{%</span> <span class="k">for</span> <span class="nv">choice</span> <span class="k">in</span> <span class="nv">poll.choice_set.all</span> <span class="cp">%}</span><span class="x"></span>
@@ -345,7 +353,7 @@ pressing F5). To prevent this, we should always redirect with HttpResponseRedire
 Then play with voting on them and invite others to do the same.</p>
 <div class="alert alert-hidden admonition">
 <p class="first admonition-title"><code class="docutils literal"><span class="pre">polls/views.py</span></code></p>
-<div class="last highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">django.http</span> <span class="kn">import</span> <span class="n">HttpResponseRedirect</span>
+<div class="last highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">django.http</span> <span class="kn">import</span> <span class="n">HttpResponseRedirect</span>
 <span class="kn">from</span> <span class="nn">django.core.urlresolvers</span> <span class="kn">import</span> <span class="n">reverse</span>
 <span class="kn">from</span> <span class="nn">django.shortcuts</span> <span class="kn">import</span> <span class="n">get_object_or_404</span>
 
@@ -356,11 +364,11 @@ Then play with voting on them and invite others to do the same.</p>
 
 
 <span class="k">def</span> <span class="nf">index</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
-    <span class="n">latest_poll_list</span> <span class="o">=</span> <span class="n">Poll</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">()</span><span class="o">.</span><span class="n">order_by</span><span class="p">(</span><span class="s">&#39;-pub_date&#39;</span><span class="p">)[:</span><span class="mi">5</span><span class="p">]</span>
+    <span class="n">latest_poll_list</span> <span class="o">=</span> <span class="n">Poll</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">()</span><span class="o">.</span><span class="n">order_by</span><span class="p">(</span><span class="s1">&#39;-pub_date&#39;</span><span class="p">)[:</span><span class="mi">5</span><span class="p">]</span>
     <span class="k">return</span> <span class="n">render</span><span class="p">(</span>
         <span class="n">request</span><span class="p">,</span>
-        <span class="s">&#39;polls/index.html&#39;</span><span class="p">,</span>
-        <span class="p">{</span><span class="s">&#39;latest_poll_list&#39;</span><span class="p">:</span> <span class="n">latest_poll_list</span><span class="p">})</span>
+        <span class="s1">&#39;polls/index.html&#39;</span><span class="p">,</span>
+        <span class="p">{</span><span class="s1">&#39;latest_poll_list&#39;</span><span class="p">:</span> <span class="n">latest_poll_list</span><span class="p">})</span>
 
 
 <span class="k">def</span> <span class="nf">detail</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">poll_id</span><span class="p">):</span>
@@ -368,57 +376,57 @@ Then play with voting on them and invite others to do the same.</p>
         <span class="n">p</span> <span class="o">=</span> <span class="n">Poll</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="n">poll_id</span><span class="p">)</span>
     <span class="k">except</span> <span class="n">Poll</span><span class="o">.</span><span class="n">DoesNotExist</span><span class="p">:</span>
         <span class="k">raise</span> <span class="n">Http404</span>
-    <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="s">&#39;polls/detail.html&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s">&#39;poll&#39;</span><span class="p">:</span> <span class="n">p</span><span class="p">})</span>
+    <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="s1">&#39;polls/detail.html&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;poll&#39;</span><span class="p">:</span> <span class="n">p</span><span class="p">})</span>
 
 
 <span class="k">def</span> <span class="nf">results</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">poll_id</span><span class="p">):</span>
     <span class="n">p</span> <span class="o">=</span> <span class="n">get_object_or_404</span><span class="p">(</span><span class="n">Poll</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="n">poll_id</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="s">&#39;polls/results.html&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s">&#39;poll&#39;</span><span class="p">:</span> <span class="n">p</span><span class="p">})</span>
+    <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="s1">&#39;polls/results.html&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;poll&#39;</span><span class="p">:</span> <span class="n">p</span><span class="p">})</span>
 
 
 <span class="k">def</span> <span class="nf">vote</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">poll_id</span><span class="p">):</span>
     <span class="n">p</span> <span class="o">=</span> <span class="n">get_object_or_404</span><span class="p">(</span><span class="n">Poll</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="n">poll_id</span><span class="p">)</span>
     <span class="k">try</span><span class="p">:</span>
-        <span class="n">selected_choice</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">choice_set</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="n">request</span><span class="o">.</span><span class="n">POST</span><span class="p">[</span><span class="s">&#39;choice&#39;</span><span class="p">])</span>
+        <span class="n">selected_choice</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">choice_set</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="n">request</span><span class="o">.</span><span class="n">POST</span><span class="p">[</span><span class="s1">&#39;choice&#39;</span><span class="p">])</span>
     <span class="k">except</span> <span class="p">(</span><span class="ne">KeyError</span><span class="p">,</span> <span class="n">Choice</span><span class="o">.</span><span class="n">DoesNotExist</span><span class="p">):</span>
-        <span class="c"># if user chooses a wrong option, show error</span>
-        <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="s">&#39;polls/detail.html&#39;</span><span class="p">,</span> <span class="p">{</span>
-            <span class="s">&#39;poll&#39;</span><span class="p">:</span> <span class="n">p</span><span class="p">,</span>
-            <span class="s">&#39;error_message&#39;</span><span class="p">:</span> <span class="s">&quot;You have to choose a correct option&quot;</span><span class="p">,</span>
+        <span class="c1"># if user chooses a wrong option, show error</span>
+        <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="s1">&#39;polls/detail.html&#39;</span><span class="p">,</span> <span class="p">{</span>
+            <span class="s1">&#39;poll&#39;</span><span class="p">:</span> <span class="n">p</span><span class="p">,</span>
+            <span class="s1">&#39;error_message&#39;</span><span class="p">:</span> <span class="s2">&quot;You have to choose a correct option&quot;</span><span class="p">,</span>
         <span class="p">})</span>
 
-    <span class="c"># Save the number of votes</span>
+    <span class="c1"># Save the number of votes</span>
     <span class="n">selected_choice</span><span class="o">.</span><span class="n">votes</span> <span class="o">+=</span> <span class="mi">1</span>
     <span class="n">selected_choice</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
-    <span class="c"># Redirect user to poll detail view on which he/she just voted</span>
-    <span class="k">return</span> <span class="n">HttpResponseRedirect</span><span class="p">(</span><span class="n">reverse</span><span class="p">(</span><span class="s">&#39;polls.views.results&#39;</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">id</span><span class="p">,)))</span>
+    <span class="c1"># Redirect user to poll detail view on which he/she just voted</span>
+    <span class="k">return</span> <span class="n">HttpResponseRedirect</span><span class="p">(</span><span class="n">reverse</span><span class="p">(</span><span class="s1">&#39;polls.views.results&#39;</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">id</span><span class="p">,)))</span>
 </pre></div>
 </div>
 </div>
 <div class="alert alert-hidden admonition">
 <p class="first admonition-title"><code class="docutils literal"><span class="pre">urls.py</span></code></p>
-<div class="last highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">django.conf.urls</span> <span class="kn">import</span> <span class="n">patterns</span><span class="p">,</span> <span class="n">include</span><span class="p">,</span> <span class="n">url</span>
+<div class="last highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">django.conf.urls</span> <span class="kn">import</span> <span class="n">patterns</span><span class="p">,</span> <span class="n">include</span><span class="p">,</span> <span class="n">url</span>
 
 <span class="kn">from</span> <span class="nn">django.contrib</span> <span class="kn">import</span> <span class="n">admin</span>
 <span class="n">admin</span><span class="o">.</span><span class="n">autodiscover</span><span class="p">()</span>
 
-<span class="n">urlpatterns</span> <span class="o">=</span> <span class="n">patterns</span><span class="p">(</span><span class="s">&#39;&#39;</span><span class="p">,</span>
-  <span class="n">url</span><span class="p">(</span><span class="s">r&#39;^polls/$&#39;</span><span class="p">,</span> <span class="s">&#39;polls.views.index&#39;</span><span class="p">),</span>
-  <span class="n">url</span><span class="p">(</span><span class="s">r&#39;^polls/(?P&lt;poll_id&gt;\d+)/$&#39;</span><span class="p">,</span> <span class="s">&#39;polls.views.detail&#39;</span><span class="p">),</span>
-  <span class="n">url</span><span class="p">(</span><span class="s">r&#39;^polls/(?P&lt;poll_id&gt;\d+)/results/$&#39;</span><span class="p">,</span> <span class="s">&#39;polls.views.results&#39;</span><span class="p">),</span>
-  <span class="n">url</span><span class="p">(</span><span class="s">r&#39;^polls/(?P&lt;poll_id&gt;\d+)/vote/$&#39;</span><span class="p">,</span> <span class="s">&#39;polls.views.vote&#39;</span><span class="p">),</span>
-  <span class="n">url</span><span class="p">(</span><span class="s">r&#39;^admin/&#39;</span><span class="p">,</span> <span class="n">include</span><span class="p">(</span><span class="n">admin</span><span class="o">.</span><span class="n">site</span><span class="o">.</span><span class="n">urls</span><span class="p">)),</span>
+<span class="n">urlpatterns</span> <span class="o">=</span> <span class="n">patterns</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span>
+  <span class="n">url</span><span class="p">(</span><span class="s1">r&#39;^polls/$&#39;</span><span class="p">,</span> <span class="s1">&#39;polls.views.index&#39;</span><span class="p">),</span>
+  <span class="n">url</span><span class="p">(</span><span class="s1">r&#39;^polls/(?P&lt;poll_id&gt;\d+)/$&#39;</span><span class="p">,</span> <span class="s1">&#39;polls.views.detail&#39;</span><span class="p">),</span>
+  <span class="n">url</span><span class="p">(</span><span class="s1">r&#39;^polls/(?P&lt;poll_id&gt;\d+)/results/$&#39;</span><span class="p">,</span> <span class="s1">&#39;polls.views.results&#39;</span><span class="p">),</span>
+  <span class="n">url</span><span class="p">(</span><span class="s1">r&#39;^polls/(?P&lt;poll_id&gt;\d+)/vote/$&#39;</span><span class="p">,</span> <span class="s1">&#39;polls.views.vote&#39;</span><span class="p">),</span>
+  <span class="n">url</span><span class="p">(</span><span class="s1">r&#39;^admin/&#39;</span><span class="p">,</span> <span class="n">include</span><span class="p">(</span><span class="n">admin</span><span class="o">.</span><span class="n">site</span><span class="o">.</span><span class="n">urls</span><span class="p">)),</span>
 <span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="alert alert-hidden admonition">
 <p class="first admonition-title"><code class="docutils literal"><span class="pre">polls/models.py</span></code></p>
-<div class="last highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">django.db</span> <span class="kn">import</span> <span class="n">models</span>
+<div class="last highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">django.db</span> <span class="kn">import</span> <span class="n">models</span>
 
 <span class="k">class</span> <span class="nc">Poll</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
     <span class="n">question</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
-    <span class="n">pub_date</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">DateTimeField</span><span class="p">(</span><span class="s">&#39;date published&#39;</span><span class="p">)</span>
+    <span class="n">pub_date</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">DateTimeField</span><span class="p">(</span><span class="s1">&#39;date published&#39;</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">question</span>
@@ -444,9 +452,9 @@ Then play with voting on them and invite others to do the same.</p>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <a href="index.html" class="logo"><img class="logo" src="_static/logo.png" style="width: 200px; height: 169px; margin: -10px 0 10px 0"></a>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
-
+<li class="toctree-l1"><a class="reference internal" href="introduction_to_algorithm.html">Introduction to Algorithm</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python_quickstart.html">Introduction to Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python_logic.html">Python Logic</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python_strings.html">Strings formatting</a></li>
@@ -457,11 +465,15 @@ Then play with voting on them and invite others to do the same.</p>
 <li class="toctree-l1"><a class="reference internal" href="python_data.html">Python data storage types</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python_loops.html">while loop</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python_exercises.html">Python Summary: exercises</a></li>
-<li class="toctree-l1"><a class="reference internal" href="flask_quickstart.html">Flask: Quick Start</a></li>
-<li class="toctree-l1"><a class="reference internal" href="flask_templates.html">Flask: Templates</a></li>
-<li class="toctree-l1"><a class="reference internal" href="flask_forms.html">Flask: Forms</a></li>
-<li class="toctree-l1"><a class="reference internal" href="flask_exercises.html">Flask: Exercises</a></li>
-<li class="toctree-l1"><a class="reference internal" href="flask_sqlalchemy.html">Flask: SQL Alchemy - ORM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="django_in_action.html">Introduction to Django</a></li>
+<li class="toctree-l1"><a class="reference internal" href="django_models.html">Models</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Rendering websites</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#first-view">First view</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#view-that-really-does-something">View that really does something</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#returning-404-code">Returning 404 code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#form-management">Form management</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="code_of_conduct.html">Geek Girls Carrots Code of Conduct</a></li>
 </ul>
 
