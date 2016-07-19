@@ -73,7 +73,7 @@ heroku logs --tail
 ```
 
 ## Materiały z kursu
-W celu zdobycia pracy z materiałami kursu należy sklonować oficjalne repozytorium
+W celu zdobycia kursu w wersji RST należy sklonować oficjalne repozytorium
 ```bash
 git clone https://github.com/Draqun/django-carrots.git
 ```
