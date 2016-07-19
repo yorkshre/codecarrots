@@ -57,30 +57,30 @@ Image Fun:
 
 1. Create team name.
 2. Each TEAM creates random nonopen figure using 4-8 straight lines for ex. square or octagon on provided paper sheet.
-3. Sing the paper sheet with your team name.
+3. Sign the paper sheet with your team name.
 4. Shuffle all images across all teams.
 5. After receiving an image from other team: create instruction that will allow another team to recreate the same figure as closely as possible can be.
-6. Sing the paper sheet with previous team names and add your team name.
+6. Sign the paper sheet with previous team names and add your team name.
 7. Shuffle only instructions across all teams.
 8. After receiving instruction from other team, process the instruction and create the image it provides.
-9. Sing the paper sheet with previous team names and add your team name.
+9. Sign the paper sheet with previous team names and add your team name.
 
 Lets compare the images with originals, instructions. Think about the differences and why did they happen.
 
 Deaf phone:
 
 1. Each team creates random sentence max 20 characters.
-2. Sing the paper sheet with your team name.
+2. Sign the paper sheet with your team name.
 3. Shuffle all sentence across all teams.
 4. Each team creates an encoding (ciphering) algorithm. Not more then 6 steps.
 5. Using the algorithm encode the received sentence and write the secret message on paper with encoding algorithm.
-6. Sing the paper sheet with previous team names and add your team name.
+6. Sign the paper sheet with previous team names and add your team name.
 7. Shuffle all encoded sentence with encoding mechanism across all teams.
 8. Each team decodes the sentence and writes down the decoding algorithm on a new sheet of paper.
 9. Write down the given encoded sentence on decoding algorithm paper
-10. Sing the paper sheet with previous team names and add your team name.
+10. Sign the paper sheet with previous team names and add your team name.
 11. Each team decodes the sentence.
-12. Sing the paper sheet with previous team names and add your team name.
+12. Sign the paper sheet with previous team names and add your team name.
 13. Now lets see if the sentences matches ? What have happened to them ?
 
 Can You now feel how useful is to use algorithm and how often do You use them in daily life unaware of it?

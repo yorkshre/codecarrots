@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en_GB">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
@@ -60,24 +60,24 @@ already know).</p>
 <span id="bmi-tuples"></span><h2>Tuples<a class="headerlink" href="#tuples" title="Permalink to this headline">¶</a></h2>
 <p>At the beginning we mentioned that we can not use commas in numbers, because we will need them later
 while using tuples. And here they are:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span>
 <span class="go">(1, 2, 3)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="s">&quot;Ala&quot;</span><span class="p">,</span> <span class="mi">15</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="s2">&quot;Ala&quot;</span><span class="p">,</span> <span class="mi">15</span><span class="p">)</span>
 <span class="go">(&#39;Ala&#39;, 15)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span><span class="mi">5</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 <span class="go">(1, 5)</span>
 </pre></div>
 </div>
 <p>A tuple is nothing more than a few values grouped into one. The values we want to group should be
 separated by commas. The whole thing can be enclosed in parentheses to make it more clear, but it is
 not required. Except when we want to group none of the elements (however strange it may sound):</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="p">()</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="p">()</span>
 <span class="go">()</span>
 </pre></div>
 </div>
 <p>Tuples can be combined:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">names</span> <span class="o">=</span> <span class="p">(</span><span class="s">&quot;Paulina&quot;</span><span class="p">,</span> <span class="s">&quot;Kowalska&quot;</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">names</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;Paulina&quot;</span><span class="p">,</span> <span class="s2">&quot;Kowalska&quot;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">details</span> <span class="o">=</span> <span class="p">(</span><span class="mi">27</span><span class="p">,</span> <span class="mf">1.70</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">names</span> <span class="o">+</span> <span class="n">details</span>
 <span class="go">(&#39;Paulina&#39;, &#39;Kowalska&#39;, 27, 1.7)</span>
@@ -85,15 +85,15 @@ not required. Except when we want to group none of the elements (however strange
 </div>
 <p>They may also contain other tuples e.g. information on a point on the map can be
 grouped as follows:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">point</span> <span class="o">=</span> <span class="p">(</span><span class="s">&quot;Name of point&quot;</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">))</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">point</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;Name of point&quot;</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">))</span>
 </pre></div>
 </div>
 <p>where <code class="docutils literal"><span class="pre">x</span></code> and <code class="docutils literal"><span class="pre">y</span></code> are numbers.</p>
 <p>We can refer to the grouped values by using their positions in the tuple (counting form zero) e.g.:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">p</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">15</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>  <span class="c">#  first value</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">p</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">15</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>  <span class="c1">#  first value</span>
 <span class="go">10</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>  <span class="c"># second value</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>  <span class="c1"># second value</span>
 <span class="go">15</span>
 </pre></div>
 </div>
@@ -102,24 +102,24 @@ grouped as follows:</p>
 <h2>Formatting plain<a class="headerlink" href="#formatting-plain" title="Permalink to this headline">¶</a></h2>
 <p>Going back to our program: currently the result is reduced to a single line. Now we want to write the
 BMI as a number and the interval in which it is located, that is to say:</p>
-<div class="highlight-python"><div class="highlight"><pre>Your BMI is equal: 21.39 (normal weight)
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Your</span> <span class="n">BMI</span> <span class="ow">is</span> <span class="n">equal</span><span class="p">:</span> <span class="mf">21.39</span> <span class="p">(</span><span class="n">normal</span> <span class="n">weight</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Modify the current program so that the calculated BMI would be available under the name of <code class="docutils literal"><span class="pre">bmi</span></code>,and
-the name of the interval under the name of <code class="docutils literal"><span class="pre">category</span></code>. Then we can use <a class="reference external" href="http://docs.python.org/3/library/functions.html#print" title="(in Python v3.5)"><code class="xref py py-func docutils literal"><span class="pre">print()</span></code></a> and obtain the
+the name of the interval under the name of <code class="docutils literal"><span class="pre">category</span></code>. Then we can use <a class="reference external" href="https://docs.python.org/3/library/functions.html#print" title="(in Python v3.5)"><code class="xref py py-func docutils literal"><span class="pre">print()</span></code></a> and obtain the
 required result:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="k">print</span><span class="p">(</span><span class="s">&quot;Your BMI is equal:&quot;</span><span class="p">,</span> <span class="n">bmi</span><span class="p">,</span> <span class="s">&quot;(&quot;</span> <span class="o">+</span> <span class="n">category</span> <span class="o">+</span> <span class="s">&quot;)&quot;</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Your BMI is equal:&quot;</span><span class="p">,</span> <span class="n">bmi</span><span class="p">,</span> <span class="s2">&quot;(&quot;</span> <span class="o">+</span> <span class="n">category</span> <span class="o">+</span> <span class="s2">&quot;)&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Well, almost….We still have too many digits. We would also have a problem if we wanted to generate
-such a string and save with a name, because we use <a class="reference external" href="http://docs.python.org/3/library/functions.html#print" title="(in Python v3.5)"><code class="xref py py-func docutils literal"><span class="pre">print()</span></code></a> to separate the elements.
+such a string and save with a name, because we use <a class="reference external" href="https://docs.python.org/3/library/functions.html#print" title="(in Python v3.5)"><code class="xref py py-func docutils literal"><span class="pre">print()</span></code></a> to separate the elements.
 Fortunately, there is a better way:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">bmi</span> <span class="o">=</span> <span class="mf">21.387755102040817</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">category</span> <span class="o">=</span> <span class="s">&quot;normal weight&quot;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="s">&quot;Your BMI: </span><span class="si">%f</span><span class="s"> (</span><span class="si">%s</span><span class="s">)&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">bmi</span><span class="p">,</span> <span class="n">category</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">bmi</span> <span class="o">=</span> <span class="mf">21.387755102040817</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">category</span> <span class="o">=</span> <span class="s2">&quot;normal weight&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="s2">&quot;Your BMI: </span><span class="si">%f</span><span class="s2"> (</span><span class="si">%s</span><span class="s2">)&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">bmi</span><span class="p">,</span> <span class="n">category</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">result</span>
 <span class="go">&#39;Your BMI: 21.387755 (normal weight)&#39;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 <span class="go">Your BMI: 21.387755 (normal weight)</span>
 </pre></div>
 </div>
@@ -128,32 +128,32 @@ with values from the tuple. The spaces to be filled are also labeled with the pe
 The letter that follows defines the type of a value we want to insert. The integers are represented
 by  <code class="docutils literal"><span class="pre">i</span></code> as <strong>integer</strong> (we can also use <code class="docutils literal"><span class="pre">d</span></code> as <strong>decimal</strong>),  strings are represented by <code class="docutils literal"><span class="pre">s</span></code> as
 <strong>string</strong>, and floating-point numbers are represented by <code class="docutils literal"><span class="pre">f</span></code> for <strong>float</strong>:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="s">&quot;String: </span><span class="si">%s</span><span class="s">, Numbers: </span><span class="si">%d</span><span class="s"> </span><span class="si">%f</span><span class="s">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="s">&quot;Ala&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mf">3.1415</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="s2">&quot;String: </span><span class="si">%s</span><span class="s2">, Numbers: </span><span class="si">%d</span><span class="s2"> </span><span class="si">%f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="s2">&quot;Ala&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mf">3.1415</span><span class="p">)</span>
 <span class="go">&#39;String: Ala, Numbers: 10 3.141500&#39;</span>
 </pre></div>
 </div>
 <p>Now instead of nine decimal places we always get six, but the formatting has the advantage that it
 allows us to have more control by putting between <code class="docutils literal"><span class="pre">%</span></code> and <code class="docutils literal"><span class="pre">f</span></code> additional information, e.g. if you
 want to display only two places after the decimal point:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="s">&quot;</span><span class="si">%.2f</span><span class="s">&quot;</span> <span class="o">%</span> <span class="mf">3.1415</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="s2">&quot;</span><span class="si">%.2f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="mf">3.1415</span>
 <span class="go">&#39;3.14&#39;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="s">&quot;</span><span class="si">%.2f</span><span class="s">&quot;</span> <span class="o">%</span> <span class="mf">21.387755102040817</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s2">&quot;</span><span class="si">%.2f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="mf">21.387755102040817</span>
 <span class="go">&#39;21.39&#39;</span>
 </pre></div>
 </div>
 <p>There are plenty options of formatting, so we will not show them all here. One of the most useful is
 the option of aligning to a specific number of characters:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">WIDTH</span> <span class="o">=</span> <span class="mi">28</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">WIDTH</span> <span class="o">=</span> <span class="mi">28</span>
 
-<span class="k">print</span><span class="p">(</span><span class="s">&quot;-&quot;</span> <span class="o">*</span> <span class="n">WIDTH</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s">&quot;| Name and last name |  Weight  |&quot;</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s">&quot;-&quot;</span> <span class="o">*</span> <span class="n">WIDTH</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s">&quot;| </span><span class="si">%15s</span><span class="s"> | </span><span class="si">%6.2f</span><span class="s"> |&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="s">&quot;Łukasz&quot;</span><span class="p">,</span> <span class="mf">67.5</span><span class="p">))</span>
-<span class="k">print</span><span class="p">(</span><span class="s">&quot;| </span><span class="si">%15s</span><span class="s"> | </span><span class="si">%6.2f</span><span class="s"> |&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="s">&quot;Pudzian&quot;</span><span class="p">,</span> <span class="mi">123</span><span class="p">))</span>
-<span class="k">print</span><span class="p">(</span><span class="s">&quot;-&quot;</span> <span class="o">*</span> <span class="n">WIDTH</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-&quot;</span> <span class="o">*</span> <span class="n">WIDTH</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;| Name and last name |  Weight  |&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-&quot;</span> <span class="o">*</span> <span class="n">WIDTH</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;| </span><span class="si">%15s</span><span class="s2"> | </span><span class="si">%6.2f</span><span class="s2"> |&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="s2">&quot;Łukasz&quot;</span><span class="p">,</span> <span class="mf">67.5</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;| </span><span class="si">%15s</span><span class="s2"> | </span><span class="si">%6.2f</span><span class="s2"> |&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="s2">&quot;Pudzian&quot;</span><span class="p">,</span> <span class="mi">123</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-&quot;</span> <span class="o">*</span> <span class="n">WIDTH</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="highlight-none"><div class="highlight"><pre>--------------------------------
+<div class="highlight-none"><div class="highlight"><pre><span></span>--------------------------------
 | Name and last name  |  Weight|
 --------------------------------
 |              Łukasz |  67.50 |
@@ -162,17 +162,17 @@ the option of aligning to a specific number of characters:</p>
 </pre></div>
 </div>
 <p>We can also align the string <code class="docutils literal"><span class="pre">-</span></code>  to the left by putting before the number of characters:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">WIDTH</span> <span class="o">=</span> <span class="mi">28</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">WIDTH</span> <span class="o">=</span> <span class="mi">28</span>
 
-<span class="k">print</span><span class="p">(</span><span class="s">&quot;-&quot;</span> <span class="o">*</span> <span class="n">WIDTH</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s">&quot;| Name and last name |  Weight |&quot;</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s">&quot;-&quot;</span> <span class="o">*</span> <span class="n">WIDTH</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s">&quot;| </span><span class="si">%-15s</span><span class="s"> | </span><span class="si">%6.2f</span><span class="s"> |&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="s">&quot;Łukasz&quot;</span><span class="p">,</span> <span class="mf">67.5</span><span class="p">))</span>
-<span class="k">print</span><span class="p">(</span><span class="s">&quot;| </span><span class="si">%-15s</span><span class="s"> | </span><span class="si">%6.2f</span><span class="s"> |&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="s">&quot;Pudzian&quot;</span><span class="p">,</span> <span class="mi">123</span><span class="p">))</span>
-<span class="k">print</span><span class="p">(</span><span class="s">&quot;-&quot;</span> <span class="o">*</span> <span class="n">WIDTH</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-&quot;</span> <span class="o">*</span> <span class="n">WIDTH</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;| Name and last name |  Weight |&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-&quot;</span> <span class="o">*</span> <span class="n">WIDTH</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;| </span><span class="si">%-15s</span><span class="s2"> | </span><span class="si">%6.2f</span><span class="s2"> |&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="s2">&quot;Łukasz&quot;</span><span class="p">,</span> <span class="mf">67.5</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;| </span><span class="si">%-15s</span><span class="s2"> | </span><span class="si">%6.2f</span><span class="s2"> |&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="s2">&quot;Pudzian&quot;</span><span class="p">,</span> <span class="mi">123</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-&quot;</span> <span class="o">*</span> <span class="n">WIDTH</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="highlight-none"><div class="highlight"><pre>-------------------------------
+<div class="highlight-none"><div class="highlight"><pre><span></span>-------------------------------
 | Name and last name|  Weight |
 -------------------------------
 | Łukasz            |  67.50  |
@@ -228,7 +228,7 @@ the option of aligning to a specific number of characters:</p>
 <div class="section" id="obligatory-task">
 <h2>Obligatory task<a class="headerlink" href="#obligatory-task" title="Permalink to this headline">¶</a></h2>
 <p>Type in interpreter:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">antigravity</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">antigravity</span>
 </pre></div>
 </div>
 <p>This is very important library use it wise :)</p>
@@ -254,12 +254,12 @@ For example</p>
 <div class="section" id="summary">
 <h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
 <p>We also know now that indentations can be important, especially when we want to use
-the instruction <a class="reference external" href="http://docs.python.org/3/reference/compound_stmts.html#if" title="(in Python v3.5)"><code class="xref std std-keyword docutils literal"><span class="pre">if</span></code></a> (also in connection with <a class="reference external" href="http://docs.python.org/3/reference/compound_stmts.html#else" title="(in Python v3.5)"><code class="xref std std-keyword docutils literal"><span class="pre">else</span></code></a> and <a class="reference external" href="http://docs.python.org/3/reference/compound_stmts.html#elif" title="(in Python v3.5)"><code class="xref std std-keyword docutils literal"><span class="pre">elif</span></code></a>).</p>
+the instruction <a class="reference external" href="https://docs.python.org/3/reference/compound_stmts.html#if" title="(in Python v3.5)"><code class="xref std std-keyword docutils literal"><span class="pre">if</span></code></a> (also in connection with <a class="reference external" href="https://docs.python.org/3/reference/compound_stmts.html#else" title="(in Python v3.5)"><code class="xref std std-keyword docutils literal"><span class="pre">else</span></code></a> and <a class="reference external" href="https://docs.python.org/3/reference/compound_stmts.html#elif" title="(in Python v3.5)"><code class="xref std std-keyword docutils literal"><span class="pre">elif</span></code></a>).</p>
 <p>This is quite a lot like for a first program. We still have a lot of work, anyhow you can be proud of
 what we have done so far!</p>
 <p>And if You did the obligatory task 1 You know there are some easter eggs in python and thats not all of them.
 Here is one more:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="bp">True</span> <span class="o">+</span> <span class="bp">True</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kc">True</span> <span class="o">+</span> <span class="kc">True</span>
 </pre></div>
 </div>
 <p>:-)</p>
@@ -275,10 +275,10 @@ Here is one more:</p>
   <a href="index.html" class="logo"><img class="logo" src="_static/logo.png" style="width: 200px; height: 169px; margin: -10px 0 10px 0"></a>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
-
+<li class="toctree-l1"><a class="reference internal" href="introduction_to_algorithm.html">Introduction to Algorithm</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python_quickstart.html">Introduction to Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python_logic.html">Python Logic</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">Strings formatting</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Strings formatting</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#tuples">Tuples</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#formatting-plain">Formatting plain</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#formatting-more-pythonic-way">Formatting more Pythonic way</a></li>
@@ -299,11 +299,9 @@ Here is one more:</p>
 <li class="toctree-l1"><a class="reference internal" href="python_data.html">Python data storage types</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python_loops.html">while loop</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python_exercises.html">Python Summary: exercises</a></li>
-<li class="toctree-l1"><a class="reference internal" href="flask_quickstart.html">Flask: Quick Start</a></li>
-<li class="toctree-l1"><a class="reference internal" href="flask_templates.html">Flask: Templates</a></li>
-<li class="toctree-l1"><a class="reference internal" href="flask_forms.html">Flask: Forms</a></li>
-<li class="toctree-l1"><a class="reference internal" href="flask_exercises.html">Flask: Exercises</a></li>
-<li class="toctree-l1"><a class="reference internal" href="flask_sqlalchemy.html">Flask: SQL Alchemy - ORM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="django_in_action.html">Introduction to Django</a></li>
+<li class="toctree-l1"><a class="reference internal" href="django_models.html">Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="django_views.html">Rendering websites</a></li>
 <li class="toctree-l1"><a class="reference internal" href="code_of_conduct.html">Geek Girls Carrots Code of Conduct</a></li>
 </ul>
 

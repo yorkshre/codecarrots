@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en_GB">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
@@ -22,9 +22,7 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="Django Carrots" href="index.html" />
-    <link rel="next" title="Flask: Forms" href="flask_forms.html" />
-    <link rel="prev" title="Flask: Quick Start" href="flask_quickstart.html" /> 
+    <link rel="top" title="Django Carrots" href="index.html" /> 
   </head>
   <body role="document">
   
@@ -33,12 +31,6 @@
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="flask_forms.html" title="Flask: Forms"
-             accesskey="N">next</a></li>
-        <li class="right" >
-          <a href="flask_quickstart.html" title="Flask: Quick Start"
-             accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">Django Carrots</a> &raquo;</li> 
       </ul>
     </div>  
@@ -55,22 +47,22 @@
 <p>Let&#8217;s consider how we can expand our little application.</p>
 <p>We want the home page of our app to have a heading that welcomes the logged in user, that&#8217;s pretty standard for applications of this kind. Ignore for now the fact that we have no way to log a user in, I&#8217;ll present a workaround for this issue in a moment.</p>
 <p>An easy option to output a nice and big heading would be to change our view function to output HTML, maybe something like this:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">app</span> <span class="kn">import</span> <span class="n">app</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">app</span> <span class="kn">import</span> <span class="n">app</span>
 
-<span class="nd">@app.route</span><span class="p">(</span><span class="s">&#39;/&#39;</span><span class="p">)</span>
-<span class="nd">@app.route</span><span class="p">(</span><span class="s">&#39;/index&#39;</span><span class="p">)</span>
+<span class="nd">@app.route</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)</span>
+<span class="nd">@app.route</span><span class="p">(</span><span class="s1">&#39;/index&#39;</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">index</span><span class="p">():</span>
-    <span class="n">user</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;nickname&#39;</span><span class="p">:</span> <span class="s">&#39;Martha&#39;</span><span class="p">}</span>  <span class="c"># fake user</span>
-    <span class="k">return</span> <span class="s">&#39;&#39;&#39;</span>
-<span class="s">&lt;html&gt;</span>
-<span class="s">  &lt;head&gt;</span>
-<span class="s">    &lt;title&gt;Home Page&lt;/title&gt;</span>
-<span class="s">  &lt;/head&gt;</span>
-<span class="s">  &lt;body&gt;</span>
-<span class="s">    &lt;h1&gt;Hello, &#39;&#39;&#39;</span> <span class="o">+</span> <span class="n">user</span><span class="p">[</span><span class="s">&#39;nickname&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="s">&#39;&#39;&#39;&lt;/h1&gt;</span>
-<span class="s">  &lt;/body&gt;</span>
-<span class="s">&lt;/html&gt;</span>
-<span class="s">&#39;&#39;&#39;</span>
+    <span class="n">user</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;nickname&#39;</span><span class="p">:</span> <span class="s1">&#39;Martha&#39;</span><span class="p">}</span>  <span class="c1"># fake user</span>
+    <span class="k">return</span> <span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">&lt;html&gt;</span>
+<span class="s1">  &lt;head&gt;</span>
+<span class="s1">    &lt;title&gt;Home Page&lt;/title&gt;</span>
+<span class="s1">  &lt;/head&gt;</span>
+<span class="s1">  &lt;body&gt;</span>
+<span class="s1">    &lt;h1&gt;Hello, &#39;&#39;&#39;</span> <span class="o">+</span> <span class="n">user</span><span class="p">[</span><span class="s1">&#39;nickname&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39;&#39;&#39;&lt;/h1&gt;</span>
+<span class="s1">  &lt;/body&gt;</span>
+<span class="s1">&lt;/html&gt;</span>
+<span class="s1">&#39;&#39;&#39;</span>
 </pre></div>
 </div>
 <p>Give the application a try to see how this looks in your browser.</p>
@@ -81,24 +73,24 @@
 <h2>Templates to the rescue<a class="headerlink" href="#templates-to-the-rescue" title="Permalink to this headline">¶</a></h2>
 <p>If you could keep the logic of your application separate from the layout or presentation of your web pages things would be much better organized, don&#8217;t you think? You could even hire a web designer to create a killer web site while you code the site&#8217;s behaviors in Python. Templates help implement this separation.</p>
 <p>Let&#8217;s write our first template file app/templates/index.html:</p>
-<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;html&gt;</span>
-  <span class="nt">&lt;head&gt;</span>
-    <span class="nt">&lt;title&gt;</span>{{ title }} - App<span class="nt">&lt;/title&gt;</span>
-  <span class="nt">&lt;/head&gt;</span>
-  <span class="nt">&lt;body&gt;</span>
-      <span class="nt">&lt;h1&gt;</span>Hello, {{ user.nickname }}!<span class="nt">&lt;/h1&gt;</span>
-  <span class="nt">&lt;/body&gt;</span>
-<span class="nt">&lt;/html&gt;</span>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>{{ title }} - App<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Hello, {{ user.nickname }}!<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </pre></div>
 </div>
 <p>As you see above, we just wrote a mostly standard HTML page, with the only difference that there are some placeholders for the dynamic content enclosed in {{ ... }} sections.</p>
 <p>Now let&#8217;s see how we use this template from our view function (file app/views.py):</p>
 <p>from flask import render_template</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="nd">@app.route</span><span class="p">(</span><span class="s">&#39;/&#39;</span><span class="p">)</span>
-<span class="nd">@app.route</span><span class="p">(</span><span class="s">&#39;/index&#39;</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="nd">@app.route</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)</span>
+<span class="nd">@app.route</span><span class="p">(</span><span class="s1">&#39;/index&#39;</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">index</span><span class="p">():</span>
-    <span class="n">user</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;nickname&#39;</span><span class="p">:</span> <span class="s">&#39;Martha&#39;</span><span class="p">}</span>  <span class="c"># fake user</span>
-    <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s">&#39;index.html&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s">&#39;Home&#39;</span><span class="p">,</span> <span class="n">user</span><span class="o">=</span><span class="n">user</span><span class="p">)</span>
+    <span class="n">user</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;nickname&#39;</span><span class="p">:</span> <span class="s1">&#39;Martha&#39;</span><span class="p">}</span>  <span class="c1"># fake user</span>
+    <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s1">&#39;index.html&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Home&#39;</span><span class="p">,</span> <span class="n">user</span><span class="o">=</span><span class="n">user</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Try the application at this point to see how the template works. Once you have the rendered page in your browser you may want to view the source HTML and compare it against the original template.</p>
@@ -108,18 +100,18 @@
 <div class="section" id="control-statements-in-templates">
 <h2>Control statements in templates<a class="headerlink" href="#control-statements-in-templates" title="Permalink to this headline">¶</a></h2>
 <p>The Jinja2 templates also support control statements, given inside {%...%} blocks. Let&#8217;s add an if statement to our template (file app/templates/index.html):</p>
-<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;html&gt;</span>
-  <span class="nt">&lt;head&gt;</span>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
     {% if title %}
-    <span class="nt">&lt;title&gt;</span>{{ title }} - App<span class="nt">&lt;/title&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>{{ title }} - App<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
     {% else %}
-    <span class="nt">&lt;title&gt;</span>Welcome to The App<span class="nt">&lt;/title&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Welcome to The App<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
     {% endif %}
-  <span class="nt">&lt;/head&gt;</span>
-  <span class="nt">&lt;body&gt;</span>
-      <span class="nt">&lt;h1&gt;</span>Hello, {{ user[&#39;nickname&#39;] }}!<span class="nt">&lt;/h1&gt;</span>
-  <span class="nt">&lt;/body&gt;</span>
-<span class="nt">&lt;/html&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Hello, {{ user[&#39;nickname&#39;] }}!<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </pre></div>
 </div>
 <p>Now our template is a bit smarter. If the view function forgets to define a page title then instead of showing an empty title the template will provide its own title. Feel free to remove the title argument in the render_template call of our view function to see how the conditional statement works.</p>
@@ -128,23 +120,23 @@
 <h2>Loops in templates<a class="headerlink" href="#loops-in-templates" title="Permalink to this headline">¶</a></h2>
 <p>The logged in user in our App application will probably want to see some lists, so let&#8217;s see how we can do that.</p>
 <p>Lets thing about a blog in that case.</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="nd">@app.route</span><span class="p">(</span><span class="s">&#39;/&#39;</span><span class="p">)</span>
-<span class="nd">@app.route</span><span class="p">(</span><span class="s">&#39;/index&#39;</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="nd">@app.route</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)</span>
+<span class="nd">@app.route</span><span class="p">(</span><span class="s1">&#39;/index&#39;</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">index</span><span class="p">():</span>
-    <span class="n">user</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;nickname&#39;</span><span class="p">:</span> <span class="s">&#39;Martha&#39;</span><span class="p">}</span>  <span class="c"># fake user</span>
-    <span class="n">posts</span> <span class="o">=</span> <span class="p">[</span>  <span class="c"># fake array of posts</span>
+    <span class="n">user</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;nickname&#39;</span><span class="p">:</span> <span class="s1">&#39;Martha&#39;</span><span class="p">}</span>  <span class="c1"># fake user</span>
+    <span class="n">posts</span> <span class="o">=</span> <span class="p">[</span>  <span class="c1"># fake array of posts</span>
         <span class="p">{</span>
-            <span class="s">&#39;author&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s">&#39;nickname&#39;</span><span class="p">:</span> <span class="s">&#39;John&#39;</span><span class="p">},</span>
-            <span class="s">&#39;title&#39;</span><span class="p">:</span> <span class="s">&#39;Beautiful day in Poznan!&#39;</span>
-            <span class="s">&#39;body&#39;</span><span class="p">:</span> <span class="s">&#39;Very random text about Poznan!&#39;</span>
+            <span class="s1">&#39;author&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;nickname&#39;</span><span class="p">:</span> <span class="s1">&#39;John&#39;</span><span class="p">},</span>
+            <span class="s1">&#39;title&#39;</span><span class="p">:</span> <span class="s1">&#39;Beautiful day in Poznan!&#39;</span>
+            <span class="s1">&#39;body&#39;</span><span class="p">:</span> <span class="s1">&#39;Very random text about Poznan!&#39;</span>
         <span class="p">},</span>
         <span class="p">{</span>
-            <span class="s">&#39;author&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s">&#39;nickname&#39;</span><span class="p">:</span> <span class="s">&#39;Susan&#39;</span><span class="p">},</span>
-            <span class="s">&#39;title&#39;</span><span class="p">:</span> <span class="s">&#39;The Avengers movie was so cool!&#39;</span>
-            <span class="s">&#39;body&#39;</span><span class="p">:</span> <span class="s">&#39;Long random text about the movie!&#39;</span>
+            <span class="s1">&#39;author&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;nickname&#39;</span><span class="p">:</span> <span class="s1">&#39;Susan&#39;</span><span class="p">},</span>
+            <span class="s1">&#39;title&#39;</span><span class="p">:</span> <span class="s1">&#39;The Avengers movie was so cool!&#39;</span>
+            <span class="s1">&#39;body&#39;</span><span class="p">:</span> <span class="s1">&#39;Long random text about the movie!&#39;</span>
         <span class="p">}</span>
     <span class="p">]</span>
-    <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s">&quot;index.html&quot;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s">&#39;Home&#39;</span><span class="p">,</span> <span class="n">user</span><span class="o">=</span><span class="n">user</span><span class="p">,</span> <span class="n">posts</span><span class="o">=</span><span class="n">posts</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s2">&quot;index.html&quot;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Home&#39;</span><span class="p">,</span> <span class="n">user</span><span class="o">=</span><span class="n">user</span><span class="p">,</span> <span class="n">posts</span><span class="o">=</span><span class="n">posts</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>To represent user posts we are using a list, where each element has author and body fields.
@@ -154,24 +146,24 @@ using the fake objects without having to worry about updating it when we move to
 it will be up to the view function to decide how many posts need to be presented.
 The template cannot make any assumptions about the number of posts, so it needs to be prepared to render as many posts as the view sends.</p>
 <p>So let&#8217;s see how we do this using a for control structure (file app/templates/index.html):</p>
-<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;html&gt;</span>
-  <span class="nt">&lt;head&gt;</span>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
     {% if title %}
-    <span class="nt">&lt;title&gt;</span>{{ title }} - App<span class="nt">&lt;/title&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>{{ title }} - App<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
     {% else %}
-    <span class="nt">&lt;title&gt;</span>Welcome to the App<span class="nt">&lt;/title&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Welcome to the App<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
     {% endif %}
-  <span class="nt">&lt;/head&gt;</span>
-  <span class="nt">&lt;body&gt;</span>
-    <span class="nt">&lt;h1&gt;</span>Hi, {{ user.nickname }}!<span class="nt">&lt;/h1&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Hi, {{ user.nickname }}!<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
 
     {% for post in posts %}
-    <span class="nt">&lt;div&gt;</span>
-    <span class="nt">&lt;p&gt;</span>{{ post.author.nickname }} writs article with title: <span class="nt">&lt;b&gt;</span>{{ post.title }}<span class="nt">&lt;/b&gt;&lt;/p&gt;&lt;/div&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>{{ post.author.nickname }} writs article with title: <span class="p">&lt;</span><span class="nt">b</span><span class="p">&gt;</span>{{ post.title }}<span class="p">&lt;/</span><span class="nt">b</span><span class="p">&gt;&lt;/</span><span class="nt">p</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
     {% endfor %}
 
-  <span class="nt">&lt;/body&gt;</span>
-<span class="nt">&lt;/html&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </pre></div>
 </div>
 <p>Simple, right? Give it a try, and be sure to play with adding more content to the posts array.</p>
@@ -188,32 +180,32 @@ Then you will have to keep all these identical copies of the navigation bar in s
 <p>Instead, we can use Jinja2&#8217;s template inheritance feature, which allows us to move the parts of the
 page layout that are common to all templates and put them in a base template from which all other templates are derived.</p>
 <p>So let&#8217;s define a base template that includes the navigation bar and also the bit of title logic we implemented earlier (file app/templates/_base.html):</p>
-<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;html&gt;</span>
-  <span class="nt">&lt;head&gt;</span>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
     {% if title %}
-    <span class="nt">&lt;title&gt;</span>{{ title }} - App<span class="nt">&lt;/title&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>{{ title }} - App<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
     {% else %}
-    <span class="nt">&lt;title&gt;</span>Welcome to the App<span class="nt">&lt;/title&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Welcome to the App<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
     {% endif %}
-  <span class="nt">&lt;/head&gt;</span>
-  <span class="nt">&lt;body&gt;</span>
-    <span class="nt">&lt;div&gt;</span>Microblog: <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;/index&quot;</span><span class="nt">&gt;</span>Home<span class="nt">&lt;/a&gt;&lt;/div&gt;</span>
-    <span class="nt">&lt;hr&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>Microblog: <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;/index&quot;</span><span class="p">&gt;</span>Home<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">hr</span><span class="p">&gt;</span>
 
     {% block content %}
     {% endblock %}
 
-  <span class="nt">&lt;/body&gt;</span>
-<span class="nt">&lt;/html&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </pre></div>
 </div>
 <p>In this template we use the block control statement to define the place where the derived templates can insert themselves. Blocks are given a unique name, and their content can be replaced or enhanced in derived templates.</p>
 <p>And now what&#8217;s left is to modify our index.html template to inherit from _base.html (file app/templates/index.html):</p>
-<div class="highlight-html"><div class="highlight"><pre>{% extends &quot;_base.html&quot; %}
+<div class="highlight-html"><div class="highlight"><pre><span></span>{% extends &quot;_base.html&quot; %}
 {% block content %}
-    <span class="nt">&lt;h1&gt;</span>Hi, {{ user.nickname }}!<span class="nt">&lt;/h1&gt;</span>
+    <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Hi, {{ user.nickname }}!<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
     {% for post in posts %}
-    <span class="nt">&lt;div&gt;&lt;p&gt;</span>{{ post.author.nickname }} says: <span class="nt">&lt;b&gt;</span>{{ post.body }}<span class="nt">&lt;/b&gt;&lt;/p&gt;&lt;/div&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;&lt;</span><span class="nt">p</span><span class="p">&gt;</span>{{ post.author.nickname }} says: <span class="p">&lt;</span><span class="nt">b</span><span class="p">&gt;</span>{{ post.body }}<span class="p">&lt;/</span><span class="nt">b</span><span class="p">&gt;&lt;/</span><span class="nt">p</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
     {% endfor %}
 {% endblock %}
 </pre></div>
@@ -233,9 +225,9 @@ templates we will also create them as extensions to _base.html.</p>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <a href="index.html" class="logo"><img class="logo" src="_static/logo.png" style="width: 200px; height: 169px; margin: -10px 0 10px 0"></a>
-<ul class="current">
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
-
+<li class="toctree-l1"><a class="reference internal" href="introduction_to_algorithm.html">Introduction to Algorithm</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python_quickstart.html">Introduction to Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python_logic.html">Python Logic</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python_strings.html">Strings formatting</a></li>
@@ -246,18 +238,9 @@ templates we will also create them as extensions to _base.html.</p>
 <li class="toctree-l1"><a class="reference internal" href="python_data.html">Python data storage types</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python_loops.html">while loop</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python_exercises.html">Python Summary: exercises</a></li>
-<li class="toctree-l1"><a class="reference internal" href="flask_quickstart.html">Flask: Quick Start</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">Flask: Templates</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#why-we-need-templates">Why we need templates</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#templates-to-the-rescue">Templates to the rescue</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#control-statements-in-templates">Control statements in templates</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#loops-in-templates">Loops in templates</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#template-inheritance">Template inheritance</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="flask_forms.html">Flask: Forms</a></li>
-<li class="toctree-l1"><a class="reference internal" href="flask_exercises.html">Flask: Exercises</a></li>
-<li class="toctree-l1"><a class="reference internal" href="flask_sqlalchemy.html">Flask: SQL Alchemy - ORM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="django_in_action.html">Introduction to Django</a></li>
+<li class="toctree-l1"><a class="reference internal" href="django_models.html">Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="django_views.html">Rendering websites</a></li>
 <li class="toctree-l1"><a class="reference internal" href="code_of_conduct.html">Geek Girls Carrots Code of Conduct</a></li>
 </ul>
 

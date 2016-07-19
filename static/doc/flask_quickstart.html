@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en_GB">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
@@ -22,9 +22,7 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="Django Carrots" href="index.html" />
-    <link rel="next" title="Flask: Templates" href="flask_templates.html" />
-    <link rel="prev" title="Python Summary: exercises" href="python_exercises.html" /> 
+    <link rel="top" title="Django Carrots" href="index.html" /> 
   </head>
   <body role="document">
   
@@ -33,12 +31,6 @@
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="flask_templates.html" title="Flask: Templates"
-             accesskey="N">next</a></li>
-        <li class="right" >
-          <a href="python_exercises.html" title="Python Summary: exercises"
-             accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">Django Carrots</a> &raquo;</li> 
       </ul>
     </div>  
@@ -55,11 +47,11 @@
 <p>&#8220;Hello world&#8221; web application with Flask:</p>
 <p>from flask import Flask
 app = Flask(__name__)</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="nd">@app.route</span><span class="p">(</span><span class="s">&#39;/&#39;</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="nd">@app.route</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">hello_world</span><span class="p">():</span>
-    <span class="k">return</span> <span class="s">&#39;Hello World!&#39;</span>
+    <span class="k">return</span> <span class="s1">&#39;Hello World!&#39;</span>
 
-<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&#39;__main__&#39;</span><span class="p">:</span>
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
     <span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -73,10 +65,10 @@ $ pip install flask-wtf</div></blockquote>
 <p>Optional:
 $ pip install flask-sqlalchemy</p>
 <p>After let&#8217;s create the basic folder structure for our application:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>mkdir app
-<span class="nv">$ </span>mkdir app/static
-<span class="nv">$ </span>mkdir app/templates
-<span class="nv">$ </span>mkdir tmp
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ mkdir app
+$ mkdir app/static
+$ mkdir app/templates
+$ mkdir tmp
 </pre></div>
 </div>
 <p>The app folder will be where we will put our application package. The static sub-folder is where we will store static files like images, javascripts, and cascading style sheets. The templates sub-folder is obviously where our templates will go.</p>
@@ -85,14 +77,14 @@ $ pip install flask-sqlalchemy</p>
 <div class="section" id="flask-hallo-world">
 <h2>Flask: Hallo world<a class="headerlink" href="#flask-hallo-world" title="Permalink to this headline">¶</a></h2>
 <p>&#8220;Hello world&#8221; web application with Flask:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span>
 <span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
 
-<span class="nd">@app.route</span><span class="p">(</span><span class="s">&#39;/&#39;</span><span class="p">)</span>
+<span class="nd">@app.route</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">hello_world</span><span class="p">():</span>
-    <span class="k">return</span> <span class="s">&#39;Hello World!&#39;</span>
+    <span class="k">return</span> <span class="s1">&#39;Hello World!&#39;</span>
 
-<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&#39;__main__&#39;</span><span class="p">:</span>
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
     <span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">debug</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -101,13 +93,13 @@ $ pip install flask-sqlalchemy</p>
 <p>The views are the handlers that respond to requests from web browsers or other clients. In Flask handlers are written as Python functions. Each view function is mapped to one or more request URLs.</p>
 <p>This view is actually pretty simple, it just returns a string, to be displayed on the client&#8217;s web browser. The two route decorators above the function create the mappings from URLs / and /index to this function.</p>
 <p>The final step to have a fully working web application is to create a script that starts up the development web server with our application:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&#39;__main__&#39;</span><span class="p">:</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
     <span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">debug</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>It simply invokes app run method to start the server. Remember that the app variable holds the Flask instance that we created it above.</p>
 <p>To start the app you just run this script. On OS X, Linux and Cygwin you have to indicate that this is an executable file before you can run it:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">python</span> <span class="n">main</span><span class="o">.</span><span class="n">py</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">python</span> <span class="n">main</span><span class="o">.</span><span class="n">py</span>
 </pre></div>
 </div>
 <p>If You are having probles try:</p>
@@ -130,9 +122,9 @@ Do you see the route mappings in action? The first URL maps to /, while the seco
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <a href="index.html" class="logo"><img class="logo" src="_static/logo.png" style="width: 200px; height: 169px; margin: -10px 0 10px 0"></a>
-<ul class="current">
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
-
+<li class="toctree-l1"><a class="reference internal" href="introduction_to_algorithm.html">Introduction to Algorithm</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python_quickstart.html">Introduction to Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python_logic.html">Python Logic</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python_strings.html">Strings formatting</a></li>
@@ -143,15 +135,9 @@ Do you see the route mappings in action? The first URL maps to /, while the seco
 <li class="toctree-l1"><a class="reference internal" href="python_data.html">Python data storage types</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python_loops.html">while loop</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python_exercises.html">Python Summary: exercises</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">Flask: Quick Start</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#flask-instalation-and-preparaion">Flask: Instalation and preparaion</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#flask-hallo-world">Flask: Hallo world</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="flask_templates.html">Flask: Templates</a></li>
-<li class="toctree-l1"><a class="reference internal" href="flask_forms.html">Flask: Forms</a></li>
-<li class="toctree-l1"><a class="reference internal" href="flask_exercises.html">Flask: Exercises</a></li>
-<li class="toctree-l1"><a class="reference internal" href="flask_sqlalchemy.html">Flask: SQL Alchemy - ORM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="django_in_action.html">Introduction to Django</a></li>
+<li class="toctree-l1"><a class="reference internal" href="django_models.html">Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="django_views.html">Rendering websites</a></li>
 <li class="toctree-l1"><a class="reference internal" href="code_of_conduct.html">Geek Girls Carrots Code of Conduct</a></li>
 </ul>
 

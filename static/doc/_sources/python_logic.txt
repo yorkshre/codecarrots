@@ -82,6 +82,9 @@ Lest make few test if 'is' is the same as '==':
     >>> "aa" is x * 2
     >>> "aa" == x * 2
 
+    >>> [1, 2] == [1, 2]
+    >>> [1, 2] is [1, 2]
+
 Conclusion:
 is will return True if two variables point to the same object, == if the objects referred to by the variables are equal.
 
