@@ -103,7 +103,14 @@ class Links:
             {'name': 'damian_japanise.py', 'url': 'https://www.dropbox.com/s/jmmgrgwm1vgn4uz/japanise.py?dl=1'},
             {'name': 'damian_message.py', 'url': 'https://www.dropbox.com/s/omkhx2gykfstcp8/message.py?dl=1'},
             {'name': 'damian_numbers.py', 'url': 'https://www.dropbox.com/s/1xw676uoyvos3ql/numbers.py?dl=1'},
-            {'name': 'damian_palindrom.py', 'url': 'https://www.dropbox.com/s/1hfxingobntfrb2/palindrom.py?dl=1'}
+            {'name': 'damian_palindrom.py', 'url': 'https://www.dropbox.com/s/1hfxingobntfrb2/palindrom.py?dl=1'},
+            {'name': 'Wideokurs Django Wstęp', 'url': 'https://www.dropbox.com/s/f84dluvwmv8b4xs/00%20-%20Wst%C4%99p.ogv?dl=1'},
+            {'name': 'Wideokurs Django Instalacja', 'url': 'https://www.dropbox.com/s/6cr4cow2r4sf2gx/01%20-%20Instalacja%20Pythona%20i%20Django.ogv?dl=1'},
+            {'name': 'Wideokurs Django IDE', 'url': 'https://www.dropbox.com/s/h25rf51h8iw5og1/02%20-%20IDE%20i%20wtyczka%20do%20Pythona.ogv?dl=1'},
+            {'name': 'Wideokurs Django Hello world', 'url': 'https://www.dropbox.com/s/szr2nw674tltdb6/03%20-%20Hello%20World%20w%20Django.ogv?dl=1'},
+            {'name': 'Wideokurs Django Modele i migracje', 'url': 'https://www.dropbox.com/s/mff50mza7xencld/04%20-%20Modele%20i%20migracje.ogv?dl=1'},
+            {'name': 'Wideokurs Django Formularze cz. 1', 'url': 'https://www.dropbox.com/s/8gjkd8uoy7dy5r3/05%20-%20Formularze%20cz.%201.ogv?dl=1'},
+            {'name': 'Wideokurs Django Formularze cz. 2', 'url': 'https://www.dropbox.com/s/l909ynqzvc8l3vt/06%20-%20Formularze%20cz.%202.ogv?dl=1'}
         ]
 
 
