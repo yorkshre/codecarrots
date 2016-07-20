@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 
+DEBUG = True if os.environ.get('DEBUG') == 1 else False
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
@@ -100,25 +101,31 @@ USE_TZ = False
 
 STATIC_URL = '/static/'
 
-DROPBOX_OAUTH2_TOKEN = os.environ['DROPBOX_OAUTH2_TOKEN']
+DROPBOX_OAUTH2_TOKEN = os.environ.get('DROPBOX_OAUTH2_TOKEN')
 
-NOREPLY_ACCOUNT = os.environ['NOREPLY_ACCOUNT']
-NOREPLY_PASSWORD = os.environ['NOREPLY_PASSWORD']
-NOREPLY_TARGET = os.environ['NOREPLY_TARGET']
+NOREPLY_ACCOUNT = os.environ.get('NOREPLY_ACCOUNT')
+NOREPLY_PASSWORD = os.environ.get('NOREPLY_PASSWORD')
+NOREPLY_TARGET = os.environ.get('NOREPLY_TARGET')
 
-RECAPTCHA_SITE_KEY = os.environ['RECAPTCHA_SITE_KEY']
-RECAPTCHA_SECRET_KEY = os.environ['RECAPTCHA_SECRET_KEY']
+RECAPTCHA_SITE_KEY = os.environ.get('RECAPTCHA_SITE_KEY')
+RECAPTCHA_SECRET_KEY = os.environ.get('RECAPTCHA_SECRET_KEY')
 
-import dj_database_url
-DATABASES['default'] =  dj_database_url.config()
+try:
+    import dj_database_url
+    DATABASES['default'] =  dj_database_url.config(default='sqlite://db/sqlite3.db')
+except:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
+    }
 
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 ALLOWED_HOSTS = ['*']
 
 STATIC_ROOT = 'staticfiles'
-
-DEBUG = True if os.environ['DEBUG'] == 1 else False
 
 try:
     from .local_settings import *

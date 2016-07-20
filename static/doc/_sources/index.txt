@@ -8,7 +8,7 @@ The manual is a part of the PyCode Carrots workshop organized by Geek Girls Carr
 If you decide to use the manual, we would be grateful if you contact us (however it is optional).
 
 
-Table of Contents 
+Table of Contents
 -----------------
 
 .. toctree::
@@ -24,11 +24,9 @@ Table of Contents
    python_data
    python_loops
    python_exercises
-   flask_quickstart
-   flask_templates
-   flask_forms
-   flask_exercises
-   flask_sqlalchemy
+   django_in_action
+   django_models
+   django_views
    code_of_conduct
 
 .. going_social

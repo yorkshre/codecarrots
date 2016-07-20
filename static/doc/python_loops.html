@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en_GB">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
@@ -51,17 +51,17 @@
   <div class="section" id="while-loop">
 <h1>while loop<a class="headerlink" href="#while-loop" title="Permalink to this headline">¶</a></h1>
 <p>We discoused the for loop, but there is also a while loop</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="k">while</span> <span class="n">expression</span><span class="p">:</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="n">expression</span><span class="p">:</span>
     <span class="n">statement</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Example:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">number</span> <span class="o">=</span> <span class="mi">0</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">number</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="k">while</span> <span class="p">(</span><span class="n">number</span> <span class="o">&lt;</span> <span class="mi">9</span><span class="p">):</span>
-   <span class="k">print</span><span class="p">(</span><span class="s">&#39;Number:&#39;</span><span class="p">,</span> <span class="n">count</span><span class="p">)</span>
+   <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Number:&#39;</span><span class="p">,</span> <span class="n">count</span><span class="p">)</span>
    <span class="n">number</span> <span class="o">=</span> <span class="n">number</span> <span class="o">+</span> <span class="mi">1</span>
 
-<span class="k">print</span> <span class="s">&quot;Finished!&quot;</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Finished!&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>A loop becomes infinite loop if a condition never becomes FALSE.
@@ -69,26 +69,26 @@ You must use caution when using while loops because of the possibility that this
 condition never resolves to a FALSE value. This results in a loop that never ends.
 Such a loop is called an infinite loop.</p>
 <p>Example:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">number</span> <span class="o">=</span> <span class="mi">1</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">number</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="k">while</span> <span class="n">number</span><span class="p">:</span>
-   <span class="k">print</span><span class="p">(</span><span class="s">&#39;Number:&#39;</span><span class="p">,</span> <span class="n">count</span><span class="p">)</span>
+   <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Number:&#39;</span><span class="p">,</span> <span class="n">count</span><span class="p">)</span>
    <span class="n">number</span> <span class="o">=</span> <span class="n">number</span> <span class="o">+</span> <span class="mi">1</span>
 
-<span class="k">print</span><span class="p">(</span><span class="s">&quot;Finished!&quot;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Finished!&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Above example goes in an infinite loop and you need to use CTRL+C (or CTRL+D) to exit the program.</p>
 <div class="section" id="else-in-while-loop">
 <h2>Else in while loop:<a class="headerlink" href="#else-in-while-loop" title="Permalink to this headline">¶</a></h2>
 <p>If the else statement is used with a while loop, the else statement is executed when the condition becomes false.</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">number</span> <span class="o">=</span> <span class="mi">0</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">number</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="k">while</span> <span class="n">number</span> <span class="o">&lt;</span> <span class="mi">6</span><span class="p">:</span>
-   <span class="k">print</span><span class="p">(</span><span class="n">number</span><span class="p">,</span> <span class="s">&quot; is  less than 6&quot;</span><span class="p">)</span>
+   <span class="k">print</span><span class="p">(</span><span class="n">number</span><span class="p">,</span> <span class="s2">&quot; is  less than 6&quot;</span><span class="p">)</span>
    <span class="n">number</span> <span class="o">=</span> <span class="n">number</span> <span class="o">+</span> <span class="mi">1</span>
 <span class="k">else</span><span class="p">:</span>
-   <span class="k">print</span><span class="p">(</span><span class="n">number</span><span class="p">,</span> <span class="s">&quot; is not less than 6&quot;</span><span class="p">)</span>
+   <span class="k">print</span><span class="p">(</span><span class="n">number</span><span class="p">,</span> <span class="s2">&quot; is not less than 6&quot;</span><span class="p">)</span>
 
-<span class="k">print</span><span class="p">(</span><span class="s">&quot;Finished!&quot;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Finished!&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -103,7 +103,7 @@ Such a loop is called an infinite loop.</p>
   <a href="index.html" class="logo"><img class="logo" src="_static/logo.png" style="width: 200px; height: 169px; margin: -10px 0 10px 0"></a>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
-
+<li class="toctree-l1"><a class="reference internal" href="introduction_to_algorithm.html">Introduction to Algorithm</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python_quickstart.html">Introduction to Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python_logic.html">Python Logic</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python_strings.html">Strings formatting</a></li>
@@ -112,16 +112,14 @@ Such a loop is called an infinite loop.</p>
 <li class="toctree-l1"><a class="reference internal" href="python_objects.html#inheritance">Inheritance</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python_xmas_tree.html">The for loop: Christmas Tree</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python_data.html">Python data storage types</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">while loop</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">while loop</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#else-in-while-loop">Else in while loop:</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="python_exercises.html">Python Summary: exercises</a></li>
-<li class="toctree-l1"><a class="reference internal" href="flask_quickstart.html">Flask: Quick Start</a></li>
-<li class="toctree-l1"><a class="reference internal" href="flask_templates.html">Flask: Templates</a></li>
-<li class="toctree-l1"><a class="reference internal" href="flask_forms.html">Flask: Forms</a></li>
-<li class="toctree-l1"><a class="reference internal" href="flask_exercises.html">Flask: Exercises</a></li>
-<li class="toctree-l1"><a class="reference internal" href="flask_sqlalchemy.html">Flask: SQL Alchemy - ORM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="django_in_action.html">Introduction to Django</a></li>
+<li class="toctree-l1"><a class="reference internal" href="django_models.html">Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="django_views.html">Rendering websites</a></li>
 <li class="toctree-l1"><a class="reference internal" href="code_of_conduct.html">Geek Girls Carrots Code of Conduct</a></li>
 </ul>
 
