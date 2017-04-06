@@ -77,3 +77,6 @@ W celu zdobycia kursu w wersji RST należy sklonować oficjalne repozytorium
 ```bash
 git clone https://github.com/Draqun/django-carrots.git
 ```
+
+## Zaktulizować na PyCode 2017
+
